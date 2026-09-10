@@ -1,0 +1,6 @@
+.worktrees/
+tmp/
+__pycache__/
+.pytest_cache/
+*.pyc
+outputs/previews/
