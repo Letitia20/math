@@ -15,6 +15,7 @@ import matplotlib.pyplot as plt
 from drying_model.problem1 import (
     Problem1Parameters,
     load_chamber_history_csv,
+    richardson_extrapolate_solutions,
     result_payload,
     sample_solution,
     solve_problem1,
@@ -26,7 +27,8 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--input", type=Path, default=Path("data/raw/attachment1.csv"))
     parser.add_argument("--output", type=Path, default=Path("tmp/problem1_result.json"))
     parser.add_argument("--figure-dir", type=Path, default=Path("reports/figures"))
-    parser.add_argument("--radial-intervals", type=int, default=1280)
+    parser.add_argument("--coarse-radial-intervals", type=int, default=5120)
+    parser.add_argument("--fine-radial-intervals", type=int, default=10240)
     return parser
 
 
@@ -71,16 +73,26 @@ def main() -> None:
     history = load_chamber_history_csv(args.input)
     output_times = np.arange(1.0, 1801.0)
     requested_radii_cm = np.arange(0.0, 2.0 + 0.05, 0.1)
-    solution = solve_problem1(
-        history,
-        args.radial_intervals,
-        output_times,
-        parameters=Problem1Parameters(),
-        relative_tolerance=2.0e-9,
-        max_step_s=2.0,
+    sampled_solutions = []
+    for radial_intervals in (
+        args.coarse_radial_intervals,
+        args.fine_radial_intervals,
+    ):
+        solution = solve_problem1(
+            history,
+            radial_intervals,
+            output_times,
+            parameters=Problem1Parameters(),
+            relative_tolerance=5.0e-10,
+            max_step_s=1.0,
+        )
+        sampled_solutions.append(sample_solution(solution, requested_radii_cm))
+    extrapolated = richardson_extrapolate_solutions(
+        sampled_solutions[0],
+        sampled_solutions[1],
+        order=2,
     )
-    sampled = sample_solution(solution, requested_radii_cm)
-    payload = result_payload(sampled)
+    payload = result_payload(extrapolated)
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(
         json.dumps(payload, ensure_ascii=False, separators=(",", ":")),
