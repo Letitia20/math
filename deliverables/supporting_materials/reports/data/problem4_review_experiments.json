@@ -1,0 +1,176 @@
+{
+  "schema_version": 1,
+  "runtime": {
+    "python": "3.12.14",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1"
+  },
+  "input_sha256": {
+    "data\\raw\\attachment1.csv": "6643a85c56d054c2e62a176302b75317a2a3d8626d5b6da0f261b1b58d821cdc",
+    "data\\raw\\attachment2.csv": "d96c5fc6c555a36d2eea2f7fa56c67c107c959226ea3712a3cbe9c94b37a343b"
+  },
+  "threshold": 0.15,
+  "default_solver": {
+    "relative_tolerance": 2e-08,
+    "max_step_s": 120.0
+  },
+  "sensitivity_radial_intervals": 320,
+  "fixed_radius_endpoint_s": {
+    "160": 470194.22711003956,
+    "320": 468052.3759018782,
+    "640": 467594.98620358686,
+    "1280": 467488.5041609087,
+    "richardson_640_1280": 467453.0101466826,
+    "observed_order_320_640_1280": 2.1028137202499244
+  },
+  "time_integration": [
+    {
+      "relative_tolerance": 2e-08,
+      "max_step_s": 120.0,
+      "endpoint_s": 184045.08858721715
+    },
+    {
+      "relative_tolerance": 2e-09,
+      "max_step_s": 60.0,
+      "endpoint_s": 184045.09076226078
+    },
+    {
+      "relative_tolerance": 5e-10,
+      "max_step_s": 30.0,
+      "endpoint_s": 184045.0906983197
+    }
+  ],
+  "time_integration_endpoint_spread_s": 0.0021750436280854046,
+  "radius_interpolation": {
+    "linear_endpoint_s": 184045.08858721715,
+    "pchip_endpoint_s": 184032.4857135069,
+    "pchip_minus_linear_s": -12.602873710246058,
+    "observation_times_unchanged": true
+  },
+  "mass_transfer_sensitivity": [
+    {
+      "multiplier": 0.8,
+      "coefficient": 6.4e-07,
+      "endpoint_s": 186483.3350068343,
+      "change_from_baseline_s": 2438.2464196171495
+    },
+    {
+      "multiplier": 1.0,
+      "coefficient": 8e-07,
+      "endpoint_s": 184045.08858721715,
+      "change_from_baseline_s": 0.0
+    },
+    {
+      "multiplier": 1.2,
+      "coefficient": 9.6e-07,
+      "endpoint_s": 182663.85698193312,
+      "change_from_baseline_s": -1381.2316052840324
+    }
+  ],
+  "heat_transfer_sensitivity": [
+    {
+      "multiplier": 0.8,
+      "coefficient": 20.0,
+      "endpoint_s": 184110.4552058862,
+      "change_from_baseline_s": 65.36661866903887
+    },
+    {
+      "multiplier": 1.0,
+      "coefficient": 25.0,
+      "endpoint_s": 184045.08858721715,
+      "change_from_baseline_s": 0.0
+    },
+    {
+      "multiplier": 1.2,
+      "coefficient": 30.0,
+      "endpoint_s": 184002.25875689572,
+      "change_from_baseline_s": -42.829830321425106
+    }
+  ],
+  "density_shrinkage_compatibility": {
+    "640": {
+      "interpretation": "hypothetical wet bulk density; constant cylinder length",
+      "time_s": [
+        0.0,
+        21600.0,
+        43200.0,
+        64800.0,
+        86400.0,
+        108000.0,
+        129600.0,
+        151200.0,
+        172800.0,
+        183958.81357849855
+      ],
+      "implied_dry_mass_per_length_kg_m": [
+        0.35026545698332145,
+        0.2522803551264767,
+        0.2686971702066646,
+        0.28494714860788506,
+        0.2945869188377785,
+        0.3008779829793388,
+        0.3051803111030538,
+        0.3084540309772933,
+        0.3108375046090011,
+        0.31183509688067085
+      ],
+      "mass_ratio_to_initial": [
+        1.0,
+        0.7202547385039155,
+        0.767124376239759,
+        0.8135176990103633,
+        0.8410390261572548,
+        0.8589998727555532,
+        0.8712829227621653,
+        0.8806293193564357,
+        0.8874340829555517,
+        0.8902821864490036
+      ],
+      "final_mass_ratio": 0.8902821864490036,
+      "maximum_absolute_ratio_deviation": 0.2797452614960845,
+      "center_moisture_at_48h": 0.15616402248363556
+    },
+    "1280": {
+      "interpretation": "hypothetical wet bulk density; constant cylinder length",
+      "time_s": [
+        0.0,
+        21600.0,
+        43200.0,
+        64800.0,
+        86400.0,
+        108000.0,
+        129600.0,
+        151200.0,
+        172800.0,
+        183937.98140998464
+      ],
+      "implied_dry_mass_per_length_kg_m": [
+        0.3502654569833165,
+        0.25228025151786165,
+        0.2686974499386948,
+        0.28494916654018143,
+        0.2945916219361194,
+        0.3008838590068552,
+        0.305186008988825,
+        0.30845907294746394,
+        0.31084183844625407,
+        0.311837351813862
+      ],
+      "mass_ratio_to_initial": [
+        1.0,
+        0.7202544427036607,
+        0.7671251748684231,
+        0.8135234601616849,
+        0.8410524533972275,
+        0.8590166486819356,
+        0.8712991900978728,
+        0.8806437140678596,
+        0.887446455963426,
+        0.8902886242325493
+      ],
+      "final_mass_ratio": 0.8902886242325493,
+      "maximum_absolute_ratio_deviation": 0.2797455572963393,
+      "center_moisture_at_48h": 0.1561529920454446
+    }
+  }
+}

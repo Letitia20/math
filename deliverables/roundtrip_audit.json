@@ -1,0 +1,76 @@
+{
+  "1": {
+    "status": "passed",
+    "sheets": [
+      {
+        "name": "温度",
+        "rows": 1801,
+        "columns": 22,
+        "checked_cells": 39622
+      },
+      {
+        "name": "水分浓度",
+        "rows": 1801,
+        "columns": 22,
+        "checked_cells": 39622
+      }
+    ],
+    "mismatch_count": 0,
+    "first_mismatches": [],
+    "workbook_sha256": "894cc520bf1a761b015bafe6e2d82fad07e9ef16ba7718e802525f4b56c5be59"
+  },
+  "2": {
+    "status": "passed",
+    "sheets": [
+      {
+        "name": "温度",
+        "rows": 10801,
+        "columns": 22,
+        "checked_cells": 237622
+      },
+      {
+        "name": "水分浓度",
+        "rows": 10801,
+        "columns": 22,
+        "checked_cells": 237622
+      }
+    ],
+    "mismatch_count": 0,
+    "first_mismatches": [],
+    "workbook_sha256": "385f861af72c560b463e479d99752ca3697362bf8e3ea719312b34046c3a0346"
+  },
+  "3": {
+    "status": "passed",
+    "sheets": [
+      {
+        "name": "Sheet1",
+        "rows": 3451,
+        "columns": 22,
+        "checked_cells": 75922
+      }
+    ],
+    "mismatch_count": 0,
+    "first_mismatches": [],
+    "workbook_sha256": "9c3461120f83af5de6ba4333d41b84d1181d128dbc83d1e27284427e555b8a61"
+  },
+  "4": {
+    "status": "passed",
+    "data_rows": 3067,
+    "rows": 3068,
+    "columns": 23,
+    "blank_outside_cells": 23173,
+    "radius_last_observation_time_s": 259200.0,
+    "radius_extension": "hold_last_value",
+    "rows_after_radius_observations": 0,
+    "critical_time_s": 183931.037354,
+    "strict_completion_time_s": 183960.0,
+    "critical_maximum_moisture_unrounded": 0.1500000032406248,
+    "strict_completion_maximum_moisture_unrounded": 0.14998513113134057,
+    "checked_cells": 70564
+  },
+  "full_process_restoration": {
+    "xl/worksheets/sheet1.xml": true,
+    "xl/worksheets/sheet2.xml": true
+  },
+  "source_and_support_tests": "95 passed in original repository and support directory"
+}
