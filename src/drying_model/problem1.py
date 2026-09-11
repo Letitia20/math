@@ -264,6 +264,37 @@ def sample_solution(solution: Problem1Solution, radius_cm: ArrayLike) -> Problem
     )
 
 
+def richardson_extrapolate_solutions(
+    coarse: Problem1Solution,
+    fine: Problem1Solution,
+    *,
+    order: int = 2,
+) -> Problem1Solution:
+    """Extrapolate two solutions whose spatial mesh widths differ by a factor of two."""
+    if order <= 0:
+        raise ValueError("Richardson order must be positive")
+    if (
+        coarse.temperature_c.shape != fine.temperature_c.shape
+        or coarse.moisture_concentration.shape
+        != fine.moisture_concentration.shape
+    ):
+        raise ValueError("Solutions must have matching field shapes")
+    if not np.array_equal(coarse.time_s, fine.time_s) or not np.array_equal(
+        coarse.radius_m,
+        fine.radius_m,
+    ):
+        raise ValueError("Solutions must use identical output times and radii")
+    denominator = 2.0**order - 1.0
+    return Problem1Solution(
+        time_s=fine.time_s.copy(),
+        radius_m=fine.radius_m.copy(),
+        temperature_c=fine.temperature_c
+        + (fine.temperature_c - coarse.temperature_c) / denominator,
+        moisture_concentration=fine.moisture_concentration
+        + (fine.moisture_concentration - coarse.moisture_concentration) / denominator,
+    )
+
+
 def result_payload(solution: Problem1Solution) -> dict[str, list]:
     """Convert a sampled solution to the numeric schema used by result1.xlsx."""
     if not np.allclose(solution.time_s, np.round(solution.time_s), atol=1.0e-10):

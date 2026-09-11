@@ -5,7 +5,9 @@ import numpy as np
 
 from drying_model.problem1 import (
     ChamberHistory,
+    Problem1Solution,
     diffusivity_q1,
+    richardson_extrapolate_solutions,
     nodal_control_volumes,
     radial_flux_divergence,
     interpolate_history,
@@ -198,3 +200,49 @@ def test_result_payload_uses_seconds_centimetres_and_four_decimal_values():
     assert payload["radius_cm"] == [0.0, 1.0, 2.0]
     assert payload["temperature_c"] == [[28.0, 28.0, 28.0]]
     assert payload["moisture_concentration"] == [[2.55, 2.55, 2.55]]
+
+
+def test_richardson_extrapolation_removes_second_order_spatial_error():
+    time = np.array([1.0, 2.0])
+    radius = np.array([0.0, 0.02])
+    exact_temperature = np.array([[28.0, 29.0], [30.0, 31.0]])
+    exact_moisture = np.array([[2.5, 2.4], [2.3, 2.2]])
+    fine_error_temperature = np.array([[0.03, -0.06], [0.09, -0.12]])
+    fine_error_moisture = np.array([[0.003, -0.006], [0.009, -0.012]])
+    coarse = Problem1Solution(
+        time_s=time,
+        radius_m=radius,
+        temperature_c=exact_temperature + 4.0 * fine_error_temperature,
+        moisture_concentration=exact_moisture + 4.0 * fine_error_moisture,
+    )
+    fine = Problem1Solution(
+        time_s=time,
+        radius_m=radius,
+        temperature_c=exact_temperature + fine_error_temperature,
+        moisture_concentration=exact_moisture + fine_error_moisture,
+    )
+
+    extrapolated = richardson_extrapolate_solutions(coarse, fine, order=2)
+
+    np.testing.assert_allclose(extrapolated.temperature_c, exact_temperature)
+    np.testing.assert_allclose(extrapolated.moisture_concentration, exact_moisture)
+    np.testing.assert_array_equal(extrapolated.time_s, time)
+    np.testing.assert_array_equal(extrapolated.radius_m, radius)
+
+
+def test_richardson_extrapolation_rejects_different_output_grids():
+    coarse = Problem1Solution(
+        time_s=np.array([1.0]),
+        radius_m=np.array([0.0, 0.02]),
+        temperature_c=np.array([[28.0, 29.0]]),
+        moisture_concentration=np.array([[2.5, 2.4]]),
+    )
+    fine = Problem1Solution(
+        time_s=np.array([2.0]),
+        radius_m=np.array([0.0, 0.02]),
+        temperature_c=np.array([[28.0, 29.0]]),
+        moisture_concentration=np.array([[2.5, 2.4]]),
+    )
+
+    with np.testing.assert_raises(ValueError):
+        richardson_extrapolate_solutions(coarse, fine, order=2)
