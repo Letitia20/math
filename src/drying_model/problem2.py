@@ -76,6 +76,7 @@ def solve_variable_property_fixed_cylinder(
     parameters: Problem1Parameters = Problem1Parameters(),
     relative_tolerance: float = 1.0e-8,
     max_step_s: float = 5.0,
+    maximum_moisture_threshold: float | None = None,
 ) -> Problem1Solution:
     """Solve coupled heat and moisture transport on a fixed cylindrical radius."""
     if radial_intervals < 2:
@@ -87,6 +88,12 @@ def solve_variable_property_fixed_cylinder(
         raise ValueError("Output times must be strictly increasing")
     if output_times[0] < history.time_s[0] or output_times[-1] > history.time_s[-1]:
         raise ValueError("Output times must lie within the chamber history")
+    if maximum_moisture_threshold is not None and (
+        not np.isfinite(maximum_moisture_threshold)
+        or maximum_moisture_threshold <= 0.0
+        or maximum_moisture_threshold >= parameters.initial_moisture_concentration
+    ):
+        raise ValueError("Maximum moisture threshold must lie between zero and the initial value")
 
     node_count = radial_intervals + 1
     radii = np.linspace(0.0, parameters.radius_m, node_count)
@@ -158,6 +165,19 @@ def solve_variable_property_fixed_cylinder(
     absolute_tolerance = np.concatenate(
         [np.full(node_count, 1.0e-9), np.full(node_count, 1.0e-10)]
     )
+
+    threshold_event = None
+    if maximum_moisture_threshold is not None:
+
+        def threshold_event(time_s: float, state: NDArray[np.float64]) -> float:
+            del time_s
+            return float(
+                np.max(np.exp(state[node_count:])) - maximum_moisture_threshold
+            )
+
+        threshold_event.terminal = True
+        threshold_event.direction = -1.0
+
     result = solve_ivp(
         coupled_rhs,
         (float(history.time_s[0]), float(output_times[-1])),
@@ -168,14 +188,35 @@ def solve_variable_property_fixed_cylinder(
         atol=absolute_tolerance,
         max_step=max_step_s,
         jac_sparsity=sparsity,
+        events=threshold_event,
     )
     if not result.success:
         raise RuntimeError(f"Coupled solver failed: {result.message}")
+    result_time = result.t
+    result_state = result.y
+    if maximum_moisture_threshold is not None:
+        if not result.t_events or result.t_events[0].size == 0:
+            raise RuntimeError("Maximum moisture threshold was not reached")
+        event_time = float(result.t_events[0][0])
+        event_state = result.y_events[0][0]
+        if result_time.size and np.isclose(
+            result_time[-1],
+            event_time,
+            rtol=0.0,
+            atol=1.0e-9,
+        ):
+            result_time = result_time.copy()
+            result_state = result_state.copy()
+            result_time[-1] = event_time
+            result_state[:, -1] = event_state
+        else:
+            result_time = np.append(result_time, event_time)
+            result_state = np.column_stack([result_state, event_state])
     return Problem1Solution(
-        time_s=output_times,
+        time_s=result_time,
         radius_m=radii,
-        temperature_c=result.y[:node_count].T,
-        moisture_concentration=np.exp(result.y[node_count:].T),
+        temperature_c=result_state[:node_count].T,
+        moisture_concentration=np.exp(result_state[node_count:].T),
     )
 
 
@@ -187,6 +228,7 @@ def solve_problem2(
     parameters: Problem1Parameters = Problem1Parameters(),
     relative_tolerance: float = 1.0e-8,
     max_step_s: float = 5.0,
+    maximum_moisture_threshold: float | None = None,
 ) -> Problem1Solution:
     """Solve Problem 2 with the four Appendix 3 material-property laws."""
     return solve_variable_property_fixed_cylinder(
@@ -200,4 +242,5 @@ def solve_problem2(
         parameters=parameters,
         relative_tolerance=relative_tolerance,
         max_step_s=max_step_s,
+        maximum_moisture_threshold=maximum_moisture_threshold,
     )

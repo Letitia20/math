@@ -124,3 +124,46 @@ def test_q2_hot_dry_environment_creates_expected_surface_gradients():
     assert solution.temperature_c[0, -1] > solution.temperature_c[0, 0]
     assert solution.moisture_concentration[0, -1] < solution.moisture_concentration[0, 0]
     assert np.all(solution.moisture_concentration > 0.0)
+
+
+def test_coupled_solver_appends_exact_maximum_moisture_threshold_event():
+    history = ChamberHistory(
+        time_s=np.array([0.0, 1000.0]),
+        temperature_c=np.array([50.0, 50.0]),
+        moisture_concentration=np.array([0.05, 0.05]),
+    )
+    parameters = Problem1Parameters(radius_m=1.0e-4)
+
+    solution = solve_problem2(
+        history,
+        radial_intervals=8,
+        output_times_s=np.arange(0.0, 1001.0, 60.0),
+        parameters=parameters,
+        relative_tolerance=1.0e-9,
+        max_step_s=1.0,
+        maximum_moisture_threshold=0.2,
+    )
+
+    assert solution.time_s[-1] % 60.0 != 0.0
+    np.testing.assert_allclose(
+        np.max(solution.moisture_concentration[-1]),
+        0.2,
+        atol=1.0e-9,
+    )
+    assert np.all(np.max(solution.moisture_concentration[:-1], axis=1) > 0.2)
+
+
+def test_coupled_solver_reports_when_threshold_is_not_reached():
+    history = ChamberHistory(
+        time_s=np.array([0.0, 100.0]),
+        temperature_c=np.array([50.0, 50.0]),
+        moisture_concentration=np.array([0.05, 0.05]),
+    )
+
+    with np.testing.assert_raises_regex(RuntimeError, "not reached"):
+        solve_problem2(
+            history,
+            radial_intervals=8,
+            output_times_s=np.arange(0.0, 101.0, 20.0),
+            maximum_moisture_threshold=0.01,
+        )
