@@ -23,10 +23,12 @@ from drying_model.problem2 import solve_problem2
 from drying_model.problem3 import (
     Problem3Result,
     extend_chamber_history_to_plateau,
+    moisture_balance_diagnostics,
     problem3_payload,
     richardson_extrapolate_drying_time,
     solve_problem3,
     truncate_solution_at_threshold,
+    validate_radially_nonincreasing_moisture,
 )
 
 
@@ -52,14 +54,21 @@ def save_figures(result: Problem3Result, figure_dir: Path) -> None:
     selected_hours = [6.0, 12.0, 24.0, 36.0, 48.0]
     selected_hours = [hour for hour in selected_hours if hour < time_h[-1]]
     selected_indices = [int(np.argmin(np.abs(time_h - hour))) for hour in selected_hours]
-    selected_indices.append(len(time_h) - 1)
+    critical_index = int(
+        np.flatnonzero(
+            np.isclose(solution.time_s, result.drying_time_s, atol=1.0e-8)
+        )[0]
+    )
+    selected_indices.extend([critical_index, len(time_h) - 1])
+    selected_indices = list(dict.fromkeys(selected_indices))
     fig, axis = plt.subplots(figsize=(7.2, 4.6), constrained_layout=True)
     for index in selected_indices:
-        label = (
-            "drying endpoint"
-            if index == len(time_h) - 1
-            else f"{time_h[index]:g} h"
-        )
+        if index == critical_index:
+            label = "critical threshold"
+        elif index == len(time_h) - 1:
+            label = "first strict regular time"
+        else:
+            label = f"{time_h[index]:g} h"
         axis.plot(radius_cm, moisture[index], label=label)
     axis.axhline(result.threshold, color="#B91C1C", linestyle="--", linewidth=1.0)
     axis.set(
@@ -124,8 +133,13 @@ def main() -> None:
             [extrapolated_time - 60.0, extrapolated_time + 60.0],
         )
     )
+    diagnostic_times = np.unique(
+        np.concatenate([np.arange(0.0, 601.0), common_times])
+    )
     requested_radii_cm = np.arange(0.0, 2.0 + 0.05, 0.1)
     sampled_solutions = []
+    moisture_balance: dict[str, dict[str, float]] = {}
+    radial_monotonicity: dict[str, float] = {}
     for radial_intervals in (
         args.coarse_radial_intervals,
         args.fine_radial_intervals,
@@ -133,11 +147,33 @@ def main() -> None:
         full_solution = solve_problem2(
             extended_history,
             radial_intervals,
-            common_times,
+            diagnostic_times,
             **solver_options,
         )
-        sampled_solutions.append(sample_solution(full_solution, requested_radii_cm))
+        moisture_balance[str(radial_intervals)] = moisture_balance_diagnostics(
+            full_solution,
+            extended_history,
+        )
+        radial_monotonicity[str(radial_intervals)] = (
+            validate_radially_nonincreasing_moisture(full_solution)
+        )
+        sampled_full_solution = sample_solution(
+            full_solution,
+            requested_radii_cm,
+        )
+        common_indices = np.searchsorted(diagnostic_times, common_times)
+        sampled_solutions.append(
+            replace(
+                sampled_full_solution,
+                time_s=sampled_full_solution.time_s[common_indices],
+                temperature_c=sampled_full_solution.temperature_c[common_indices],
+                moisture_concentration=(
+                    sampled_full_solution.moisture_concentration[common_indices]
+                ),
+            )
+        )
         del full_solution
+        del sampled_full_solution
         gc.collect()
         print(f"sampled field grid={radial_intervals}", flush=True)
     extrapolated_solution = richardson_extrapolate_solutions(
@@ -145,18 +181,23 @@ def main() -> None:
         sampled_solutions[1],
         order=2,
     )
-    terminal_solution = truncate_solution_at_threshold(
+    maximum_outward_increase = validate_radially_nonincreasing_moisture(
+        extrapolated_solution
+    )
+    output_solution = truncate_solution_at_threshold(
         extrapolated_solution,
         threshold=0.15,
         output_interval_s=60.0,
     )
-    terminal_moisture = terminal_solution.moisture_concentration[-1]
-    maximum_index = int(np.argmax(terminal_moisture))
+    critical_index = output_solution.time_s.size - 2
+    critical_moisture = output_solution.moisture_concentration[critical_index]
+    maximum_index = int(np.argmax(critical_moisture))
     result = Problem3Result(
-        solution=terminal_solution,
-        drying_time_s=float(terminal_solution.time_s[-1]),
-        maximum_moisture=float(terminal_moisture[maximum_index]),
-        maximum_radius_m=float(terminal_solution.radius_m[maximum_index]),
+        solution=output_solution,
+        drying_time_s=float(output_solution.time_s[critical_index]),
+        strict_completion_time_s=float(output_solution.time_s[-1]),
+        maximum_moisture=float(critical_moisture[maximum_index]),
+        maximum_radius_m=float(output_solution.radius_m[maximum_index]),
         plateau_temperature_c=float(extended_history.temperature_c[-1]),
         plateau_moisture_concentration=float(
             extended_history.moisture_concentration[-1]
@@ -217,6 +258,12 @@ def main() -> None:
         str(args.coarse_radial_intervals): endpoint_results[0].drying_time_s,
         str(args.fine_radial_intervals): endpoint_results[1].drying_time_s,
         "richardson": result.drying_time_s,
+    }
+    payload["moisture_balance"] = moisture_balance
+    payload["radial_monotonicity"] = {
+        "center_is_wettest_at_all_output_times": True,
+        "maximum_outward_increase_by_grid": radial_monotonicity,
+        "extrapolated_sampled_maximum_outward_increase": maximum_outward_increase,
     }
     payload["sensitivity"] = sensitivity
     args.output.parent.mkdir(parents=True, exist_ok=True)
