@@ -15,6 +15,7 @@ from drying_model.problem1 import (
     Problem1Solution,
     interpolate_history,
     radial_flux_divergence,
+    sample_solution,
 )
 
 ScalarLaw = Callable[[NDArray[np.float64]], NDArray[np.float64]]
@@ -77,6 +78,9 @@ def solve_variable_property_fixed_cylinder(
     relative_tolerance: float = 1.0e-8,
     max_step_s: float = 5.0,
     maximum_moisture_threshold: float | None = None,
+    initial_time_s: float | None = None,
+    initial_temperature_c: ArrayLike | None = None,
+    initial_moisture_concentration: ArrayLike | None = None,
 ) -> Problem1Solution:
     """Solve coupled heat and moisture transport on a fixed cylindrical radius."""
     if radial_intervals < 2:
@@ -86,7 +90,13 @@ def solve_variable_property_fixed_cylinder(
         raise ValueError("Output times must be a non-empty one-dimensional array")
     if np.any(np.diff(output_times) <= 0.0):
         raise ValueError("Output times must be strictly increasing")
-    if output_times[0] < history.time_s[0] or output_times[-1] > history.time_s[-1]:
+    start_time = history.time_s[0] if initial_time_s is None else float(initial_time_s)
+    if (
+        not np.isfinite(start_time)
+        or start_time < history.time_s[0]
+        or start_time > output_times[0]
+        or output_times[-1] > history.time_s[-1]
+    ):
         raise ValueError("Output times must lie within the chamber history")
     if maximum_moisture_threshold is not None and (
         not np.isfinite(maximum_moisture_threshold)
@@ -156,11 +166,31 @@ def solve_variable_property_fixed_cylinder(
         log_concentration_rate = concentration_rate / concentration
         return np.concatenate([temperature_rate, log_concentration_rate])
 
+    supplied_initial_fields = (
+        initial_temperature_c is not None,
+        initial_moisture_concentration is not None,
+    )
+    if any(supplied_initial_fields) and not all(supplied_initial_fields):
+        raise ValueError("Both initial fields must be supplied together")
+    if all(supplied_initial_fields):
+        temperature_initial = np.asarray(initial_temperature_c, dtype=float)
+        moisture_initial = np.asarray(initial_moisture_concentration, dtype=float)
+        if (
+            temperature_initial.shape != (node_count,)
+            or moisture_initial.shape != (node_count,)
+            or np.any(~np.isfinite(temperature_initial))
+            or np.any(~np.isfinite(moisture_initial))
+            or np.any(moisture_initial <= 0.0)
+        ):
+            raise ValueError("Initial fields must be finite positive nodal arrays")
+    else:
+        temperature_initial = np.full(node_count, parameters.initial_temperature_c)
+        moisture_initial = np.full(
+            node_count,
+            parameters.initial_moisture_concentration,
+        )
     initial_state = np.concatenate(
-        [
-            np.full(node_count, parameters.initial_temperature_c),
-            np.full(node_count, np.log(parameters.initial_moisture_concentration)),
-        ]
+        [temperature_initial, np.log(moisture_initial)]
     )
     absolute_tolerance = np.concatenate(
         [np.full(node_count, 1.0e-9), np.full(node_count, 1.0e-10)]
@@ -180,7 +210,7 @@ def solve_variable_property_fixed_cylinder(
 
     result = solve_ivp(
         coupled_rhs,
-        (float(history.time_s[0]), float(output_times[-1])),
+        (start_time, float(output_times[-1])),
         initial_state,
         method="BDF",
         t_eval=output_times,
@@ -229,6 +259,9 @@ def solve_problem2(
     relative_tolerance: float = 1.0e-8,
     max_step_s: float = 5.0,
     maximum_moisture_threshold: float | None = None,
+    initial_time_s: float | None = None,
+    initial_temperature_c: ArrayLike | None = None,
+    initial_moisture_concentration: ArrayLike | None = None,
 ) -> Problem1Solution:
     """Solve Problem 2 with the four Appendix 3 material-property laws."""
     return solve_variable_property_fixed_cylinder(
@@ -243,4 +276,111 @@ def solve_problem2(
         relative_tolerance=relative_tolerance,
         max_step_s=max_step_s,
         maximum_moisture_threshold=maximum_moisture_threshold,
+        initial_time_s=initial_time_s,
+        initial_temperature_c=initial_temperature_c,
+        initial_moisture_concentration=initial_moisture_concentration,
+    )
+
+
+def solve_problem2_sampled_in_chunks(
+    history: ChamberHistory,
+    radial_intervals: int,
+    output_times_s: ArrayLike,
+    sample_radius_cm: ArrayLike,
+    *,
+    chunk_duration_s: float = 600.0,
+    parameters: Problem1Parameters = Problem1Parameters(),
+    relative_tolerance: float = 1.0e-8,
+    max_step_s: float = 5.0,
+) -> Problem1Solution:
+    """Solve Problem 2 in bounded-memory chunks and retain sampled radii only."""
+    output_times = np.asarray(output_times_s, dtype=float)
+    if output_times.ndim != 1 or output_times.size == 0:
+        raise ValueError("Output times must be a non-empty one-dimensional array")
+    if np.any(~np.isfinite(output_times)) or np.any(np.diff(output_times) <= 0.0):
+        raise ValueError("Output times must be finite and strictly increasing")
+    if (
+        output_times[0] < history.time_s[0]
+        or output_times[-1] > history.time_s[-1]
+    ):
+        raise ValueError("Output times must lie within the chamber history")
+    if not np.isfinite(chunk_duration_s) or chunk_duration_s <= 0.0:
+        raise ValueError("Chunk duration must be finite and positive")
+
+    requested_radius_cm = np.asarray(sample_radius_cm, dtype=float)
+    node_count = radial_intervals + 1
+    nodal_radius = np.linspace(0.0, parameters.radius_m, node_count)
+    initial_solution = Problem1Solution(
+        time_s=np.array([history.time_s[0]]),
+        radius_m=nodal_radius,
+        temperature_c=np.full((1, node_count), parameters.initial_temperature_c),
+        moisture_concentration=np.full(
+            (1, node_count),
+            parameters.initial_moisture_concentration,
+        ),
+    )
+    sampled_initial = sample_solution(initial_solution, requested_radius_cm)
+    sampled_temperature = np.empty(
+        (output_times.size, sampled_initial.radius_m.size),
+        dtype=float,
+    )
+    sampled_moisture = np.empty_like(sampled_temperature)
+
+    next_output_index = 0
+    current_time = float(history.time_s[0])
+    current_temperature: NDArray[np.float64] | None = None
+    current_moisture: NDArray[np.float64] | None = None
+    if np.isclose(output_times[0], current_time, rtol=0.0, atol=1.0e-12):
+        sampled_temperature[0] = sampled_initial.temperature_c[0]
+        sampled_moisture[0] = sampled_initial.moisture_concentration[0]
+        next_output_index = 1
+
+    final_time = float(output_times[-1])
+    while current_time < final_time:
+        chunk_end = min(current_time + chunk_duration_s, final_time)
+        chunk_stop = int(np.searchsorted(output_times, chunk_end, side="right"))
+        requested_times = output_times[next_output_index:chunk_stop]
+        if requested_times.size and requested_times[0] <= current_time:
+            raise RuntimeError("Chunked output indexing did not advance")
+        append_chunk_end = (
+            requested_times.size == 0
+            or not np.isclose(requested_times[-1], chunk_end, rtol=0.0, atol=1.0e-12)
+        )
+        integration_times = (
+            np.append(requested_times, chunk_end)
+            if append_chunk_end
+            else requested_times
+        )
+        chunk_solution = solve_problem2(
+            history,
+            radial_intervals=radial_intervals,
+            output_times_s=integration_times,
+            parameters=parameters,
+            relative_tolerance=relative_tolerance,
+            max_step_s=max_step_s,
+            initial_time_s=None if current_temperature is None else current_time,
+            initial_temperature_c=current_temperature,
+            initial_moisture_concentration=current_moisture,
+        )
+        sampled_chunk = sample_solution(chunk_solution, requested_radius_cm)
+        retained_count = requested_times.size
+        if retained_count:
+            sampled_temperature[next_output_index:chunk_stop] = (
+                sampled_chunk.temperature_c[:retained_count]
+            )
+            sampled_moisture[next_output_index:chunk_stop] = (
+                sampled_chunk.moisture_concentration[:retained_count]
+            )
+        current_temperature = chunk_solution.temperature_c[-1].copy()
+        current_moisture = chunk_solution.moisture_concentration[-1].copy()
+        current_time = chunk_end
+        next_output_index = chunk_stop
+
+    if next_output_index != output_times.size:
+        raise RuntimeError("Chunked solver did not populate every requested output time")
+    return Problem1Solution(
+        time_s=output_times.copy(),
+        radius_m=sampled_initial.radius_m,
+        temperature_c=sampled_temperature,
+        moisture_concentration=sampled_moisture,
     )

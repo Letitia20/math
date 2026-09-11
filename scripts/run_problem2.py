@@ -12,8 +12,12 @@ import numpy as np
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-from drying_model.problem1 import load_chamber_history_csv, result_payload, sample_solution
-from drying_model.problem2 import diffusivity_q2, solve_problem2
+from drying_model.problem1 import (
+    load_chamber_history_csv,
+    result_payload,
+    richardson_extrapolate_solutions,
+)
+from drying_model.problem2 import diffusivity_q2, solve_problem2_sampled_in_chunks
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -21,7 +25,9 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--input", type=Path, default=Path("data/raw/attachment1.csv"))
     parser.add_argument("--output", type=Path, default=Path("tmp/problem2_result.json"))
     parser.add_argument("--figure-dir", type=Path, default=Path("reports/figures"))
-    parser.add_argument("--radial-intervals", type=int, default=640)
+    parser.add_argument("--coarse-radial-intervals", type=int, default=2560)
+    parser.add_argument("--fine-radial-intervals", type=int, default=5120)
+    parser.add_argument("--chunk-duration-s", type=float, default=600.0)
     return parser
 
 
@@ -70,16 +76,63 @@ def save_figures(payload: dict[str, list], figure_dir: Path) -> None:
 
 def main() -> None:
     args = build_parser().parse_args()
+    if args.fine_radial_intervals != 2 * args.coarse_radial_intervals:
+        raise ValueError("Fine radial grid must have twice as many intervals as the coarse grid")
     history = load_chamber_history_csv(args.input)
-    solution = solve_problem2(
-        history,
-        args.radial_intervals,
-        np.arange(1.0, 10801.0),
-        relative_tolerance=2.0e-10,
-        max_step_s=2.0,
-    )
-    sampled = sample_solution(solution, np.arange(0.0, 2.0 + 0.05, 0.1))
-    payload = result_payload(sampled)
+    output_times = np.arange(1.0, 10801.0)
+    sample_radius_cm = np.arange(0.0, 2.0 + 0.05, 0.1)
+    solutions = []
+    for radial_intervals in (
+        args.coarse_radial_intervals,
+        args.fine_radial_intervals,
+    ):
+        print(f"Solving Problem 2 on {radial_intervals} radial intervals...", flush=True)
+        solutions.append(
+            solve_problem2_sampled_in_chunks(
+                history,
+                radial_intervals=radial_intervals,
+                output_times_s=output_times,
+                sample_radius_cm=sample_radius_cm,
+                chunk_duration_s=args.chunk_duration_s,
+                relative_tolerance=2.0e-10,
+                max_step_s=2.0,
+            )
+        )
+        print(f"Completed {radial_intervals} radial intervals.", flush=True)
+    coarse, fine = solutions
+    extrapolated = richardson_extrapolate_solutions(coarse, fine, order=2)
+    payload = result_payload(extrapolated)
+    payload["numerical_method"] = {
+        "coarse_radial_intervals": args.coarse_radial_intervals,
+        "fine_radial_intervals": args.fine_radial_intervals,
+        "richardson_order": 2,
+        "relative_tolerance": 2.0e-10,
+        "maximum_time_step_s": 2.0,
+        "chunk_duration_s": args.chunk_duration_s,
+        "max_abs_temperature_difference_c": float(
+            np.max(np.abs(fine.temperature_c - coarse.temperature_c))
+        ),
+        "max_abs_moisture_difference": float(
+            np.max(
+                np.abs(
+                    fine.moisture_concentration
+                    - coarse.moisture_concentration
+                )
+            )
+        ),
+        "temperature_four_decimal_mismatches": int(
+            np.count_nonzero(
+                np.round(fine.temperature_c, 4)
+                != np.round(coarse.temperature_c, 4)
+            )
+        ),
+        "moisture_four_decimal_mismatches": int(
+            np.count_nonzero(
+                np.round(fine.moisture_concentration, 4)
+                != np.round(coarse.moisture_concentration, 4)
+            )
+        ),
+    }
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(
         json.dumps(payload, ensure_ascii=False, separators=(",", ":")),
