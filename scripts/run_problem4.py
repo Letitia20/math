@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 from pathlib import Path
 
@@ -31,6 +32,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--radius", type=Path, default=Path("data/raw/attachment2.csv"))
     parser.add_argument("--output", type=Path, default=Path("tmp/problem4_result.json"))
     parser.add_argument("--figure-dir", type=Path, default=Path("reports/figures"))
+    parser.add_argument("--diagnostics-output", type=Path, default=Path("reports/data/problem4_production_diagnostics.json"))
     parser.add_argument("--coarse-radial-intervals", type=int, default=640)
     parser.add_argument("--fine-radial-intervals", type=int, default=1280)
     parser.add_argument("--horizon-hours", type=float, default=72.0)
@@ -59,6 +61,24 @@ def interpolate_rows(values: np.ndarray, times: np.ndarray, query: float) -> np.
     return values[index - 1] + fraction * (values[index] - values[index - 1])
 
 
+def write_diagnostics(payload: dict, path: Path, chamber_path: Path, radius_path: Path) -> None:
+    """Retain compact production evidence alongside the generated workbook."""
+    omitted = {"time_s", "radius_cm", "moisture_concentration", "surface_moisture_concentration"}
+    evidence = {key: value for key, value in payload.items() if key not in omitted}
+    evidence["input_sha256"] = {p.as_posix(): hashlib.sha256(p.read_bytes()).hexdigest() for p in (chamber_path, radius_path)}
+    evidence["data_rows"] = len(payload["time_s"])
+    evidence["table6_columns"] = ["time_h", "center", "0.5_cm", "1.0_cm", "surface"]
+    evidence["table6"] = []
+    for hour in range(6, 49, 6):
+        if hour * 3600 not in payload["time_s"]:
+            continue
+        index = payload["time_s"].index(hour * 3600)
+        row = payload["moisture_concentration"][index]
+        evidence["table6"].append([hour, row[0], row[5], row[10], payload["surface_moisture_concentration"][index]])
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(evidence, indent=2, ensure_ascii=False, allow_nan=False) + "\n", encoding="utf-8")
+
+
 def save_figures(
     times_s: np.ndarray,
     radius_cm: np.ndarray,
@@ -78,7 +98,7 @@ def save_figures(
     fig, axis = plt.subplots(figsize=(7.4, 4.7), constrained_layout=True)
     for index in selected:
         label = f"{time_h[index]:g} h"
-        if np.isclose(times_s[index], drying_time_s, atol=1.0e-6):
+        if np.isclose(times_s[index], drying_time_s, atol=1.0e-6, rtol=0.0):
             label = "critical threshold"
         elif index == len(times_s) - 1:
             label = "first strict regular time"
@@ -113,13 +133,15 @@ def main() -> None:
     args = build_parser().parse_args()
     chamber = load_chamber_history_csv(args.chamber)
     radius_history = load_radius_history_csv(args.radius)
-    horizon_s = min(float(args.horizon_hours * 3600.0), float(radius_history.time_s[-1]))
+    if args.fine_radial_intervals != 2 * args.coarse_radial_intervals:
+        raise ValueError("Second-order Richardson requires fine intervals = 2 * coarse intervals")
+    horizon_s = float(args.horizon_hours * 3600.0)
     extended_chamber = extend_chamber_history_to_plateau(chamber, horizon_s)
     threshold = 0.15
     solver_options = {"relative_tolerance": 2.0e-8, "max_step_s": 120.0}
     endpoint_times: dict[str, float] = {}
     for grid in (args.coarse_radial_intervals, args.fine_radial_intervals):
-        probe_times = np.arange(3600.0, horizon_s + 1.0e-9, 3600.0)
+        probe_times = np.unique(np.append(np.arange(3600.0, horizon_s, 3600.0), horizon_s))
         endpoint = solve_problem4(
             extended_chamber,
             radius_history,
@@ -144,13 +166,13 @@ def main() -> None:
             extended_chamber,
             shifted_radius,
             sensitivity_grid,
-            np.arange(3600.0, horizon_s + 1.0e-9, 3600.0),
+            probe_times,
             maximum_moisture_threshold=threshold,
             **solver_options,
         )
         timing_sensitivity[name] = float(sensitivity_solution.time_s[-1])
     if not (0.0 < drying_time_s < horizon_s):
-        raise RuntimeError("Extrapolated drying endpoint is outside the radius-history horizon")
+        raise RuntimeError("Extrapolated drying endpoint is outside the supplied chamber horizon")
     strict_time_s = float(np.floor(drying_time_s / 60.0 + 1.0) * 60.0)
     if strict_time_s <= drying_time_s + 1.0e-8:
         strict_time_s += 60.0
@@ -188,7 +210,7 @@ def main() -> None:
     extrapolated_surface = richardson(surface_by_grid[0], surface_by_grid[1])
     critical_fixed = interpolate_rows(extrapolated, integration_times, drying_time_s)
     critical_surface = float(interpolate_rows(extrapolated_surface[:, None], integration_times, drying_time_s)[0])
-    strict_index = int(np.where(np.isclose(integration_times, strict_time_s, atol=1.0e-9))[0][0])
+    strict_index = int(np.where(np.isclose(integration_times, strict_time_s, atol=1.0e-9, rtol=0.0))[0][0])
     strict_fixed = extrapolated[strict_index]
     strict_surface = float(extrapolated_surface[strict_index])
     regular_before = regular_times[regular_times < drying_time_s - 1.0e-8]
@@ -205,7 +227,7 @@ def main() -> None:
 
     endpoint_moisture = float(np.nanmax(critical_fixed))
     strict_maximum = float(np.nanmax(strict_fixed))
-    if not np.isclose(endpoint_moisture, threshold, atol=3.0e-4):
+    if not np.isclose(endpoint_moisture, threshold, atol=1.0e-7, rtol=0.0):
         raise RuntimeError(f"Critical moisture does not equal threshold: {endpoint_moisture}")
     if not strict_maximum < threshold:
         raise RuntimeError(f"Strict regular row is not below threshold: {strict_maximum}")
@@ -238,6 +260,7 @@ def main() -> None:
         json.dumps(payload, ensure_ascii=False, separators=(",", ":"), allow_nan=False),
         encoding="utf-8",
     )
+    write_diagnostics(payload, args.diagnostics_output, args.chamber, args.radius)
     save_figures(output_times, fixed_radius_cm, output_fixed, output_surface, radius_history, drying_time_s, args.figure_dir)
     print(f"drying endpoint: {drying_time_s / 3600.0:.6f} h; strict row: {strict_time_s:.0f} s", flush=True)
 

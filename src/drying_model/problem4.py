@@ -3,25 +3,26 @@
 The measured radius history is used as a prescribed moving boundary.  The
 radial coordinate is mapped to ``xi=r/R(t)``; for dry-basis concentration the
 solid motion then cancels the grid velocity and leaves a diffusion equation on
-the fixed interval ``0 <= xi <= 1``.  All transport coefficients are from
-Appendix 4.
+the fixed interval ``0 <= xi <= 1`` under spatially uniform dry-solid density.
+Appendix 4 density is used as an effective thermal-storage law; compatibility
+with a literal wet-bulk-density interpretation is audited separately.
 """
 
 from __future__ import annotations
 
 import csv
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from pathlib import Path
 
 import numpy as np
 from numpy.typing import ArrayLike, NDArray
 from scipy.integrate import cumulative_simpson, solve_ivp
+from scipy.interpolate import PchipInterpolator
 from scipy.sparse import bmat, diags
 
 from drying_model.problem1 import (
     ChamberHistory,
     Problem1Parameters,
-    Problem1Solution,
     interpolate_history,
     nodal_control_volumes,
     radial_flux_divergence,
@@ -34,6 +35,8 @@ class RadiusHistory:
 
     time_s: NDArray[np.float64]
     radius_m: NDArray[np.float64]
+    interpolation: str = "linear"
+    _pchip: PchipInterpolator | None = field(init=False, repr=False, compare=False)
 
     def __post_init__(self) -> None:
         time = np.asarray(self.time_s, dtype=float)
@@ -46,8 +49,11 @@ class RadiusHistory:
             raise ValueError("Radius times must be strictly increasing")
         if np.any(radius <= 0.0) or np.any(np.diff(radius) > 1.0e-12):
             raise ValueError("Radius must remain positive and non-increasing")
+        if self.interpolation not in ("linear", "pchip"):
+            raise ValueError("Radius interpolation must be linear or pchip")
         object.__setattr__(self, "time_s", time)
         object.__setattr__(self, "radius_m", radius)
+        object.__setattr__(self, "_pchip", PchipInterpolator(time, radius) if self.interpolation == "pchip" else None)
 
 
 @dataclass(frozen=True)
@@ -87,10 +93,12 @@ def load_radius_history_csv(path: str | Path) -> RadiusHistory:
 
 
 def interpolate_radius(time_s: ArrayLike, history: RadiusHistory) -> NDArray[np.float64]:
-    """Piecewise-linear radius interpolation, holding the measured tail constant."""
+    """Interpolate radius with the selected method and hold the measured tail."""
     query = np.asarray(time_s, dtype=float)
     if np.any(~np.isfinite(query)) or np.any(query < history.time_s[0]):
         raise ValueError("Requested radius time precedes Attachment 2")
+    if history._pchip is not None:
+        return history._pchip(np.minimum(query, history.time_s[-1]))
     return np.interp(query, history.time_s, history.radius_m)
 
 
@@ -153,10 +161,10 @@ def solve_problem4(
     if np.any(np.diff(output_times) <= 0.0):
         raise ValueError("Output times must be strictly increasing")
     start_time = history.time_s[0] if initial_time_s is None else float(initial_time_s)
-    if start_time < history.time_s[0] or start_time > output_times[0]:
+    if not np.isfinite(start_time) or start_time < max(history.time_s[0], radius_history.time_s[0]) or start_time > output_times[0]:
         raise ValueError("Initial time must not be after the first output time")
-    if output_times[-1] > history.time_s[-1] or output_times[-1] > radius_history.time_s[-1]:
-        raise ValueError("Output times exceed the supplied histories")
+    if output_times[-1] > history.time_s[-1]:
+        raise ValueError("Output times exceed the supplied chamber history")
     if maximum_moisture_threshold is not None and not (
         0.0 < maximum_moisture_threshold < parameters.initial_moisture_concentration
     ):
@@ -178,7 +186,7 @@ def solve_problem4(
         moisture_initial = np.asarray(initial_moisture_concentration, dtype=float)
         if temperature_initial.shape != (node_count,) or moisture_initial.shape != (node_count,):
             raise ValueError("Initial fields have the wrong nodal shape")
-        if np.any(~np.isfinite(temperature_initial)) or np.any(moisture_initial <= 0.0):
+        if np.any(~np.isfinite(temperature_initial)) or np.any(~np.isfinite(moisture_initial)) or np.any(moisture_initial <= 0.0):
             raise ValueError("Initial fields must be finite and moisture must be positive")
     else:
         temperature_initial = np.full(node_count, parameters.initial_temperature_c)
@@ -247,7 +255,7 @@ def sample_moving_solution(
 ) -> NDArray[np.float64]:
     """Sample moisture at fixed physical radii; outside cells are NaN."""
     requested = np.asarray(radius_cm, dtype=float)
-    if requested.ndim != 1 or requested.size == 0 or np.any(np.diff(requested) <= 0.0):
+    if requested.ndim != 1 or requested.size == 0 or np.any(~np.isfinite(requested)) or np.any(requested < 0.0) or np.any(np.diff(requested) <= 0.0):
         raise ValueError("Requested radii must be strictly increasing")
     radii_m = requested * 0.01
     sampled = np.full((solution.time_s.size, requested.size), np.nan, dtype=float)
@@ -287,7 +295,7 @@ def moisture_balance_diagnostics(
     parameters: Problem1Parameters = Problem1Parameters(),
 ) -> dict[str, float]:
     """Check normalized-domain moisture change against the moving surface flux."""
-    if not np.isclose(solution.time_s[0], chamber_history.time_s[0], atol=1.0e-12):
+    if not np.isclose(solution.time_s[0], chamber_history.time_s[0], atol=1.0e-12, rtol=0.0):
         raise ValueError("Moisture balance requires the initial-time row")
     volumes = nodal_control_volumes(solution.xi.size, 1.0)
     mean_moisture = solution.moisture_concentration @ volumes / np.sum(volumes)
@@ -317,4 +325,33 @@ def moisture_balance_diagnostics(
         "relative_max_residual": maximum_residual / max(total_change, 1.0e-15),
         "total_mean_moisture_change": float(mean_moisture[-1] - mean_moisture[0]),
         "integrated_surface_change": float(integrated_change[-1]),
+    }
+
+
+def density_shrinkage_compatibility(
+    solution: Problem4Solution,
+    radius_history: RadiusHistory,
+) -> dict[str, object]:
+    """Audit the hypothetical interpretation of Appendix 4 rho as wet density.
+
+    This is separate from the moisture PDE flux balance. With fixed length,
+    dry mass per unit length would be 2*pi*R**2*integral[rho(C)/(1+C)*xi dxi].
+    The first field must be the initial field; no conservation is imposed here.
+    """
+    if not np.isclose(solution.time_s[0], radius_history.time_s[0], atol=1.0e-12, rtol=0.0):
+        raise ValueError("Density compatibility requires the initial-time row")
+    volumes = nodal_control_volumes(solution.xi.size, 1.0)
+    concentration = solution.moisture_concentration
+    implied_dry_density = density_q4(concentration) / (1.0 + concentration)
+    radii = interpolate_radius(solution.time_s, radius_history)
+    # Unit-radius annular volumes already include pi (their sum is pi).
+    mass_per_length = radii**2 * (implied_dry_density @ volumes)
+    ratio = mass_per_length / mass_per_length[0]
+    return {
+        "interpretation": "hypothetical wet bulk density; constant cylinder length",
+        "time_s": solution.time_s.tolist(),
+        "implied_dry_mass_per_length_kg_m": mass_per_length.tolist(),
+        "mass_ratio_to_initial": ratio.tolist(),
+        "final_mass_ratio": float(ratio[-1]),
+        "maximum_absolute_ratio_deviation": float(np.max(np.abs(ratio - 1.0))),
     }
