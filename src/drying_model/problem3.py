@@ -182,11 +182,11 @@ def moisture_balance_diagnostics(
     parameters: Problem1Parameters = Problem1Parameters(),
 ) -> dict[str, float]:
     """Compare total moisture change with integrated convective surface flux."""
-    if not np.isclose(solution.time_s[0], history.time_s[0], atol=1.0e-12):
+    if not np.isclose(solution.time_s[0], history.time_s[0], atol=1.0e-12, rtol=0.0):
         raise ValueError("Moisture balance requires the initial-time solution row")
     if solution.time_s[-1] > history.time_s[-1]:
         raise ValueError("Moisture balance times must lie within the chamber history")
-    if not np.isclose(solution.radius_m[-1], parameters.radius_m, atol=1.0e-12):
+    if not np.isclose(solution.radius_m[-1], parameters.radius_m, atol=1.0e-12, rtol=0.0):
         raise ValueError("Solution radius and model radius must match")
 
     volumes = nodal_control_volumes(solution.radius_m.size, parameters.radius_m)
@@ -234,10 +234,11 @@ def truncate_solution_at_threshold(
         raise ValueError("Solution must bracket the first moisture threshold crossing")
     upper = int(crossing_indices[0])
     lower = upper - 1
-    denominator = maximum[lower] - maximum[upper]
-    if denominator <= 0.0:
-        raise ValueError("Threshold bracket must decrease across the crossing")
-    fraction = (maximum[lower] - threshold) / denominator
+    # Interpolate each nodal field, then take the last nodal crossing. Merely
+    # interpolating the two maxima is wrong when the wettest node changes.
+    above = solution.moisture_concentration[lower] > threshold
+    nodal_drop = solution.moisture_concentration[lower, above] - solution.moisture_concentration[upper, above]
+    fraction = float(np.max((solution.moisture_concentration[lower, above] - threshold) / nodal_drop))
     crossing_time = solution.time_s[lower] + fraction * (
         solution.time_s[upper] - solution.time_s[lower]
     )
@@ -324,7 +325,7 @@ def problem3_payload(result: Problem3Result) -> dict[str, object]:
         np.max(solution.moisture_concentration[critical_index])
     )
     strict_maximum = float(np.max(solution.moisture_concentration[-1]))
-    if not np.isclose(critical_maximum, result.threshold, atol=1.0e-8):
+    if not np.isclose(critical_maximum, result.threshold, atol=1.0e-8, rtol=0.0):
         raise ValueError("Critical maximum moisture must equal the unrounded threshold")
     if not strict_maximum < result.threshold:
         raise ValueError("Strict completion maximum moisture must be below threshold")

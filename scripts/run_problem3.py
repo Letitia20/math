@@ -56,7 +56,7 @@ def save_figures(result: Problem3Result, figure_dir: Path) -> None:
     selected_indices = [int(np.argmin(np.abs(time_h - hour))) for hour in selected_hours]
     critical_index = int(
         np.flatnonzero(
-            np.isclose(solution.time_s, result.drying_time_s, atol=1.0e-8)
+            np.isclose(solution.time_s, result.drying_time_s, atol=1.0e-8, rtol=0.0)
         )[0]
     )
     selected_indices.extend([critical_index, len(time_h) - 1])
@@ -96,6 +96,8 @@ def save_figures(result: Problem3Result, figure_dir: Path) -> None:
 
 def main() -> None:
     args = build_parser().parse_args()
+    if args.fine_radial_intervals != 2 * args.coarse_radial_intervals:
+        raise ValueError("Fine radial grid must have twice as many intervals as the coarse grid")
     history = load_chamber_history_csv(args.input)
     horizon_s = args.horizon_hours * 3600.0
     solver_options = {"relative_tolerance": 2.0e-9, "max_step_s": 60.0}

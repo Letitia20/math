@@ -26,6 +26,8 @@ class ChamberHistory:
         moisture = np.asarray(self.moisture_concentration, dtype=float)
         if time.ndim != 1 or temperature.shape != time.shape or moisture.shape != time.shape:
             raise ValueError("Chamber history columns must be one-dimensional and equal-sized")
+        if any(np.any(~np.isfinite(values)) for values in (time, temperature, moisture)):
+            raise ValueError("Chamber history must contain only finite values")
         if time.size < 2 or np.any(np.diff(time) <= 0.0):
             raise ValueError("Chamber times must be strictly increasing")
         if np.any(moisture < 0.0):
@@ -297,7 +299,7 @@ def richardson_extrapolate_solutions(
 
 def result_payload(solution: Problem1Solution) -> dict[str, list]:
     """Convert a sampled solution to the numeric schema used by result1.xlsx."""
-    if not np.allclose(solution.time_s, np.round(solution.time_s), atol=1.0e-10):
+    if np.any(~np.isfinite(solution.time_s)) or not np.allclose(solution.time_s, np.round(solution.time_s), atol=1.0e-10, rtol=0.0):
         raise ValueError("Workbook output times must be whole seconds")
     return {
         "time_s": np.round(solution.time_s).astype(int).tolist(),

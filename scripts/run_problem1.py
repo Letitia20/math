@@ -70,6 +70,8 @@ def save_figures(payload: dict[str, list], figure_dir: Path) -> None:
 
 def main() -> None:
     args = build_parser().parse_args()
+    if args.fine_radial_intervals != 2 * args.coarse_radial_intervals:
+        raise ValueError("Fine radial grid must have twice as many intervals as the coarse grid")
     history = load_chamber_history_csv(args.input)
     output_times = np.arange(1.0, 1801.0)
     requested_radii_cm = np.arange(0.0, 2.0 + 0.05, 0.1)
