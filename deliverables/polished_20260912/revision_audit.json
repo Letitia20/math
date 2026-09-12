@@ -15,7 +15,7 @@
   "reference_count": 3,
   "result_workbooks_resaved": false,
   "source_main_chars_before": 12161,
-  "source_main_chars_after": 12833,
+  "source_main_chars_after": 12836,
   "section_counts": [
     {
       "section": "1.1 任务及数据",
@@ -120,11 +120,11 @@
     {
       "section": "8.5 密度与收缩的相容性",
       "before_chars": 435,
-      "after_chars": 489
+      "after_chars": 488
     }
   ],
-  "archive_bytes": 7236517,
-  "pdf_bytes": 1278730,
+  "archive_bytes": 7236516,
+  "pdf_bytes": 1278751,
   "page_text_bounds": [
     {
       "page": 1,
@@ -479,8 +479,8 @@
     }
   ],
   "sha256": {
-    "A题论文_可编辑版.docx": "389ca0c71102e7af415c439143d2b371ab43737a0dbd9ede5931b78f5d515361",
-    "A题论文_提交预览.pdf": "8724b57f7a49b293e3d36c7c62a74dbf47b57696bc051033f1669c142010e350",
-    "A题支撑材料.zip": "06b65c440d48881c09c87c90640d9cfb55f403b3402510c43d6afcd4745875dd"
+    "A题论文_可编辑版.docx": "fbeaafeb7f5133342fac0d79255821a1f38e518d74e0f23c3e20d70ba764242d",
+    "A题论文_提交预览.pdf": "33da5eb85ce4c3df29df2b4c2f7bd2b27ae1741b878b020595e027227b67ba69",
+    "A题支撑材料.zip": "f34a9393bae67ffac8dbf6e2d8d356f010f95c5ee1724dc5564a3a2b2f3f6ca3"
   }
 }
