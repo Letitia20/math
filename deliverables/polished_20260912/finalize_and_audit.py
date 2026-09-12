@@ -170,7 +170,8 @@ def audit():
             page_bounds.append({'page': i+1, 'bounds': bounds})
     # Preserve the single-level package and refresh only the required disclosure PDF.
     support = OUT / 'supporting_materials'
-    shutil.copy2(OUT / 'AI工具使用详情.pdf', support / 'AI工具使用详情.pdf')
+    shutil.copy2(OUT / 'AI工具使用详情.pdf', support / 'AI 工具使用详情.pdf')
+    assert not (support / 'AI工具使用详情.pdf').exists()
     assert not any(p.is_dir() for p in support.iterdir()), 'Supporting package is not single-level'
     files = sorted(p for p in support.iterdir() if p.is_file())
     expected_results = {f'result{index}.xlsx' for index in range(1, 5)}

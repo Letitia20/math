@@ -200,7 +200,7 @@ def build() -> None:
     ):
         copy_file(SOURCE / "reports" / "data" / filename)
     copy_file(SOURCE / "reports" / "problem4_independent_validation.json")
-    copy_file(OUT / "AI工具使用详情.pdf")
+    copy_file(OUT / "AI工具使用详情.pdf", "AI 工具使用详情.pdf")
 
     python_sources = [
         *(ROOT / "src" / "drying_model" / name for name in (
@@ -246,7 +246,7 @@ python run_problem4.py
 
 `flat_support_audit.json` 记录四个结果工作簿的 SHA-256、工作表尺寸、非空单元格数和模板样式核验结果。第四问中药材收缩后位于实体外的固定位置按题意留空，不属于漏填。
 
-`AI工具使用详情.pdf` 为按竞赛规定提供的独立披露文件。论文参考文献仅收录赛题与学术文献，不将 AI 工具或技能项目列入参考文献。
+`AI 工具使用详情.pdf` 为按竞赛规定提供的独立披露文件。论文参考文献仅收录赛题与学术文献，不将 AI 工具或技能项目列入参考文献。
 """
     (STAGING / "README_复现说明.md").write_text(readme, encoding="utf-8")
 
