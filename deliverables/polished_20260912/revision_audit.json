@@ -124,7 +124,7 @@
       "after_chars": 488
     }
   ],
-  "archive_bytes": 7070630,
+  "archive_bytes": 7068005,
   "pdf_bytes": 1286533,
   "page_text_bounds": [
     {
@@ -471,8 +471,8 @@
     }
   ],
   "sha256": {
-    "A题论文_可编辑版.docx": "21cbb04f81dd3d3e72efeea5e09b786d964aca8e2950eb15d45e90a99b6ad2ae",
-    "A题论文_提交预览.pdf": "9f2c93e87f87dbb03ebfb2a95856bedc093b873181c4a70e5b75e8a52aba534f",
-    "A题支撑材料.zip": "d06594baf4df9ce8bd000d00db075fbac989242d42e18caed6ee361d60120297"
+    "A题论文_可编辑版.docx": "2d002ecbfa120c615140547caccdef3fcdfc2c20d5fc1e55a4b7281f38ad6186",
+    "A题论文_提交预览.pdf": "45807d3ce1a0895b603d71d703cb114586b1979bad6150d9221617c451dece94",
+    "A题支撑材料.zip": "68b08f588a69d1e5bbce7e8899077a388428f9b498174a98316c6f0bdc9f0fd1"
   }
 }
