@@ -16,7 +16,7 @@
   "reference_count": 3,
   "result_workbooks_resaved": false,
   "source_main_chars_before": 12161,
-  "source_main_chars_after": 13544,
+  "source_main_chars_after": 13619,
   "section_counts": [
     {
       "section": "1.1 任务及数据",
@@ -124,8 +124,8 @@
       "after_chars": 488
     }
   ],
-  "archive_bytes": 7236518,
-  "pdf_bytes": 1305612,
+  "archive_bytes": 7200874,
+  "pdf_bytes": 1305646,
   "page_text_bounds": [
     {
       "page": 1,
@@ -276,8 +276,8 @@
       "bounds": [
         70.94400024414062,
         72.73197937011719,
-        524.31396484375,
-        284.6419982910156
+        524.4760131835938,
+        323.5220031738281
       ]
     },
     {
@@ -489,8 +489,8 @@
     }
   ],
   "sha256": {
-    "A题论文_可编辑版.docx": "0d48533b4e5b476f97d265f11d2e6a73ab0c17f12dd15e745c5f9f3f1dd3fb84",
-    "A题论文_提交预览.pdf": "0cba2d184b4f751a9ed88ce99009cdc2c1482c87adcce3d866c1b535d470bdae",
-    "A题支撑材料.zip": "aeb5fe9c7c531bbe3e92046088f677bf7ab6450f4163034f0582465c5e0c65bb"
+    "A题论文_可编辑版.docx": "c538d11a734c1e0efd83f909d47427c79c4de5663f129ed06b45883a1897247f",
+    "A题论文_提交预览.pdf": "adb5e78e64ea1868d165cce3ccedfa4eb5fcfbadf1ffe89b2f19a29b10bbf5b5",
+    "A题支撑材料.zip": "02a270ee8cd31a2898181ae0932b87dbfcbf715fe31b979552bddef43acb8cfa"
   }
 }
