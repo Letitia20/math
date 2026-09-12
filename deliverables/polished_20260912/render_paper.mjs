@@ -34,7 +34,7 @@ source=source.replace('{{SOURCECODE}}',codes.map(f=>'### '+f+'\n\n```python\n'+f
 fs.writeFileSync(path.join(out,'paper_complete.md'),source);
 function parse(text){const children=[],lines=text.split('\n');let code=false;for(let i=0;i<lines.length;i++){const ln=lines[i],s=ln.trim();
  if(s.startsWith('```')){code=!code;continue;}
- if(code){children.push(new Paragraph({widowControl:false,spacing:{line:200,lineRule:'exact',after:0},children:[new TextRun({text:ln||' ',font:{ascii:'Consolas',hAnsi:'Consolas',eastAsia:'宋体'},size:16})]}));continue;}
+ if(code){children.push(new Paragraph({widowControl:false,spacing:{line:180,lineRule:'exact',after:0},children:[new TextRun({text:ln||' ',font:{ascii:'Consolas',hAnsi:'Consolas',eastAsia:'宋体'},size:14})]}));continue;}
  if(!s)continue;
  if(s==='<!-- PAGEBREAK -->'||s==='<!-- APPENDIX -->'){children.push(new Paragraph({children:[new PageBreak()],spacing:{after:0}}));continue;}
  if(s.startsWith('<!--'))continue;
@@ -50,7 +50,7 @@ function parse(text){const children=[],lines=text.split('\n');let code=false;for
  if(s.startsWith('`')&&s.endsWith('`')){children.push(p(s,{indent:{firstLine:0},alignment:A.LEFT,spacing:{line:240,after:0},children:inline(s,19)}));continue;}
  if(s.startsWith('关键词：')){children.push(p(s,{indent:{firstLine:0},children:inline(s,22)}));continue;}
  children.push(p(s));}return children;}
-async function build(text,file){const doc=new Document({creator:'',lastModifiedBy:'',title:'药材烘干的传热传质模型',styles:{default:{document:{run:{font,size:24},paragraph:{spacing:{line:300,after:70}}}}},sections:[{properties:{page:{size:{width:11906,height:16838},margin:{top:1418,bottom:1418,left:1418,right:1418}}},footers:{default:new Footer({children:[new Paragraph({alignment:A.CENTER,children:[new TextRun({children:[PageNumber.CURRENT],size:20,font})]})]})},children:parse(text)}]});fs.writeFileSync(file,await Packer.toBuffer(doc));}
+async function build(text,file){const doc=new Document({creator:'',lastModifiedBy:'',title:'药材烘干的传热传质模型',styles:{default:{document:{run:{font,size:24},paragraph:{spacing:{line:300,after:70}}}}},sections:[{properties:{page:{size:{width:11906,height:16838},margin:{top:1418,bottom:1418,left:1418,right:1500}}},footers:{default:new Footer({children:[new Paragraph({alignment:A.CENTER,children:[new TextRun({children:[PageNumber.CURRENT],size:20,font})]})]})},children:parse(text)}]});fs.writeFileSync(file,await Packer.toBuffer(doc));}
 await build(source,path.join(out,'A题论文_可编辑版.docx'));
 await build(fs.readFileSync(path.join(out,'AI工具使用详情.md'),'utf8'),path.join(out,'AI工具使用详情_可编辑版.docx'));
 fs.writeFileSync(path.join(out,'equations.json'),JSON.stringify(math,null,2));

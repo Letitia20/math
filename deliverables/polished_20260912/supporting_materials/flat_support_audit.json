@@ -4,7 +4,7 @@
   "result_workbooks": [
     {
       "filename": "result1.xlsx",
-      "sha256": "4aa406a45602bdc307108dca31c92236335ab9ad8644353ee362d2159e3d9345",
+      "sha256": "55afe4be82c96efddfb476565a62f77422374ffcd98c06e3d86d3a719dea8c22",
       "sheets": [
         {
           "name": "温度",
@@ -14,7 +14,7 @@
           "format_preservation": "packaged workbook is byte-identical to the filled source workbook",
           "layout_comparison": {
             "merged_cells_match": true,
-            "freeze_panes_match": false,
+            "freeze_panes_match": true,
             "gridlines_match": true,
             "first_row_dimension_match": false,
             "first_column_dimension_match": false,
@@ -30,7 +30,7 @@
           "format_preservation": "packaged workbook is byte-identical to the filled source workbook",
           "layout_comparison": {
             "merged_cells_match": true,
-            "freeze_panes_match": false,
+            "freeze_panes_match": true,
             "gridlines_match": true,
             "first_row_dimension_match": false,
             "first_column_dimension_match": false,
@@ -45,7 +45,7 @@
     },
     {
       "filename": "result2.xlsx",
-      "sha256": "41a034af6171be9010978f41de85c6a8e5a56552d7b310d45be6f0484fa8e8ab",
+      "sha256": "1fce048dbaba8754c0248b627c589229c26b6073bb07019b588ad8ba3b726084",
       "sheets": [
         {
           "name": "温度",
@@ -55,7 +55,7 @@
           "format_preservation": "packaged workbook is byte-identical to the filled source workbook",
           "layout_comparison": {
             "merged_cells_match": true,
-            "freeze_panes_match": false,
+            "freeze_panes_match": true,
             "gridlines_match": true,
             "first_row_dimension_match": false,
             "first_column_dimension_match": false,
@@ -71,7 +71,7 @@
           "format_preservation": "packaged workbook is byte-identical to the filled source workbook",
           "layout_comparison": {
             "merged_cells_match": true,
-            "freeze_panes_match": false,
+            "freeze_panes_match": true,
             "gridlines_match": true,
             "first_row_dimension_match": false,
             "first_column_dimension_match": false,
@@ -86,7 +86,7 @@
     },
     {
       "filename": "result3.xlsx",
-      "sha256": "5b150cb63d6c35d18d68c8c9ac6fb125ce2ffbe4074f087854452528732fb98b",
+      "sha256": "7655ec3ca65338dce3b63ebd9c86f558e138e2938fa3b5269e55d36d7f3d93f4",
       "sheets": [
         {
           "name": "Sheet1",
@@ -96,7 +96,7 @@
           "format_preservation": "packaged workbook is byte-identical to the filled source workbook",
           "layout_comparison": {
             "merged_cells_match": true,
-            "freeze_panes_match": false,
+            "freeze_panes_match": true,
             "gridlines_match": true,
             "first_row_dimension_match": false,
             "first_column_dimension_match": false,
@@ -111,7 +111,7 @@
     },
     {
       "filename": "result4.xlsx",
-      "sha256": "8200390659c328cbacd14ff53d4fa7c8b19030fe9be17cfe08d25071479ee64e",
+      "sha256": "cbc47e9ac5e769b2105f30abf68e96134e397cb2ab7fce24fe7f9dae5f57b7aa",
       "sheets": [
         {
           "name": "Sheet1",
@@ -121,7 +121,7 @@
           "format_preservation": "packaged workbook is byte-identical to the filled source workbook",
           "layout_comparison": {
             "merged_cells_match": true,
-            "freeze_panes_match": false,
+            "freeze_panes_match": true,
             "gridlines_match": true,
             "first_row_dimension_match": true,
             "first_column_dimension_match": false,

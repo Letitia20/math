@@ -171,11 +171,15 @@ def audit():
     for idx in range(min(appendix, len(pdf))):
         pdf[idx].get_pixmap(matrix=pymupdf.Matrix(1.2, 1.2)).save(review / f'detail_{idx+1:02}.png')
     page_bounds = []
+    required_right_edge = 595.3 - 1418 / 20
     for i, page in enumerate(pdf):
         blocks = [b for b in page.get_text('blocks') if len(b) > 4 and b[4].strip() != str(i+1)]
         if blocks:
             bounds = [min(b[0] for b in blocks), min(b[1] for b in blocks),
                       max(b[2] for b in blocks), max(b[3] for b in blocks)]
+            assert bounds[2] <= required_right_edge + 0.2, (
+                f"Page {i + 1} enters the required 2.5 cm right margin: {bounds[2]:.1f} pt"
+            )
             page_bounds.append({'page': i+1, 'bounds': bounds})
     # Preserve the single-level package and refresh only the required disclosure PDF.
     support = OUT / 'supporting_materials'
