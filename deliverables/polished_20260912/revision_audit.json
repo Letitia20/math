@@ -15,17 +15,17 @@
   "reference_count": 3,
   "result_workbooks_resaved": false,
   "source_main_chars_before": 12161,
-  "source_main_chars_after": 12199,
+  "source_main_chars_after": 11865,
   "section_counts": [
     {
       "section": "1.1 任务及数据",
       "before_chars": 305,
-      "after_chars": 322
+      "after_chars": 319
     },
     {
       "section": "1.2 模型选择",
       "before_chars": 307,
-      "after_chars": 285
+      "after_chars": 253
     },
     {
       "section": "2.1 基本假设",
@@ -40,17 +40,17 @@
     {
       "section": "3.1 数据核验及环境延拓",
       "before_chars": 399,
-      "after_chars": 445
+      "after_chars": 461
     },
     {
       "section": "3.2 环形有限体积离散",
       "before_chars": 537,
-      "after_chars": 571
+      "after_chars": 551
     },
     {
       "section": "3.3 时间积分、正性与外推",
       "before_chars": 354,
-      "after_chars": 339
+      "after_chars": 319
     },
     {
       "section": "4.1 方程、初值与边界",
@@ -60,12 +60,12 @@
     {
       "section": "4.2 指定位置的计算结果",
       "before_chars": 315,
-      "after_chars": 347
+      "after_chars": 342
     },
     {
       "section": "5.1 经验物性与耦合关系",
       "before_chars": 478,
-      "after_chars": 487
+      "after_chars": 451
     },
     {
       "section": "5.2 前三小时结果与全程输出",
@@ -75,7 +75,7 @@
     {
       "section": "6.1 全域阈值与严格不等式",
       "before_chars": 350,
-      "after_chars": 375
+      "after_chars": 363
     },
     {
       "section": "6.2 时长与指定结果",
@@ -85,46 +85,46 @@
     {
       "section": "7.1 从干物质与水分守恒出发",
       "before_chars": 655,
-      "after_chars": 732
+      "after_chars": 711
     },
     {
       "section": "7.2 固定域坐标与表面通量",
       "before_chars": 808,
-      "after_chars": 864
+      "after_chars": 848
     },
     {
       "section": "7.3 固定物理位置的映射与结果",
       "before_chars": 516,
-      "after_chars": 526
+      "after_chars": 498
     },
     {
       "section": "8.1 网格与程序一致性",
       "before_chars": 661,
-      "after_chars": 592
+      "after_chars": 582
     },
     {
       "section": "8.2 水分通量平衡",
       "before_chars": 372,
-      "after_chars": 363
+      "after_chars": 358
     },
     {
       "section": "8.3 长期环境与表面系数情景",
       "before_chars": 430,
-      "after_chars": 471
+      "after_chars": 464
     },
     {
       "section": "8.4 收缩处理与固定几何对照",
       "before_chars": 270,
-      "after_chars": 305
+      "after_chars": 276
     },
     {
       "section": "8.5 密度与收缩的相容性",
       "before_chars": 435,
-      "after_chars": 465
+      "after_chars": 435
     }
   ],
-  "archive_bytes": 7236519,
-  "pdf_bytes": 1264852,
+  "archive_bytes": 7236517,
+  "pdf_bytes": 1260403,
   "page_text_bounds": [
     {
       "page": 1,
@@ -159,7 +159,7 @@
         70.94400024414062,
         72.34797668457031,
         527.5,
-        749.2799682617188
+        729.843994140625
       ]
     },
     {
@@ -167,7 +167,7 @@
       "bounds": [
         70.94400024414062,
         72.6968002319336,
-        527.488037109375,
+        524.6199951171875,
         614.781982421875
       ]
     },
@@ -195,7 +195,7 @@
         70.94400024414062,
         72.34797668457031,
         524.5960083007812,
-        741.2919311523438
+        721.8519897460938
       ]
     },
     {
@@ -204,7 +204,7 @@
         70.94400024414062,
         72.34797668457031,
         527.5,
-        761.2274169921875
+        741.7913818359375
       ]
     },
     {
@@ -212,8 +212,8 @@
       "bounds": [
         70.94400024414062,
         71.99205780029297,
-        527.5,
-        664.9719848632812
+        524.739990234375,
+        645.4119262695312
       ]
     },
     {
@@ -248,8 +248,8 @@
       "bounds": [
         70.94400024414062,
         72.34797668457031,
-        524.6199951171875,
-        743.6919555664062
+        527.5,
+        724.251953125
       ]
     },
     {
@@ -257,8 +257,8 @@
       "bounds": [
         70.94400024414062,
         71.49261474609375,
-        524.5,
-        680.0919799804688
+        524.5899658203125,
+        660.6519775390625
       ]
     },
     {
@@ -470,8 +470,8 @@
     }
   ],
   "sha256": {
-    "A题论文_可编辑版.docx": "33f44763b19dece97a929564d2b902305fde3c4beca8b20f81201925158f600f",
-    "A题论文_提交预览.pdf": "1d2c4951e8e9e266f84da781cf24ddb843554d6f5ab124471eb7b3692f30819b",
-    "A题支撑材料.zip": "be145c0e9255586162f7ea05c3378ad9c598e113e3d1b87701d47b6c24a83e2c"
+    "A题论文_可编辑版.docx": "3728a3e5dc27635b3c73cb7872e6ed0ac2c0aa664e15e8c69ecc974261671455",
+    "A题论文_提交预览.pdf": "346c478dbcfffd3202ec1972f21889d4bbc3a8d54d83ff5bb5f91c9aad423a44",
+    "A题支撑材料.zip": "69024e2d3c4fb3f88a8b1915e069b3eaef3d8aad014a4da185bda9eb7a199881"
   }
 }
