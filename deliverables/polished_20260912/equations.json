@@ -202,7 +202,7 @@
   },
   {
     "key": "MATHPLACEHOLDER33END",
-    "latex": "1/r",
+    "latex": "r=0",
     "display": false,
     "size": 24
   },
@@ -346,7 +346,7 @@
   },
   {
     "key": "MATHPLACEHOLDER56END",
-    "latex": "\\rho(C)",
+    "latex": "\\rho(C)c_p(C)",
     "display": false,
     "size": 24
   },
@@ -428,26 +428,26 @@
   },
   {
     "key": "MATHPLACEHOLDER69END",
+    "latex": "\\rho_d",
+    "display": false,
+    "size": 24
+  },
+  {
+    "key": "MATHPLACEHOLDER70END",
     "latex": "\\frac{\\partial C}{\\partial t}+\\frac{\\dot R}{R}r\\frac{\\partial C}{\\partial r}=\\frac1r\\frac{\\partial}{\\partial r}\\left(rD\\frac{\\partial C}{\\partial r}\\right)",
     "display": true,
     "size": 23,
     "number": "14"
   },
   {
-    "key": "MATHPLACEHOLDER70END",
+    "key": "MATHPLACEHOLDER71END",
     "latex": "C",
     "display": false,
     "size": 24
   },
   {
-    "key": "MATHPLACEHOLDER71END",
-    "latex": "\\xi=r/R(t)",
-    "display": false,
-    "size": 24
-  },
-  {
     "key": "MATHPLACEHOLDER72END",
-    "latex": "\\xi",
+    "latex": "\\xi=r/R(t)",
     "display": false,
     "size": 24
   },
@@ -459,122 +459,128 @@
   },
   {
     "key": "MATHPLACEHOLDER74END",
+    "latex": "\\xi",
+    "display": false,
+    "size": 24
+  },
+  {
+    "key": "MATHPLACEHOLDER75END",
     "latex": "\\rho(C)c_p(C)\\left.\\frac{\\partial T}{\\partial t}\\right|_\\xi=\\frac1{R(t)^2\\xi}\\frac{\\partial}{\\partial\\xi}\\left(\\xi k(C)\\frac{\\partial T}{\\partial\\xi}\\right)",
     "display": true,
     "size": 23,
     "number": "15"
   },
   {
-    "key": "MATHPLACEHOLDER75END",
+    "key": "MATHPLACEHOLDER76END",
     "latex": "\\left.\\frac{\\partial C}{\\partial t}\\right|_\\xi=\\frac1{R(t)^2\\xi}\\frac{\\partial}{\\partial\\xi}\\left(\\xi D(C,T)\\frac{\\partial C}{\\partial\\xi}\\right)",
     "display": true,
     "size": 23,
     "number": "16"
   },
   {
-    "key": "MATHPLACEHOLDER76END",
+    "key": "MATHPLACEHOLDER77END",
     "latex": "T_\\xi=C_\\xi=0",
     "display": false,
     "size": 24
   },
   {
-    "key": "MATHPLACEHOLDER77END",
+    "key": "MATHPLACEHOLDER78END",
     "latex": "\\begin{aligned}-\\frac{k}{R}T_\\xi(1,t)=h_T(T_s-T_\\infty) \\\\ -\\frac{D}{R}C_\\xi(1,t)=h_m(C_s-C_\\infty)\\end{aligned}",
     "display": true,
     "size": 23,
     "number": "17"
   },
   {
-    "key": "MATHPLACEHOLDER78END",
+    "key": "MATHPLACEHOLDER79END",
     "latex": "R^{-2}",
     "display": false,
     "size": 24
   },
   {
-    "key": "MATHPLACEHOLDER79END",
+    "key": "MATHPLACEHOLDER80END",
     "latex": "R^{-1}",
     "display": false,
     "size": 24
   },
   {
-    "key": "MATHPLACEHOLDER80END",
+    "key": "MATHPLACEHOLDER81END",
     "latex": "\\rho=760+90C,\\qquad c_p=1850+2150\\frac{C}{C+1},\\qquad k=0.12+0.20\\frac{C}{C+1}",
     "display": true,
     "size": 23,
     "number": "18"
   },
   {
-    "key": "MATHPLACEHOLDER81END",
+    "key": "MATHPLACEHOLDER82END",
     "latex": "D(C,T)=4.2\\times10^{-4}\\exp\\left(-\\frac{0.30}{C}\\right)\\exp\\left(-\\frac{3850}{T_K}\\right)",
     "display": true,
     "size": 23,
     "number": "19"
   },
   {
-    "key": "MATHPLACEHOLDER82END",
+    "key": "MATHPLACEHOLDER83END",
     "latex": "\\xi=r/R(t)",
     "display": false,
     "size": 24
   },
   {
-    "key": "MATHPLACEHOLDER83END",
+    "key": "MATHPLACEHOLDER84END",
     "latex": "r>R(t)",
     "display": false,
     "size": 24
   },
   {
-    "key": "MATHPLACEHOLDER84END",
+    "key": "MATHPLACEHOLDER85END",
     "latex": "\\xi=1",
     "display": false,
     "size": 24
   },
   {
-    "key": "MATHPLACEHOLDER85END",
+    "key": "MATHPLACEHOLDER86END",
     "latex": "\\bar C(t)-\\bar C(0)=-\\frac{2h_m}{R_0}\\int_0^t[C_s(\\tau)-C_\\infty(\\tau)]\\,\\mathrm d\\tau",
     "display": true,
     "size": 23,
     "number": "20"
   },
   {
-    "key": "MATHPLACEHOLDER86END",
+    "key": "MATHPLACEHOLDER87END",
     "latex": "\\bar C=2\\int_0^1 C\\xi\\,\\mathrm d\\xi",
     "display": false,
     "size": 24
   },
   {
-    "key": "MATHPLACEHOLDER87END",
+    "key": "MATHPLACEHOLDER88END",
     "latex": "\\frac{\\mathrm d\\bar C}{\\mathrm dt}=-\\frac{2h_m}{R(t)}[C_s(t)-C_\\infty(t)]",
     "display": true,
     "size": 23,
     "number": "21"
   },
   {
-    "key": "MATHPLACEHOLDER88END",
+    "key": "MATHPLACEHOLDER89END",
     "latex": "R=R_0",
     "display": false,
     "size": 24
   },
   {
-    "key": "MATHPLACEHOLDER89END",
+    "key": "MATHPLACEHOLDER90END",
     "latex": "\\rho(C)",
     "display": false,
     "size": 24
   },
   {
-    "key": "MATHPLACEHOLDER90END",
+    "key": "MATHPLACEHOLDER91END",
     "latex": "\\rho_d=\\rho(C)/(1+C)",
     "display": false,
     "size": 24
   },
   {
-    "key": "MATHPLACEHOLDER91END",
+    "key": "MATHPLACEHOLDER92END",
     "latex": "M_d(t)=2\\pi L R(t)^2\\int_0^1\\frac{760+90C(\\xi,t)}{1+C(\\xi,t)}\\xi\\,\\mathrm d\\xi",
     "display": true,
     "size": 23,
     "number": "22"
   },
   {
-    "key": "MATHPLACEHOLDER92END",
+    "key": "MATHPLACEHOLDER93END",
     "latex": "M_d(t_*)/M_d(0)\\approx0.890289",
     "display": false,
     "size": 24
