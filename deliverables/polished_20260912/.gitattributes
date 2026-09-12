@@ -1,0 +1,2 @@
+# Preserve the bytes checked against the original support ZIP on every platform.
+supporting_materials/** -text whitespace=cr-at-eol

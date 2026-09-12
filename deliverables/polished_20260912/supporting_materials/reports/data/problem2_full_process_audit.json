@@ -1,0 +1,16 @@
+{
+  "time_start_s": 1,
+  "time_end_s": 206940,
+  "radial_intervals": [
+    2560,
+    5120
+  ],
+  "output_interval_s": 1,
+  "temperature_first_3h_max_difference": 0.0,
+  "moisture_first_3h_max_difference": 0.0,
+  "q3_minute_max_rounded_difference": 0.00010000000000001674,
+  "strict_final_maximum_unrounded": 0.14999016644783977,
+  "readback_checked_cells": 9105360,
+  "workbook_bytes": 27734531,
+  "status": "passed"
+}
