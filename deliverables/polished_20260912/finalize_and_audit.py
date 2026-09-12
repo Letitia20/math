@@ -107,7 +107,16 @@ def audit():
     assert old_display == new_display
     old_tables = re.findall(r'(?m)^\|.*\|$', old)
     new_tables = re.findall(r'(?m)^\|.*\|$', new)
-    assert old_tables == new_tables, 'A numeric/symbol table changed'
+    # The original result and primary-symbol tables must be retained exactly.
+    # This revision intentionally inserts one extra definition table in §2.3.
+    next_expected = iter(old_tables)
+    expected = next(next_expected, None)
+    for row in new_tables:
+        if expected is not None and row == expected:
+            expected = next(next_expected, None)
+    assert expected is None, 'An original numeric/symbol table row changed or was removed'
+    definition_rows = [row for row in new_tables if '$\\Delta r$' in row or '$\\rho_{d0},M_d,L$' in row]
+    assert len(definition_rows) == 2, 'Supplementary definition table is incomplete'
     new_codes = re.findall(r'```python\n(.*?)```', new, re.S)
     assert len(new_codes) == 4, 'Appendix must contain only four core model files'
     references = new_source.split('## 参考文献', 1)[1].split('<!-- APPENDIX -->', 1)[0]
@@ -123,7 +132,7 @@ def audit():
         arrays = doc.findall('.//m:eqArr', NS)
         assert len(arrays) == 4 and all(len(x.findall('./m:e', NS)) == 2 for x in arrays)
         tables = doc.findall('.//w:tbl', NS)
-        assert len(tables) == 10
+        assert len(tables) == 11
         assert equations >= 79
         assert b'MATHPLACEHOLDER' not in z.read('word/document.xml')
         for margin in doc.findall('.//w:pgMar', NS):
@@ -210,7 +219,9 @@ def audit():
     report = {'total_pages': len(pdf), 'abstract_pages': 1, 'body_pages': appendix-2,
               'appendix_first_page': appendix, 'native_editable_equations': equations,
               'editable_three_line_tables': len(tables), 'display_equations_unchanged': len(old_display),
-              'table_rows_unchanged': len(old_tables), 'python_listings': len(new_codes),
+              'table_rows_unchanged': len(old_tables),
+              'supplementary_definition_table_rows': len(new_tables) - len(old_tables),
+              'python_listings': len(new_codes),
               'support_python_sources': 25, 'flat_package_tests': '95 passed',
               'support_files': len(files), 'support_subdirectories': 0, 'reference_count': 3,
               'result_workbooks_resaved': False, 'source_main_chars_before': count(before_main),

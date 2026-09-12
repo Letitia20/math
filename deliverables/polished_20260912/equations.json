@@ -1,664 +1,880 @@
 [
   {
     "key": "MATHPLACEHOLDER0END",
-    "latex": "t",
+    "latex": "\\infty",
     "display": false,
-    "size": 21
+    "size": 24
   },
   {
     "key": "MATHPLACEHOLDER1END",
-    "latex": "t",
+    "latex": "s",
     "display": false,
     "size": 24
   },
   {
     "key": "MATHPLACEHOLDER2END",
-    "latex": "r,R(t),R_0",
+    "latex": "t",
     "display": false,
     "size": 21
   },
   {
     "key": "MATHPLACEHOLDER3END",
-    "latex": "r,R(t),R_0",
+    "latex": "t",
     "display": false,
     "size": 24
   },
   {
     "key": "MATHPLACEHOLDER4END",
-    "latex": "\\xi=r/R(t)",
+    "latex": "r,R(t),R_0",
     "display": false,
     "size": 21
   },
   {
     "key": "MATHPLACEHOLDER5END",
-    "latex": "\\xi=r/R(t)",
+    "latex": "r,R(t),R_0",
     "display": false,
     "size": 24
   },
   {
     "key": "MATHPLACEHOLDER6END",
-    "latex": "T,T_K",
+    "latex": "\\xi=r/R(t)",
     "display": false,
     "size": 21
   },
   {
     "key": "MATHPLACEHOLDER7END",
-    "latex": "T,T_K",
+    "latex": "\\xi=r/R(t)",
     "display": false,
     "size": 24
   },
   {
     "key": "MATHPLACEHOLDER8END",
-    "latex": "C",
+    "latex": "T,T_K",
     "display": false,
     "size": 21
   },
   {
     "key": "MATHPLACEHOLDER9END",
-    "latex": "C",
+    "latex": "T,T_K",
     "display": false,
     "size": 24
   },
   {
     "key": "MATHPLACEHOLDER10END",
-    "latex": "T_\\infty,C_\\infty",
+    "latex": "C",
     "display": false,
     "size": 21
   },
   {
     "key": "MATHPLACEHOLDER11END",
-    "latex": "T_\\infty,C_\\infty",
+    "latex": "C",
     "display": false,
     "size": 24
   },
   {
     "key": "MATHPLACEHOLDER12END",
-    "latex": "\\rho,c_p,k",
+    "latex": "T_\\infty,C_\\infty",
     "display": false,
     "size": 21
   },
   {
     "key": "MATHPLACEHOLDER13END",
-    "latex": "\\rho,c_p,k",
+    "latex": "T_\\infty,C_\\infty",
     "display": false,
     "size": 24
   },
   {
     "key": "MATHPLACEHOLDER14END",
-    "latex": "D",
+    "latex": "\\rho,c_p,k",
     "display": false,
     "size": 21
   },
   {
     "key": "MATHPLACEHOLDER15END",
-    "latex": "D",
+    "latex": "\\rho,c_p,k",
     "display": false,
     "size": 24
   },
   {
     "key": "MATHPLACEHOLDER16END",
-    "latex": "h_T,h_m",
+    "latex": "D",
     "display": false,
     "size": 21
   },
   {
     "key": "MATHPLACEHOLDER17END",
-    "latex": "h_T,h_m",
+    "latex": "D",
     "display": false,
     "size": 24
   },
   {
     "key": "MATHPLACEHOLDER18END",
-    "latex": "\\rho_d,v_r",
+    "latex": "h_T,h_m",
     "display": false,
     "size": 21
   },
   {
     "key": "MATHPLACEHOLDER19END",
-    "latex": "\\rho_d,v_r",
+    "latex": "h_T,h_m",
     "display": false,
     "size": 24
   },
   {
     "key": "MATHPLACEHOLDER20END",
-    "latex": "t_*,t_{60}",
+    "latex": "\\rho_d,v_r",
     "display": false,
     "size": 21
   },
   {
     "key": "MATHPLACEHOLDER21END",
-    "latex": "t_*,t_{60}",
+    "latex": "\\rho_d,v_r",
     "display": false,
     "size": 24
   },
   {
     "key": "MATHPLACEHOLDER22END",
+    "latex": "t_*,t_{60}",
+    "display": false,
+    "size": 21
+  },
+  {
+    "key": "MATHPLACEHOLDER23END",
+    "latex": "t_*,t_{60}",
+    "display": false,
+    "size": 24
+  },
+  {
+    "key": "MATHPLACEHOLDER24END",
+    "latex": "i,N",
+    "display": false,
+    "size": 21
+  },
+  {
+    "key": "MATHPLACEHOLDER25END",
+    "latex": "i,N",
+    "display": false,
+    "size": 24
+  },
+  {
+    "key": "MATHPLACEHOLDER26END",
+    "latex": "r_{i-1/2},r_{i+1/2}",
+    "display": false,
+    "size": 21
+  },
+  {
+    "key": "MATHPLACEHOLDER27END",
+    "latex": "r_{i-1/2},r_{i+1/2}",
+    "display": false,
+    "size": 24
+  },
+  {
+    "key": "MATHPLACEHOLDER28END",
+    "latex": "i",
+    "display": false,
+    "size": 21
+  },
+  {
+    "key": "MATHPLACEHOLDER29END",
+    "latex": "i",
+    "display": false,
+    "size": 24
+  },
+  {
+    "key": "MATHPLACEHOLDER30END",
+    "latex": "\\Delta r",
+    "display": false,
+    "size": 21
+  },
+  {
+    "key": "MATHPLACEHOLDER31END",
+    "latex": "\\Delta r",
+    "display": false,
+    "size": 24
+  },
+  {
+    "key": "MATHPLACEHOLDER32END",
+    "latex": "V_i,A_{i+1/2}",
+    "display": false,
+    "size": 21
+  },
+  {
+    "key": "MATHPLACEHOLDER33END",
+    "latex": "V_i,A_{i+1/2}",
+    "display": false,
+    "size": 24
+  },
+  {
+    "key": "MATHPLACEHOLDER34END",
+    "latex": "i",
+    "display": false,
+    "size": 21
+  },
+  {
+    "key": "MATHPLACEHOLDER35END",
+    "latex": "i",
+    "display": false,
+    "size": 24
+  },
+  {
+    "key": "MATHPLACEHOLDER36END",
+    "latex": "u,s,\\Gamma",
+    "display": false,
+    "size": 21
+  },
+  {
+    "key": "MATHPLACEHOLDER37END",
+    "latex": "u,s,\\Gamma",
+    "display": false,
+    "size": 24
+  },
+  {
+    "key": "MATHPLACEHOLDER38END",
+    "latex": "f,f_i,t_i",
+    "display": false,
+    "size": 21
+  },
+  {
+    "key": "MATHPLACEHOLDER39END",
+    "latex": "f,f_i,t_i",
+    "display": false,
+    "size": 24
+  },
+  {
+    "key": "MATHPLACEHOLDER40END",
+    "latex": "z",
+    "display": false,
+    "size": 21
+  },
+  {
+    "key": "MATHPLACEHOLDER41END",
+    "latex": "z",
+    "display": false,
+    "size": 24
+  },
+  {
+    "key": "MATHPLACEHOLDER42END",
+    "latex": "z=\\ln C",
+    "display": false,
+    "size": 21
+  },
+  {
+    "key": "MATHPLACEHOLDER43END",
+    "latex": "z=\\ln C",
+    "display": false,
+    "size": 24
+  },
+  {
+    "key": "MATHPLACEHOLDER44END",
+    "latex": "u_{\\rm ext}",
+    "display": false,
+    "size": 21
+  },
+  {
+    "key": "MATHPLACEHOLDER45END",
+    "latex": "u_{\\rm ext}",
+    "display": false,
+    "size": 24
+  },
+  {
+    "key": "MATHPLACEHOLDER46END",
+    "latex": "u",
+    "display": false,
+    "size": 21
+  },
+  {
+    "key": "MATHPLACEHOLDER47END",
+    "latex": "u",
+    "display": false,
+    "size": 24
+  },
+  {
+    "key": "MATHPLACEHOLDER48END",
+    "latex": "\\bar C",
+    "display": false,
+    "size": 21
+  },
+  {
+    "key": "MATHPLACEHOLDER49END",
+    "latex": "\\bar C",
+    "display": false,
+    "size": 24
+  },
+  {
+    "key": "MATHPLACEHOLDER50END",
+    "latex": "g(t)",
+    "display": false,
+    "size": 21
+  },
+  {
+    "key": "MATHPLACEHOLDER51END",
+    "latex": "g(t)",
+    "display": false,
+    "size": 24
+  },
+  {
+    "key": "MATHPLACEHOLDER52END",
+    "latex": "\\mathbf v,\\mathbf j_w",
+    "display": false,
+    "size": 21
+  },
+  {
+    "key": "MATHPLACEHOLDER53END",
+    "latex": "\\mathbf v,\\mathbf j_w",
+    "display": false,
+    "size": 24
+  },
+  {
+    "key": "MATHPLACEHOLDER54END",
+    "latex": "\\rho_{d0},M_d,L",
+    "display": false,
+    "size": 21
+  },
+  {
+    "key": "MATHPLACEHOLDER55END",
+    "latex": "\\rho_{d0},M_d,L",
+    "display": false,
+    "size": 24
+  },
+  {
+    "key": "MATHPLACEHOLDER56END",
+    "latex": "\\dot R",
+    "display": false,
+    "size": 21
+  },
+  {
+    "key": "MATHPLACEHOLDER57END",
+    "latex": "\\dot R",
+    "display": false,
+    "size": 24
+  },
+  {
+    "key": "MATHPLACEHOLDER58END",
     "latex": "f_i,f_{i+1}",
     "display": false,
     "size": 24
   },
   {
-    "key": "MATHPLACEHOLDER23END",
+    "key": "MATHPLACEHOLDER59END",
     "latex": "f(t)=f_i+\\frac{t-t_i}{t_{i+1}-t_i}(f_{i+1}-f_i),\\quad t_i\\le t\\le t_{i+1}",
     "display": true,
     "size": 23,
     "number": "1"
   },
   {
-    "key": "MATHPLACEHOLDER24END",
+    "key": "MATHPLACEHOLDER60END",
     "latex": "i",
     "display": false,
     "size": 24
   },
   {
-    "key": "MATHPLACEHOLDER25END",
+    "key": "MATHPLACEHOLDER61END",
     "latex": "V_i=\\pi(r_{i+1/2}^2-r_{i-1/2}^2)",
     "display": false,
     "size": 24
   },
   {
-    "key": "MATHPLACEHOLDER26END",
+    "key": "MATHPLACEHOLDER62END",
     "latex": "A_{i+1/2}=2\\pi r_{i+1/2}",
     "display": false,
     "size": 24
   },
   {
-    "key": "MATHPLACEHOLDER27END",
+    "key": "MATHPLACEHOLDER63END",
     "latex": "u",
     "display": false,
     "size": 24
   },
   {
-    "key": "MATHPLACEHOLDER28END",
+    "key": "MATHPLACEHOLDER64END",
     "latex": "s",
     "display": false,
     "size": 24
   },
   {
-    "key": "MATHPLACEHOLDER29END",
+    "key": "MATHPLACEHOLDER65END",
     "latex": "\\Gamma",
     "display": false,
     "size": 24
   },
   {
-    "key": "MATHPLACEHOLDER30END",
+    "key": "MATHPLACEHOLDER66END",
     "latex": "s_iV_i\\frac{\\mathrm du_i}{\\mathrm dt}=A_{i+1/2}\\Gamma_{i+1/2}\\frac{u_{i+1}-u_i}{\\Delta r}-A_{i-1/2}\\Gamma_{i-1/2}\\frac{u_i-u_{i-1}}{\\Delta r}",
     "display": true,
     "size": 23,
     "number": "2"
   },
   {
-    "key": "MATHPLACEHOLDER31END",
+    "key": "MATHPLACEHOLDER67END",
     "latex": "u=T,s=\\rho c_p,\\Gamma=k",
     "display": false,
     "size": 24
   },
   {
-    "key": "MATHPLACEHOLDER32END",
+    "key": "MATHPLACEHOLDER68END",
     "latex": "u=C,s=1,\\Gamma=D",
     "display": false,
     "size": 24
   },
   {
-    "key": "MATHPLACEHOLDER33END",
+    "key": "MATHPLACEHOLDER69END",
     "latex": "\\Gamma_{i+1/2}=\\frac{2\\Gamma_i\\Gamma_{i+1}}{\\Gamma_i+\\Gamma_{i+1}}",
     "display": true,
     "size": 23,
     "number": "3"
   },
   {
-    "key": "MATHPLACEHOLDER34END",
+    "key": "MATHPLACEHOLDER70END",
     "latex": "r=0",
     "display": false,
     "size": 24
   },
   {
-    "key": "MATHPLACEHOLDER35END",
+    "key": "MATHPLACEHOLDER71END",
     "latex": "z=\\ln C",
     "display": false,
     "size": 24
   },
   {
-    "key": "MATHPLACEHOLDER36END",
+    "key": "MATHPLACEHOLDER72END",
     "latex": "z_t=C_t/C",
     "display": false,
     "size": 24
   },
   {
-    "key": "MATHPLACEHOLDER37END",
+    "key": "MATHPLACEHOLDER73END",
     "latex": "C=\\exp z",
     "display": false,
     "size": 24
   },
   {
-    "key": "MATHPLACEHOLDER38END",
+    "key": "MATHPLACEHOLDER74END",
     "latex": "N",
     "display": false,
     "size": 24
   },
   {
-    "key": "MATHPLACEHOLDER39END",
+    "key": "MATHPLACEHOLDER75END",
     "latex": "2N",
     "display": false,
     "size": 24
   },
   {
-    "key": "MATHPLACEHOLDER40END",
+    "key": "MATHPLACEHOLDER76END",
     "latex": "u_{\\rm ext}=\\frac{4u_{2N}-u_N}{3}",
     "display": true,
     "size": 23,
     "number": "4"
   },
   {
-    "key": "MATHPLACEHOLDER41END",
+    "key": "MATHPLACEHOLDER77END",
     "latex": "0<r<R_0=0.02",
     "display": false,
     "size": 24
   },
   {
-    "key": "MATHPLACEHOLDER42END",
+    "key": "MATHPLACEHOLDER78END",
     "latex": "\\begin{aligned}\\rho c_p\\frac{\\partial T}{\\partial t}=\\frac1r\\frac{\\partial}{\\partial r}\\left(rk\\frac{\\partial T}{\\partial r}\\right) \\\\ \\frac{\\partial C}{\\partial t}=\\frac1r\\frac{\\partial}{\\partial r}\\left(rD(C)\\frac{\\partial C}{\\partial r}\\right)\\end{aligned}",
     "display": true,
     "size": 23,
     "number": "5"
   },
   {
-    "key": "MATHPLACEHOLDER43END",
+    "key": "MATHPLACEHOLDER79END",
     "latex": "\\rho=820",
     "display": false,
     "size": 24
   },
   {
-    "key": "MATHPLACEHOLDER44END",
+    "key": "MATHPLACEHOLDER80END",
     "latex": "c_p=2600",
     "display": false,
     "size": 24
   },
   {
-    "key": "MATHPLACEHOLDER45END",
+    "key": "MATHPLACEHOLDER81END",
     "latex": "k=0.36",
     "display": false,
     "size": 24
   },
   {
-    "key": "MATHPLACEHOLDER46END",
+    "key": "MATHPLACEHOLDER82END",
     "latex": "D(C)=7\\times10^{-9}\\exp\\left(-\\frac{0.89}{C}\\right)\\quad\\mathrm{m^2/s}",
     "display": true,
     "size": 23,
     "number": "6"
   },
   {
-    "key": "MATHPLACEHOLDER47END",
+    "key": "MATHPLACEHOLDER83END",
     "latex": "T(r,0)=28",
     "display": false,
     "size": 24
   },
   {
-    "key": "MATHPLACEHOLDER48END",
+    "key": "MATHPLACEHOLDER84END",
     "latex": "C(r,0)=2.55",
     "display": false,
     "size": 24
   },
   {
-    "key": "MATHPLACEHOLDER49END",
+    "key": "MATHPLACEHOLDER85END",
     "latex": "T_r(0,t)=C_r(0,t)=0",
     "display": false,
     "size": 24
   },
   {
-    "key": "MATHPLACEHOLDER50END",
+    "key": "MATHPLACEHOLDER86END",
     "latex": "\\begin{aligned}-kT_r(R_0,t)=h_T[T_s-T_\\infty(t)] \\\\ -DC_r(R_0,t)=h_m[C_s-C_\\infty(t)]\\end{aligned}",
     "display": true,
     "size": 23,
     "number": "7"
   },
   {
-    "key": "MATHPLACEHOLDER51END",
+    "key": "MATHPLACEHOLDER87END",
     "latex": "T/{}^\\circ\\mathrm C",
     "display": false,
     "size": 21
   },
   {
-    "key": "MATHPLACEHOLDER52END",
+    "key": "MATHPLACEHOLDER88END",
     "latex": "T/{}^\\circ\\mathrm C",
     "display": false,
     "size": 24
   },
   {
-    "key": "MATHPLACEHOLDER53END",
+    "key": "MATHPLACEHOLDER89END",
     "latex": "C/(\\mathrm{kg/kg})",
     "display": false,
     "size": 21
   },
   {
-    "key": "MATHPLACEHOLDER54END",
+    "key": "MATHPLACEHOLDER90END",
     "latex": "C/(\\mathrm{kg/kg})",
     "display": false,
     "size": 24
   },
   {
-    "key": "MATHPLACEHOLDER55END",
+    "key": "MATHPLACEHOLDER91END",
     "latex": "\\rho=650+128C,\\qquad c_p=1450+2736\\frac{C}{C+1},\\qquad k=0.21+0.38\\frac{C}{C+1}",
     "display": true,
     "size": 23,
     "number": "8"
   },
   {
-    "key": "MATHPLACEHOLDER56END",
+    "key": "MATHPLACEHOLDER92END",
     "latex": "D(C,T)=2.4\\times10^{-3}\\exp\\left(-\\frac{0.45}{C}\\right)\\exp\\left(-\\frac{3850}{T_K}\\right),\\qquad T_K=T+273.15",
     "display": true,
     "size": 23,
     "number": "9"
   },
   {
-    "key": "MATHPLACEHOLDER57END",
+    "key": "MATHPLACEHOLDER93END",
     "latex": "\\rho(C)c_p(C)",
     "display": false,
     "size": 24
   },
   {
-    "key": "MATHPLACEHOLDER58END",
+    "key": "MATHPLACEHOLDER94END",
     "latex": "\\rho(C)/(1+C)",
     "display": false,
     "size": 24
   },
   {
-    "key": "MATHPLACEHOLDER59END",
+    "key": "MATHPLACEHOLDER95END",
     "latex": "g(t)=\\max_{0\\le r\\le R_0}C(r,t)-0.15,\\qquad t_* =\\inf\\{t:g(t)<0\\}",
     "display": true,
     "size": 23,
     "number": "10"
   },
   {
-    "key": "MATHPLACEHOLDER60END",
+    "key": "MATHPLACEHOLDER96END",
     "latex": "g(t)",
     "display": false,
     "size": 24
   },
   {
-    "key": "MATHPLACEHOLDER61END",
+    "key": "MATHPLACEHOLDER97END",
     "latex": "t_*",
     "display": false,
     "size": 24
   },
   {
-    "key": "MATHPLACEHOLDER62END",
+    "key": "MATHPLACEHOLDER98END",
     "latex": "g(t_*)=0",
     "display": false,
     "size": 24
   },
   {
-    "key": "MATHPLACEHOLDER63END",
+    "key": "MATHPLACEHOLDER99END",
     "latex": "t_{60}=60\\left(\\left\\lfloor\\frac{t_*}{60}\\right\\rfloor+1\\right)",
     "display": true,
     "size": 23,
     "number": "11"
   },
   {
-    "key": "MATHPLACEHOLDER64END",
+    "key": "MATHPLACEHOLDER100END",
     "latex": "R(t)",
     "display": false,
     "size": 24
   },
   {
-    "key": "MATHPLACEHOLDER65END",
+    "key": "MATHPLACEHOLDER101END",
     "latex": "v_r=(\\dot R/R)r",
     "display": false,
     "size": 24
   },
   {
-    "key": "MATHPLACEHOLDER66END",
+    "key": "MATHPLACEHOLDER102END",
     "latex": "\\rho_d",
     "display": false,
     "size": 24
   },
   {
-    "key": "MATHPLACEHOLDER67END",
+    "key": "MATHPLACEHOLDER103END",
     "latex": "\\mathbf j_w",
     "display": false,
     "size": 24
   },
   {
-    "key": "MATHPLACEHOLDER68END",
+    "key": "MATHPLACEHOLDER104END",
     "latex": "\\begin{aligned}\\partial_t\\rho_d+\\nabla\\cdot(\\rho_d\\mathbf v)=0 \\\\ \\partial_t(\\rho_d C)+\\nabla\\cdot(\\rho_d C\\mathbf v+\\mathbf j_w)=0\\end{aligned}",
     "display": true,
     "size": 23,
     "number": "12"
   },
   {
-    "key": "MATHPLACEHOLDER69END",
+    "key": "MATHPLACEHOLDER105END",
     "latex": "\\mathbf j_w=-\\rho_dD\\nabla C",
     "display": false,
     "size": 24
   },
   {
-    "key": "MATHPLACEHOLDER70END",
+    "key": "MATHPLACEHOLDER106END",
     "latex": "\\frac{\\mathrm DC}{\\mathrm Dt}=\\frac1{\\rho_d}\\nabla\\cdot(\\rho_dD\\nabla C)",
     "display": true,
     "size": 23,
     "number": "13"
   },
   {
-    "key": "MATHPLACEHOLDER71END",
+    "key": "MATHPLACEHOLDER107END",
     "latex": "R(t)^2",
     "display": false,
     "size": 24
   },
   {
-    "key": "MATHPLACEHOLDER72END",
+    "key": "MATHPLACEHOLDER108END",
     "latex": "\\rho_d(t)R(t)^2=\\rho_{d0}R_0^2",
     "display": false,
     "size": 24
   },
   {
-    "key": "MATHPLACEHOLDER73END",
+    "key": "MATHPLACEHOLDER109END",
     "latex": "\\rho_d",
     "display": false,
     "size": 24
   },
   {
-    "key": "MATHPLACEHOLDER74END",
+    "key": "MATHPLACEHOLDER110END",
     "latex": "\\mathrm DC/\\mathrm Dt=\\partial C/\\partial t+v_r\\partial C/\\partial r",
     "display": false,
     "size": 24
   },
   {
-    "key": "MATHPLACEHOLDER75END",
+    "key": "MATHPLACEHOLDER111END",
     "latex": "\\frac{\\partial C}{\\partial t}+\\frac{\\dot R}{R}r\\frac{\\partial C}{\\partial r}=\\frac1r\\frac{\\partial}{\\partial r}\\left(rD\\frac{\\partial C}{\\partial r}\\right)",
     "display": true,
     "size": 23,
     "number": "14"
   },
   {
-    "key": "MATHPLACEHOLDER76END",
+    "key": "MATHPLACEHOLDER112END",
     "latex": "C",
     "display": false,
     "size": 24
   },
   {
-    "key": "MATHPLACEHOLDER77END",
+    "key": "MATHPLACEHOLDER113END",
     "latex": "\\xi=r/R(t)",
     "display": false,
     "size": 24
   },
   {
-    "key": "MATHPLACEHOLDER78END",
+    "key": "MATHPLACEHOLDER114END",
     "latex": "0<\\xi<1",
     "display": false,
     "size": 24
   },
   {
-    "key": "MATHPLACEHOLDER79END",
+    "key": "MATHPLACEHOLDER115END",
     "latex": "\\xi",
     "display": false,
     "size": 24
   },
   {
-    "key": "MATHPLACEHOLDER80END",
+    "key": "MATHPLACEHOLDER116END",
     "latex": "\\partial/\\partial r=R^{-1}\\partial/\\partial\\xi",
     "display": false,
     "size": 24
   },
   {
-    "key": "MATHPLACEHOLDER81END",
+    "key": "MATHPLACEHOLDER117END",
     "latex": "\\rho(C)c_p(C)\\left.\\frac{\\partial T}{\\partial t}\\right|_\\xi=\\frac1{R(t)^2\\xi}\\frac{\\partial}{\\partial\\xi}\\left(\\xi k(C)\\frac{\\partial T}{\\partial\\xi}\\right)",
     "display": true,
     "size": 23,
     "number": "15"
   },
   {
-    "key": "MATHPLACEHOLDER82END",
+    "key": "MATHPLACEHOLDER118END",
     "latex": "\\left.\\frac{\\partial C}{\\partial t}\\right|_\\xi=\\frac1{R(t)^2\\xi}\\frac{\\partial}{\\partial\\xi}\\left(\\xi D(C,T)\\frac{\\partial C}{\\partial\\xi}\\right)",
     "display": true,
     "size": 23,
     "number": "16"
   },
   {
-    "key": "MATHPLACEHOLDER83END",
+    "key": "MATHPLACEHOLDER119END",
     "latex": "T_\\xi=C_\\xi=0",
     "display": false,
     "size": 24
   },
   {
-    "key": "MATHPLACEHOLDER84END",
+    "key": "MATHPLACEHOLDER120END",
     "latex": "r",
     "display": false,
     "size": 24
   },
   {
-    "key": "MATHPLACEHOLDER85END",
+    "key": "MATHPLACEHOLDER121END",
     "latex": "\\xi",
     "display": false,
     "size": 24
   },
   {
-    "key": "MATHPLACEHOLDER86END",
+    "key": "MATHPLACEHOLDER122END",
     "latex": "1/R",
     "display": false,
     "size": 24
   },
   {
-    "key": "MATHPLACEHOLDER87END",
+    "key": "MATHPLACEHOLDER123END",
     "latex": "\\begin{aligned}-\\frac{k}{R}T_\\xi(1,t)=h_T(T_s-T_\\infty) \\\\ -\\frac{D}{R}C_\\xi(1,t)=h_m(C_s-C_\\infty)\\end{aligned}",
     "display": true,
     "size": 23,
     "number": "17"
   },
   {
-    "key": "MATHPLACEHOLDER88END",
+    "key": "MATHPLACEHOLDER124END",
     "latex": "R^{-2}",
     "display": false,
     "size": 24
   },
   {
-    "key": "MATHPLACEHOLDER89END",
+    "key": "MATHPLACEHOLDER125END",
     "latex": "R^{-1}",
     "display": false,
     "size": 24
   },
   {
-    "key": "MATHPLACEHOLDER90END",
+    "key": "MATHPLACEHOLDER126END",
     "latex": "\\rho=760+90C,\\qquad c_p=1850+2150\\frac{C}{C+1},\\qquad k=0.12+0.20\\frac{C}{C+1}",
     "display": true,
     "size": 23,
     "number": "18"
   },
   {
-    "key": "MATHPLACEHOLDER91END",
+    "key": "MATHPLACEHOLDER127END",
     "latex": "D(C,T)=4.2\\times10^{-4}\\exp\\left(-\\frac{0.30}{C}\\right)\\exp\\left(-\\frac{3850}{T_K}\\right)",
     "display": true,
     "size": 23,
     "number": "19"
   },
   {
-    "key": "MATHPLACEHOLDER92END",
+    "key": "MATHPLACEHOLDER128END",
     "latex": "\\xi=r/R(t)",
     "display": false,
     "size": 24
   },
   {
-    "key": "MATHPLACEHOLDER93END",
+    "key": "MATHPLACEHOLDER129END",
     "latex": "r>R(t)",
     "display": false,
     "size": 24
   },
   {
-    "key": "MATHPLACEHOLDER94END",
+    "key": "MATHPLACEHOLDER130END",
     "latex": "\\xi=1",
     "display": false,
     "size": 24
   },
   {
-    "key": "MATHPLACEHOLDER95END",
+    "key": "MATHPLACEHOLDER131END",
     "latex": "\\bar C(t)-\\bar C(0)=-\\frac{2h_m}{R_0}\\int_0^t[C_s(\\tau)-C_\\infty(\\tau)]\\,\\mathrm d\\tau",
     "display": true,
     "size": 23,
     "number": "20"
   },
   {
-    "key": "MATHPLACEHOLDER96END",
+    "key": "MATHPLACEHOLDER132END",
     "latex": "2\\xi",
     "display": false,
     "size": 24
   },
   {
-    "key": "MATHPLACEHOLDER97END",
+    "key": "MATHPLACEHOLDER133END",
     "latex": "\\bar C=2\\int_0^1 C\\xi\\,\\mathrm d\\xi",
     "display": false,
     "size": 24
   },
   {
-    "key": "MATHPLACEHOLDER98END",
+    "key": "MATHPLACEHOLDER134END",
     "latex": "0\\leq\\xi\\leq1",
     "display": false,
     "size": 24
   },
   {
-    "key": "MATHPLACEHOLDER99END",
+    "key": "MATHPLACEHOLDER135END",
     "latex": "\\frac{\\mathrm d\\bar C}{\\mathrm dt}=-\\frac{2h_m}{R(t)}[C_s(t)-C_\\infty(t)]",
     "display": true,
     "size": 23,
     "number": "21"
   },
   {
-    "key": "MATHPLACEHOLDER100END",
+    "key": "MATHPLACEHOLDER136END",
     "latex": "R=R_0",
     "display": false,
     "size": 24
   },
   {
-    "key": "MATHPLACEHOLDER101END",
+    "key": "MATHPLACEHOLDER137END",
     "latex": "\\rho(C)",
     "display": false,
     "size": 24
   },
   {
-    "key": "MATHPLACEHOLDER102END",
+    "key": "MATHPLACEHOLDER138END",
     "latex": "C",
     "display": false,
     "size": 24
   },
   {
-    "key": "MATHPLACEHOLDER103END",
+    "key": "MATHPLACEHOLDER139END",
     "latex": "1+C",
     "display": false,
     "size": 24
   },
   {
-    "key": "MATHPLACEHOLDER104END",
+    "key": "MATHPLACEHOLDER140END",
     "latex": "\\rho_d=\\rho(C)/(1+C)",
     "display": false,
     "size": 24
   },
   {
-    "key": "MATHPLACEHOLDER105END",
+    "key": "MATHPLACEHOLDER141END",
     "latex": "M_d(t)=2\\pi L R(t)^2\\int_0^1\\frac{760+90C(\\xi,t)}{1+C(\\xi,t)}\\xi\\,\\mathrm d\\xi",
     "display": true,
     "size": 23,
     "number": "22"
   },
   {
-    "key": "MATHPLACEHOLDER106END",
+    "key": "MATHPLACEHOLDER142END",
     "latex": "M_d(t_*)/M_d(0)\\approx0.890289",
     "display": false,
     "size": 24
