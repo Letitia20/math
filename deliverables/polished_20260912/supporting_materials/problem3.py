@@ -7,13 +7,13 @@ from dataclasses import dataclass
 import numpy as np
 from scipy.integrate import cumulative_simpson
 
-from drying_model.problem1 import (
+from problem1 import (
     ChamberHistory,
     Problem1Parameters,
     Problem1Solution,
     nodal_control_volumes,
 )
-from drying_model.problem2 import solve_problem2
+from problem2 import solve_problem2
 
 
 @dataclass(frozen=True)

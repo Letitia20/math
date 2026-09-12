@@ -13,7 +13,7 @@
 
 目标为 2026 年全国大学生数学建模竞赛 A 题电子版论文。格式依据为用户提供的《全国大学生数学建模竞赛论文格式规范（2026 年修订稿）》PDF，于 2026-09-12 复核：A4、四侧页边距至少 2.5 cm、摘要含标题关键词原则上不超过一页、正文不超过 30 页、不设目录、附录包括支撑文件清单与完整程序、摘要页起连续居中编号。未采用 Nature 期刊的篇幅或栏目要求，也未把通用排版建议当作官方竞赛模板。
 
-使用 `nature-polishing` 的段落必要性、术语统一和“渲染后检查版面”流程，结合 `venue-templates`、`docx` 和 `pdf`。原文已经引用 Scientific Agent Skills，修订版保留该引用；Nature Skills 的来源与用途补入 AI 工具使用详情。现有 Word 生成链使用 LaTeX 数学源码转换为原生 Word 公式，本轮沿用这一可编辑工作流。未运行 AI 文本检测，也未对检测分数作承诺。
+使用 `nature-polishing` 的段落必要性、术语统一和“渲染后检查版面”流程，结合 `venue-templates`、`docx` 和 `pdf`。技能与工具的来源和用途仅在 AI 工具使用详情中披露，不列入论文参考文献。现有 Word 生成链使用 LaTeX 数学源码转换为原生 Word 公式，本轮沿用这一可编辑工作流。未运行 AI 文本检测，也未对检测分数作承诺。
 
 ## 术语约定
 
@@ -41,7 +41,7 @@
 
 字符数采用去除空白后的 Unicode 字符数，包含公式、表格占位符和标点，并非英文词数。修订前后各节统计、公式与表格对比、文件哈希及页数见 `revision_audit.json`。`layout_review/` 为版面检查图，不属于竞赛提交文件。
 
-本轮检查结果：摘要 1 页、正文 14 页、附录从第 16 页开始，全文 85 页；保留 80 处可编辑公式、10 张三线表、22 组独立方程和 25 份完整 Python 源文件。Word 论文与 AI 使用详情均通过 OOXML 结构校验，PDF 及 ZIP 均低于 20 MB。表格数据行、独立方程源码和代码附录与原版逐项一致；支撑包中除 AI 使用详情外的 63 份文件逐字节一致。
+最终页数、公式、表格和代码清单以重新生成后的 `revision_audit.json` 为准。四份结果工作簿均已填写，沿用 `result1.xlsx` 至 `result4.xlsx` 的指定文件名；构建和审计过程只读工作簿并逐字节复制，不重新保存。支撑材料 ZIP 中所有文件直接位于根目录。
 
 ## 重新生成
 
@@ -56,4 +56,4 @@ python deliverables/polished_20260912/finalize_and_audit.py audit
 
 依赖：Node.js 的 `docx`，Python 的 `lxml`、`latex2mathml`、`pymupdf`、`Pillow`，以及 Microsoft Word（公式转换样式表与 PDF 导出）。若使用 Codex 自带 Node.js 库，需要将其 `node_modules` 路径加入 `NODE_PATH`。
 
-润色版支撑材料压缩包保持原文件清单，仅更新其中 AI 使用详情的 Word/PDF。全程第二问 Excel 仍可使用上一级 `result2_full_process.xlsx`，或根据附录 A.1 从支撑包还原。
+润色版支撑材料压缩包采用单层结构，四份已填结果表直接位于 ZIP 根目录。全程第二问 Excel 仍可使用上一级 `result2_full_process.xlsx`，或根据附录 A.1 从支撑包还原。

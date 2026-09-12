@@ -108,9 +108,11 @@ def audit():
     old_tables = re.findall(r'(?m)^\|.*\|$', old)
     new_tables = re.findall(r'(?m)^\|.*\|$', new)
     assert old_tables == new_tables, 'A numeric/symbol table changed'
-    old_codes = re.findall(r'```python\n(.*?)```', old, re.S)
     new_codes = re.findall(r'```python\n(.*?)```', new, re.S)
-    assert old_codes == new_codes, 'Source appendix changed'
+    assert len(new_codes) == 12, 'Unexpected flattened source appendix count'
+    references = new_source.split('## 参考文献', 1)[1].split('<!-- APPENDIX -->', 1)[0]
+    assert not re.search(r'(?i)\bAI\b|Scientific Agent Skills|Nature Skills|Codex', references)
+    assert re.findall(r'(?m)^\[(\d+)\]', references) == ['1', '2', '3']
     for n in ('33.5753', '36.7856', '2.5500', '1.5102', '49.8495', '49.9664',
               '1.7662', '1.0081', '57.4740', '57.4833', '51.0920', '51.1000',
               '129.8481', '0.890289', '10.97%'):
@@ -143,7 +145,9 @@ def audit():
     for n in range(1, 23):
         assert re.search(r'\(' + str(n) + r'\)', main_text), f'Missing equation number {n}'
     review = OUT / 'layout_review'
-    review.mkdir(exist_ok=True)
+    if review.exists():
+        shutil.rmtree(review)
+    review.mkdir()
     for batch in range(0, len(pdf), 12):
         sheet = Image.new('RGB', (1600, 3 * 585), '#dedede')
         draw = ImageDraw.Draw(sheet)
@@ -164,28 +168,29 @@ def audit():
             bounds = [min(b[0] for b in blocks), min(b[1] for b in blocks),
                       max(b[2] for b in blocks), max(b[3] for b in blocks)]
             page_bounds.append({'page': i+1, 'bounds': bounds})
-    # Preserve all previously packaged numeric/code inputs and update disclosure only.
+    # Preserve the single-level package and refresh only the required disclosure PDF.
     support = OUT / 'supporting_materials'
-    for filename in ('AI工具使用详情.md', 'AI工具使用详情_可编辑版.docx', 'AI工具使用详情.pdf'):
-        # Do not add files absent from the initial inventory without rebuilding the paper.
-        if (support / filename).exists():
-            shutil.copy2(OUT / filename, support / filename)
-    files = sorted(p for p in support.rglob('*') if p.is_file())
-    unchanged = []
-    with zipfile.ZipFile(ROOT / 'deliverables/A题支撑材料.zip') as z:
-        assert set(z.namelist()) == {p.relative_to(support).as_posix() for p in files}
-        for p in files:
-            rel = p.relative_to(support).as_posix()
-            if not rel.startswith('AI工具使用详情'):
-                assert z.read(rel) == p.read_bytes(), rel
-                unchanged.append(rel)
+    shutil.copy2(OUT / 'AI工具使用详情.pdf', support / 'AI工具使用详情.pdf')
+    assert not any(p.is_dir() for p in support.iterdir()), 'Supporting package is not single-level'
+    files = sorted(p for p in support.iterdir() if p.is_file())
+    expected_results = {f'result{index}.xlsx' for index in range(1, 5)}
+    assert expected_results <= {p.name for p in files}
+    canonical_results = ROOT / 'deliverables' / 'supporting_materials' / 'outputs'
+    for filename in expected_results:
+        assert sha(support / filename) == sha(canonical_results / filename)
+    flat_audit = json.loads((support / 'flat_support_audit.json').read_text(encoding='utf-8'))
+    assert flat_audit['structure'] == 'single-level'
+    assert flat_audit['workbooks_resaved'] is False
+    assert set(flat_audit['result_filenames']) == expected_results
     with zipfile.ZipFile(OUT / 'A题支撑材料.zip', 'w', zipfile.ZIP_DEFLATED, compresslevel=9) as z:
         for p in files:
-            z.write(p, p.relative_to(support).as_posix())
+            z.write(p, p.name)
     with zipfile.ZipFile(OUT / 'A题支撑材料.zip') as z:
         assert z.testzip() is None
+        assert all('/' not in name and '\\' not in name for name in z.namelist())
+        assert set(z.namelist()) == {p.name for p in files}
         for p in files:
-            assert hashlib.sha256(z.read(p.relative_to(support).as_posix())).hexdigest() == sha(p)
+            assert hashlib.sha256(z.read(p.name)).hexdigest() == sha(p)
     for filename in ('A题论文_提交预览.pdf', 'A题支撑材料.zip'):
         assert (OUT / filename).stat().st_size < 20_000_000
     def count(text):
@@ -201,8 +206,9 @@ def audit():
     report = {'total_pages': len(pdf), 'abstract_pages': 1, 'body_pages': appendix-2,
               'appendix_first_page': appendix, 'native_editable_equations': equations,
               'editable_three_line_tables': len(tables), 'display_equations_unchanged': len(old_display),
-              'table_rows_unchanged': len(old_tables), 'python_listings_unchanged': len(old_codes),
-              'unchanged_support_files': len(unchanged), 'source_main_chars_before': count(before_main),
+              'table_rows_unchanged': len(old_tables), 'python_listings': len(new_codes),
+              'support_files': len(files), 'support_subdirectories': 0, 'reference_count': 3,
+              'result_workbooks_resaved': False, 'source_main_chars_before': count(before_main),
               'source_main_chars_after': count(after_main), 'section_counts': section_counts,
               'archive_bytes': (OUT/'A题支撑材料.zip').stat().st_size,
               'pdf_bytes': (OUT/'A题论文_提交预览.pdf').stat().st_size,

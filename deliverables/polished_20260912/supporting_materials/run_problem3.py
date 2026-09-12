@@ -14,13 +14,13 @@ import numpy as np
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-from drying_model.problem1 import (
+from problem1 import (
     load_chamber_history_csv,
     richardson_extrapolate_solutions,
     sample_solution,
 )
-from drying_model.problem2 import solve_problem2
-from drying_model.problem3 import (
+from problem2 import solve_problem2
+from problem3 import (
     Problem3Result,
     extend_chamber_history_to_plateau,
     moisture_balance_diagnostics,
@@ -34,9 +34,9 @@ from drying_model.problem3 import (
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--input", type=Path, default=Path("data/raw/attachment1.csv"))
-    parser.add_argument("--output", type=Path, default=Path("tmp/problem3_result.json"))
-    parser.add_argument("--figure-dir", type=Path, default=Path("reports/figures"))
+    parser.add_argument("--input", type=Path, default=Path("attachment1.csv"))
+    parser.add_argument("--output", type=Path, default=Path("problem3_result.json"))
+    parser.add_argument("--figure-dir", type=Path, default=Path("."))
     parser.add_argument("--coarse-radial-intervals", type=int, default=2560)
     parser.add_argument("--fine-radial-intervals", type=int, default=5120)
     parser.add_argument("--sensitivity-radial-intervals", type=int, default=640)

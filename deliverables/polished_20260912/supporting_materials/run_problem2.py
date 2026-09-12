@@ -12,19 +12,19 @@ import numpy as np
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-from drying_model.problem1 import (
+from problem1 import (
     load_chamber_history_csv,
     result_payload,
     richardson_extrapolate_solutions,
 )
-from drying_model.problem2 import diffusivity_q2, solve_problem2_sampled_in_chunks
+from problem2 import diffusivity_q2, solve_problem2_sampled_in_chunks
 
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--input", type=Path, default=Path("data/raw/attachment1.csv"))
-    parser.add_argument("--output", type=Path, default=Path("tmp/problem2_result.json"))
-    parser.add_argument("--figure-dir", type=Path, default=Path("reports/figures"))
+    parser.add_argument("--input", type=Path, default=Path("attachment1.csv"))
+    parser.add_argument("--output", type=Path, default=Path("problem2_result.json"))
+    parser.add_argument("--figure-dir", type=Path, default=Path("."))
     parser.add_argument("--coarse-radial-intervals", type=int, default=2560)
     parser.add_argument("--fine-radial-intervals", type=int, default=5120)
     parser.add_argument("--chunk-duration-s", type=float, default=600.0)

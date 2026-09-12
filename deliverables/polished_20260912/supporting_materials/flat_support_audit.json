@@ -1,0 +1,145 @@
+{
+  "structure": "single-level",
+  "subdirectory_count": 0,
+  "result_workbooks": [
+    {
+      "filename": "result1.xlsx",
+      "sha256": "4aa406a45602bdc307108dca31c92236335ab9ad8644353ee362d2159e3d9345",
+      "sheets": [
+        {
+          "name": "温度",
+          "rows": 1801,
+          "columns": 22,
+          "nonempty_cells": 39622,
+          "format_preservation": "packaged workbook is byte-identical to the filled source workbook",
+          "layout_comparison": {
+            "merged_cells_match": true,
+            "freeze_panes_match": false,
+            "gridlines_match": true,
+            "first_row_dimension_match": false,
+            "first_column_dimension_match": false,
+            "header_anchor_style_match": true,
+            "value_anchor_style_match": false
+          }
+        },
+        {
+          "name": "水分浓度",
+          "rows": 1801,
+          "columns": 22,
+          "nonempty_cells": 39622,
+          "format_preservation": "packaged workbook is byte-identical to the filled source workbook",
+          "layout_comparison": {
+            "merged_cells_match": true,
+            "freeze_panes_match": false,
+            "gridlines_match": true,
+            "first_row_dimension_match": false,
+            "first_column_dimension_match": false,
+            "header_anchor_style_match": true,
+            "value_anchor_style_match": false
+          }
+        }
+      ],
+      "cells_checked": 79244,
+      "nonempty_cells": 79244,
+      "saved_by_audit": false
+    },
+    {
+      "filename": "result2.xlsx",
+      "sha256": "41a034af6171be9010978f41de85c6a8e5a56552d7b310d45be6f0484fa8e8ab",
+      "sheets": [
+        {
+          "name": "温度",
+          "rows": 10801,
+          "columns": 22,
+          "nonempty_cells": 237622,
+          "format_preservation": "packaged workbook is byte-identical to the filled source workbook",
+          "layout_comparison": {
+            "merged_cells_match": true,
+            "freeze_panes_match": false,
+            "gridlines_match": true,
+            "first_row_dimension_match": false,
+            "first_column_dimension_match": false,
+            "header_anchor_style_match": true,
+            "value_anchor_style_match": false
+          }
+        },
+        {
+          "name": "水分浓度",
+          "rows": 10801,
+          "columns": 22,
+          "nonempty_cells": 237622,
+          "format_preservation": "packaged workbook is byte-identical to the filled source workbook",
+          "layout_comparison": {
+            "merged_cells_match": true,
+            "freeze_panes_match": false,
+            "gridlines_match": true,
+            "first_row_dimension_match": false,
+            "first_column_dimension_match": false,
+            "header_anchor_style_match": true,
+            "value_anchor_style_match": false
+          }
+        }
+      ],
+      "cells_checked": 475244,
+      "nonempty_cells": 475244,
+      "saved_by_audit": false
+    },
+    {
+      "filename": "result3.xlsx",
+      "sha256": "5b150cb63d6c35d18d68c8c9ac6fb125ce2ffbe4074f087854452528732fb98b",
+      "sheets": [
+        {
+          "name": "Sheet1",
+          "rows": 3451,
+          "columns": 22,
+          "nonempty_cells": 75922,
+          "format_preservation": "packaged workbook is byte-identical to the filled source workbook",
+          "layout_comparison": {
+            "merged_cells_match": true,
+            "freeze_panes_match": false,
+            "gridlines_match": true,
+            "first_row_dimension_match": false,
+            "first_column_dimension_match": false,
+            "header_anchor_style_match": true,
+            "value_anchor_style_match": false
+          }
+        }
+      ],
+      "cells_checked": 75922,
+      "nonempty_cells": 75922,
+      "saved_by_audit": false
+    },
+    {
+      "filename": "result4.xlsx",
+      "sha256": "8200390659c328cbacd14ff53d4fa7c8b19030fe9be17cfe08d25071479ee64e",
+      "sheets": [
+        {
+          "name": "Sheet1",
+          "rows": 3068,
+          "columns": 23,
+          "nonempty_cells": 47391,
+          "format_preservation": "packaged workbook is byte-identical to the filled source workbook",
+          "layout_comparison": {
+            "merged_cells_match": true,
+            "freeze_panes_match": false,
+            "gridlines_match": true,
+            "first_row_dimension_match": true,
+            "first_column_dimension_match": false,
+            "header_anchor_style_match": true,
+            "value_anchor_style_match": false
+          }
+        }
+      ],
+      "cells_checked": 70564,
+      "nonempty_cells": 47391,
+      "saved_by_audit": false
+    }
+  ],
+  "result_filenames": [
+    "result1.xlsx",
+    "result2.xlsx",
+    "result3.xlsx",
+    "result4.xlsx"
+  ],
+  "workbooks_resaved": false
+}

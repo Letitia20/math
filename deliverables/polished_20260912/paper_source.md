@@ -136,13 +136,13 @@ $$
 
 ### 4.2 指定位置的计算结果
 
-表 1、表 2 按题目时刻和位置列出结果。完整 1—1800 s、径向间隔 0.1 cm 的两类场见支撑材料 outputs/result1.xlsx。所有浓度和温度按题意保留四位小数。
+表 1、表 2 按题目时刻和位置列出结果。完整 1—1800 s、径向间隔 0.1 cm 的两类场见支撑材料 result1.xlsx。所有浓度和温度按题意保留四位小数。
 
 {{TABLE1}}
 
 {{TABLE2}}
 
-![图 1 预热阶段的径向温度与含水率分布；不同曲线对应图例给出的时刻。](supporting_materials/reports/figures/problem1_radial_profiles.png)
+![图 1 预热阶段的径向温度与含水率分布；不同曲线对应图例给出的时刻。](supporting_materials/problem1_radial_profiles.png)
 
 由图 1 可见，热量由表面逐渐传向中心，水分损失则主要集中在表层。1800 s 时，表面与中心温差为 3.2103 ℃，表面含水率降至 1.5102 kg/kg，中心仍接近初值。热量与水分的迁移速度不同，使预热末期形成了不同程度的径向梯度。
 
@@ -170,7 +170,7 @@ $$
 
 {{TABLE4}}
 
-![图 2 变物性模型前三小时的径向温湿分布。](supporting_materials/reports/figures/problem2_radial_profiles.png)
+![图 2 变物性模型前三小时的径向温湿分布。](supporting_materials/problem2_radial_profiles.png)
 
 3 h 时中心与表面温差仅为 0.1169 ℃，但含水率差仍为 0.7581 kg/kg，且各处均未达到 0.15 kg/kg 阈值。升温基本完成后，低含水率区的扩散率继续减小，内部水分向表面的迁移仍需较长时间。这也解释了为什么不能以表面温度稳定作为烘干结束判据。
 
@@ -202,7 +202,7 @@ $$
 
 表 5 最后一行为临界时刻结果，中心显示值 0.1500 对应阈值边界。严格达标的停止时刻按式（11）另行确定；工作簿同时列出分钟序列、临界行和首个严格达标整分钟行。
 
-![图 3 固定半径下中心、中半径和表面的长期含水率历程；虚线为 0.15 kg/kg 阈值。](supporting_materials/reports/figures/problem3_time_histories.png)
+![图 3 固定半径下中心、中半径和表面的长期含水率历程；虚线为 0.15 kg/kg 阈值。](supporting_materials/problem3_time_histories.png)
 
 图 3 显示，表面含水率先于中心下降，后期各位置的变化均趋缓。干燥终点因此应由全域最大含水率控制，表面或平均值达标不足以保证内部干燥完成。上述时长以所选长期环境平台为条件，其敏感性见第 8.3 节。
 
@@ -270,9 +270,9 @@ $$
 
 6 h 时半径已为 1.374 cm，之后继续非增；因此表 6 所列时刻的 1.5 cm 和 2 cm 均在实体外，只保留 0、0.5、1 cm 及实际表面。完整 result4.xlsx 仍保留全部 0.1 cm 固定位置与真实表面列，并以空白标记实体外位置。
 
-![图 4 附件 2 的半径历史及分段线性插值。](supporting_materials/reports/figures/problem4_radius_history.png)
+![图 4 附件 2 的半径历史及分段线性插值。](supporting_materials/problem4_radius_history.png)
 
-![图 5 收缩药材在代表时刻的径向含水率；每条曲线右端是当时实际表面。](supporting_materials/reports/figures/problem4_radial_profiles.png)
+![图 5 收缩药材在代表时刻的径向含水率；每条曲线右端是当时实际表面。](supporting_materials/problem4_radial_profiles.png)
 
 第三、四问的临界时长相差约 6.38 h，这一差异同时包含物性与几何变化的影响。为单独考察收缩作用，第 8.4 节保持附录 4 物性不变，仅将半径固定为初始值进行对照。
 
@@ -375,7 +375,7 @@ $$
 
 本参赛队在竞赛过程中使用了AI工具，主要用于模型推导辅助、代码实现与调试、数值复算和结果核查、论文初稿组织及语言润色，详细使用情况见支撑材料。
 
-研究与写作使用 Scientific Agent Skills [4] 检查证据来源、模型局限和文档结构，并使用 Nature Skills 的 nature-polishing 辅助语言与版面修订。具体用途和核验方式见支撑材料中的 AI 工具使用详情。
+参赛队对模型、代码、数值、参考文献和最终表述承担核验责任。工具的具体用途与核验方式见支撑材料中的 AI 工具使用详情，本节披露不作为参考文献引用。
 
 ## 参考文献
 
@@ -384,8 +384,6 @@ $$
 [2] DA SILVA W P, E SILVA C M D P S, GAMA F J A. Estimation of thermo-physical properties of products with cylindrical shape during drying: The coupling between mass and heat[J]. Journal of Food Engineering, 2014, 141: 65-73. DOI: 10.1016/j.jfoodeng.2014.05.010.
 
 [3] ADROVER A, VENDITTI C, BRASIELLO A. A non-isothermal moving-boundary model for continuous and intermittent drying of pears[J]. Foods, 2020, 9(11): 1577. DOI: 10.3390/foods9111577.
-
-[4] KASSIS T, AGARWAL V, HE Y, PATEL D, BRUECKNER A M. Scientific Agent Skills: A Library of Procedural Knowledge for Research Agents[EB/OL]. 2026. DOI: 10.48550/arXiv.2609.00065.
 
 <!-- APPENDIX -->
 
@@ -397,36 +395,32 @@ $$
 
 ### A.1 运行顺序
 
-先在支撑材料根目录安装 requirements.txt 中的依赖。Python 版本须为 3.11 或以上。Windows PowerShell 下设置环境变量后，按下面顺序运行；Linux/macOS 可将环境变量设置语句替换为 export PYTHONPATH=src。
+先在支撑材料根目录安装 requirements.txt 中的依赖。Python 版本须为 3.11 或以上。支撑材料采用单层结构，按下面顺序运行即可：
 
 ```powershell
 python -m pip install -r requirements.txt
-$env:PYTHONPATH='src'
-python -m pytest -q
-python scripts/run_problem1.py
-python scripts/run_problem2.py
-python scripts/run_problem3.py
-python scripts/run_problem4.py
-python tools/rebuild_delivery_workbooks.py
-python tools/extend_problem2_delivery.py
+python run_problem1.py
+python run_problem2.py
+python run_problem3.py
+python run_problem4.py
 ```
 
-四个求解脚本产生 tmp/problem1_result.json 至 tmp/problem4_result.json。工作簿重建脚本不依赖原始 Excel 模板或专用表格服务；全程扩展脚本独立求解两级网格并逐单元回读。复现所需 CSV 已包含在支撑材料中。
+四个求解脚本在根目录产生 problem1_result.json 至 problem4_result.json，并生成相应图形；不会覆盖已填写的四份结果工作簿。复现所需 CSV 已包含在支撑材料中。
 
-若仅需查看全程第二问 Excel，无须重新求解，在支撑材料根目录执行 python tools/restore_full_result2.py，即可由压缩数组还原 outputs/result2_full_process.xlsx。
+若仅需查看全程第二问 Excel，无须重新求解，在支撑材料根目录执行 python restore_full_result2.py，即可由压缩数组还原 result2_full_process.xlsx。
 
 ### A.2 全程输出与数值核验记录
 
-第二问全程逐秒 Excel 约 27.7 MB。为满足支撑材料压缩包不超过 20 MB 的要求，包中以 outputs/result2_full_process.npz 无损保存四位小数交付值，并附 Excel 恢复脚本；outputs/result2.xlsx 为原前三小时文件。包外另提供的全程 Excel 与恢复文件的两张工作表 XML 逐字节相同。
+第二问全程逐秒 Excel 约 27.7 MB。为满足支撑材料压缩包不超过 20 MB 的要求，包中以 result2_full_process.npz 无损保存四位小数交付值，并附 Excel 恢复脚本；result2.xlsx 为原前三小时文件。包外另提供的全程 Excel 与恢复文件的两张工作表 XML 逐字节相同。
 
 全程积分沿用第二问的方程、初值和完整节点终态，输出不由舍入后的分钟值插值得到。其前 3 h 与原第二问交付值完全一致，与第三问独立分钟积分的最大四位小数差为 0.0001 kg/kg，差异来自积分分段与舍入边界。
 
-原四份工作簿共回读 700974 个单元格，题设表 1—6 与对应数值输出一致；第二、三问原始分钟序列在前三小时重叠的 3780 个含水率值相同。第二问全程逐秒工作簿另有独立回读记录，详见 reports/data。
+原四份工作簿共回读 700974 个单元格，题设表 1—6 与对应数值输出一致；第二、三问原始分钟序列在前三小时重叠的 3780 个含水率值相同。第二问全程逐秒工作簿另有独立回读记录，见 problem2_full_process_audit.json。
 
-reports/data 中保存原四问审计、第四问敏感性和密度诊断、全程逐秒结果审计。程序核验与参赛队人工审查是两类不同记录；AI 工具使用详情仅记录可确认的自动检查，不代替或虚构人工核验。
+支撑材料根目录保存原四问审计、第四问敏感性和密度诊断、全程逐秒结果审计。程序核验与参赛队人工审查是两类不同记录；AI 工具使用详情仅记录可确认的自动检查，不代替或虚构人工核验。
 
 ## 附录 B 完整源程序
 
-下列代码为本次建模、输出与验证所需源文件全文。保留文件相对路径与代码缩进，实际运行应使用支撑材料中的原文件。附录页数不计入正文限制。
+下列代码为本次建模、输出与验证所需源文件全文。支撑材料中的程序均直接位于根目录，文件名和代码缩进保持不变。附录页数不计入正文限制。
 
 {{SOURCECODE}}

@@ -29,7 +29,7 @@ source=source.replace('{{ENDPOINT3}}','第三问临界时刻为 206906.2447 s（
 const support=path.join(out,'supporting_materials');
 const files=walk(support).map(f=>path.relative(support,f).replaceAll('\\','/')).sort();
 source=source.replace('{{FILELIST}}',files.map(f=>'`'+f+'`').join('\n\n'));
-const codes=files.filter(f=>/^(src|scripts|tools|tests)\//.test(f)&&f.endsWith('.py'));
+const codes=files.filter(f=>f.endsWith('.py'));
 source=source.replace('{{SOURCECODE}}',codes.map(f=>'### '+f+'\n\n```python\n'+fs.readFileSync(path.join(support,f),'utf8')+'\n```').join('\n\n'));
 fs.writeFileSync(path.join(out,'paper_complete.md'),source);
 function parse(text){const children=[],lines=text.split('\n');let code=false;for(let i=0;i<lines.length;i++){const ln=lines[i],s=ln.trim();
@@ -44,7 +44,7 @@ function parse(text){const children=[],lines=text.split('\n');let code=false;for
  if(s.startsWith('## ')){children.push(s==='## 摘要'?p('摘  要',{indent:{firstLine:0},alignment:A.CENTER,keepNext:true,children:[new TextRun({text:'摘  要',size:26,font:'黑体',bold:true})]}):h(s.slice(3)));continue;}
  if(s.startsWith('### ')){children.push(h(s.slice(4),2));continue;}
  const img=s.match(/^!\[([^\]]+)\]\(([^)]+)\)/);
- if(img){const f=path.join(support,'reports/figures',path.basename(img[2]));if(!fs.existsSync(f))throw Error(f);const b=fs.readFileSync(f),w=b.readUInt32BE(16),ht=b.readUInt32BE(20);const dw=Math.min(565,310*w/ht);children.push(new Paragraph({alignment:A.CENTER,keepNext:true,spacing:{before:60,after:50},children:[new ImageRun({type:'png',data:b,transformation:{width:dw,height:dw*ht/w}})]}));children.push(p(img[1],{indent:{firstLine:0},alignment:A.CENTER,keepLines:true,spacing:{line:260,after:100},children:inline(img[1],21)}));continue;}
+ if(img){const f=path.join(support,path.basename(img[2]));if(!fs.existsSync(f))throw Error(f);const b=fs.readFileSync(f),w=b.readUInt32BE(16),ht=b.readUInt32BE(20);const dw=Math.min(565,310*w/ht);children.push(new Paragraph({alignment:A.CENTER,keepNext:true,spacing:{before:60,after:50},children:[new ImageRun({type:'png',data:b,transformation:{width:dw,height:dw*ht/w}})]}));children.push(p(img[1],{indent:{firstLine:0},alignment:A.CENTER,keepLines:true,spacing:{line:260,after:100},children:inline(img[1],21)}));continue;}
  if(/^\[\d+\]/.test(s)){children.push(p(s,{indent:{left:300,hanging:300},alignment:A.LEFT,spacing:{line:260,after:60},keepLines:true,children:inline(s,21)}));continue;}
  if(/^表 [0-9]/.test(s)&&lines.slice(i+1).find(x=>x.trim())?.trim().startsWith('|')){children.push(p(s,{indent:{firstLine:0},alignment:A.CENTER,keepNext:true,spacing:{before:100,after:70},children:inline(s,21)}));continue;}
  if(s.startsWith('`')&&s.endsWith('`')){children.push(p(s,{indent:{firstLine:0},alignment:A.LEFT,spacing:{line:240,after:0},children:inline(s,19)}));continue;}

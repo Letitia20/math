@@ -9,7 +9,7 @@ from numpy.typing import ArrayLike, NDArray
 from scipy.integrate import solve_ivp
 from scipy.sparse import bmat, diags
 
-from drying_model.problem1 import (
+from problem1 import (
     ChamberHistory,
     Problem1Parameters,
     Problem1Solution,

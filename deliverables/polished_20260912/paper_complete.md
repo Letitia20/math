@@ -136,7 +136,7 @@ $$
 
 ### 4.2 指定位置的计算结果
 
-表 1、表 2 按题目时刻和位置列出结果。完整 1—1800 s、径向间隔 0.1 cm 的两类场见支撑材料 outputs/result1.xlsx。所有浓度和温度按题意保留四位小数。
+表 1、表 2 按题目时刻和位置列出结果。完整 1—1800 s、径向间隔 0.1 cm 的两类场见支撑材料 result1.xlsx。所有浓度和温度按题意保留四位小数。
 
 表 1  代表位置温度 $T/{}^\circ\mathrm C$
 
@@ -162,7 +162,7 @@ $$
 | 1500 | 2.5500 | 2.5499 | 2.5445 | 2.4206 | 1.5787 |
 | 1800 | 2.5500 | 2.5497 | 2.5383 | 2.3755 | 1.5102 |
 
-![图 1 预热阶段的径向温度与含水率分布；不同曲线对应图例给出的时刻。](supporting_materials/reports/figures/problem1_radial_profiles.png)
+![图 1 预热阶段的径向温度与含水率分布；不同曲线对应图例给出的时刻。](supporting_materials/problem1_radial_profiles.png)
 
 由图 1 可见，热量由表面逐渐传向中心，水分损失则主要集中在表层。1800 s 时，表面与中心温差为 3.2103 ℃，表面含水率降至 1.5102 kg/kg，中心仍接近初值。热量与水分的迁移速度不同，使预热末期形成了不同程度的径向梯度。
 
@@ -208,7 +208,7 @@ $$
 | 2.5 | 1.9566 | 1.9006 | 1.7360 | 1.4720 | 1.1166 |
 | 3.0 | 1.7662 | 1.7165 | 1.5702 | 1.3333 | 1.0081 |
 
-![图 2 变物性模型前三小时的径向温湿分布。](supporting_materials/reports/figures/problem2_radial_profiles.png)
+![图 2 变物性模型前三小时的径向温湿分布。](supporting_materials/problem2_radial_profiles.png)
 
 3 h 时中心与表面温差仅为 0.1169 ℃，但含水率差仍为 0.7581 kg/kg，且各处均未达到 0.15 kg/kg 阈值。升温基本完成后，低含水率区的扩散率继续减小，内部水分向表面的迁移仍需较长时间。这也解释了为什么不能以表面温度稳定作为烘干结束判据。
 
@@ -253,7 +253,7 @@ $$
 
 表 5 最后一行为临界时刻结果，中心显示值 0.1500 对应阈值边界。严格达标的停止时刻按式（11）另行确定；工作簿同时列出分钟序列、临界行和首个严格达标整分钟行。
 
-![图 3 固定半径下中心、中半径和表面的长期含水率历程；虚线为 0.15 kg/kg 阈值。](supporting_materials/reports/figures/problem3_time_histories.png)
+![图 3 固定半径下中心、中半径和表面的长期含水率历程；虚线为 0.15 kg/kg 阈值。](supporting_materials/problem3_time_histories.png)
 
 图 3 显示，表面含水率先于中心下降，后期各位置的变化均趋缓。干燥终点因此应由全域最大含水率控制，表面或平均值达标不足以保证内部干燥完成。上述时长以所选长期环境平台为条件，其敏感性见第 8.3 节。
 
@@ -333,9 +333,9 @@ $$
 
 6 h 时半径已为 1.374 cm，之后继续非增；因此表 6 所列时刻的 1.5 cm 和 2 cm 均在实体外，只保留 0、0.5、1 cm 及实际表面。完整 result4.xlsx 仍保留全部 0.1 cm 固定位置与真实表面列，并以空白标记实体外位置。
 
-![图 4 附件 2 的半径历史及分段线性插值。](supporting_materials/reports/figures/problem4_radius_history.png)
+![图 4 附件 2 的半径历史及分段线性插值。](supporting_materials/problem4_radius_history.png)
 
-![图 5 收缩药材在代表时刻的径向含水率；每条曲线右端是当时实际表面。](supporting_materials/reports/figures/problem4_radial_profiles.png)
+![图 5 收缩药材在代表时刻的径向含水率；每条曲线右端是当时实际表面。](supporting_materials/problem4_radial_profiles.png)
 
 第三、四问的临界时长相差约 6.38 h，这一差异同时包含物性与几何变化的影响。为单独考察收缩作用，第 8.4 节保持附录 4 物性不变，仅将半径固定为初始值进行对照。
 
@@ -438,7 +438,7 @@ $$
 
 本参赛队在竞赛过程中使用了AI工具，主要用于模型推导辅助、代码实现与调试、数值复算和结果核查、论文初稿组织及语言润色，详细使用情况见支撑材料。
 
-研究与写作使用 Scientific Agent Skills [4] 检查证据来源、模型局限和文档结构，并使用 Nature Skills 的 nature-polishing 辅助语言与版面修订。具体用途和核验方式见支撑材料中的 AI 工具使用详情。
+参赛队对模型、代码、数值、参考文献和最终表述承担核验责任。工具的具体用途与核验方式见支撑材料中的 AI 工具使用详情，本节披露不作为参考文献引用。
 
 ## 参考文献
 
@@ -448,8 +448,6 @@ $$
 
 [3] ADROVER A, VENDITTI C, BRASIELLO A. A non-isothermal moving-boundary model for continuous and intermittent drying of pears[J]. Foods, 2020, 9(11): 1577. DOI: 10.3390/foods9111577.
 
-[4] KASSIS T, AGARWAL V, HE Y, PATEL D, BRUECKNER A M. Scientific Agent Skills: A Library of Procedural Knowledge for Research Agents[EB/OL]. 2026. DOI: 10.48550/arXiv.2609.00065.
-
 <!-- APPENDIX -->
 
 ## 附录 A 支撑材料与复现说明
@@ -458,1252 +456,111 @@ $$
 
 `AI工具使用详情.pdf`
 
-`AI工具使用详情_可编辑版.docx`
-
 `README_复现说明.md`
 
-`data/raw/attachment1.csv`
+`attachment1.csv`
 
-`data/raw/attachment2.csv`
+`attachment2.csv`
 
-`docs/literature-review.md`
+`final_all_questions_audit.json`
 
-`docs/problem1-formula-audit.md`
+`flat_support_audit.json`
 
-`docs/problem2-formula-audit.md`
+`problem1.py`
 
-`docs/problem3-formula-audit.md`
+`problem1_radial_profiles.png`
 
-`docs/problem4-formula-audit.md`
+`problem1_time_histories.png`
 
-`docs/论文证据索引.md`
+`problem2.py`
 
-`outputs/result1.xlsx`
+`problem2_full_process_audit.json`
 
-`outputs/result2.xlsx`
+`problem2_radial_profiles.png`
 
-`outputs/result2_full_process.npz`
+`problem2_time_histories.png`
 
-`outputs/result3.xlsx`
+`problem3.py`
 
-`outputs/result4.xlsx`
+`problem3_radial_profiles.png`
 
-`pyproject.toml`
+`problem3_time_histories.png`
 
-`reports/data/final_all_questions_audit.json`
+`problem4.py`
 
-`reports/data/problem2_full_process_audit.json`
+`problem4_independent.py`
 
-`reports/data/problem4_production_diagnostics.json`
+`problem4_independent_validation.json`
 
-`reports/data/problem4_review_experiments.json`
+`problem4_production_diagnostics.json`
 
-`reports/data/problem4_workbook_audit.json`
+`problem4_radial_profiles.png`
 
-`reports/figures/problem1_radial_profiles.png`
+`problem4_radius_history.png`
 
-`reports/figures/problem1_time_histories.png`
+`problem4_review_experiments.json`
 
-`reports/figures/problem2_radial_profiles.png`
+`problem4_time_histories.png`
 
-`reports/figures/problem2_time_histories.png`
-
-`reports/figures/problem3_radial_profiles.png`
-
-`reports/figures/problem3_time_histories.png`
-
-`reports/figures/problem4_radial_profiles.png`
-
-`reports/figures/problem4_radius_history.png`
-
-`reports/figures/problem4_time_histories.png`
-
-`reports/final-review.md`
-
-`reports/problem1.md`
-
-`reports/problem2.md`
-
-`reports/problem3.md`
-
-`reports/problem4-review-response.md`
-
-`reports/problem4.md`
-
-`reports/problem4_independent_validation.json`
-
-`reports/verification.md`
+`problem4_workbook_audit.json`
 
 `requirements.txt`
 
-`scripts/run_problem1.py`
+`restore_full_result2.py`
 
-`scripts/run_problem2.py`
+`result1.xlsx`
 
-`scripts/run_problem3.py`
+`result2.xlsx`
 
-`scripts/run_problem4.py`
+`result2_full_process.npz`
 
-`scripts/verify_problem4.py`
+`result3.xlsx`
 
-`scripts/verify_problem4_independent.py`
+`result4.xlsx`
 
-`src/drying_model/__init__.py`
+`run_problem1.py`
 
-`src/drying_model/problem1.py`
+`run_problem2.py`
 
-`src/drying_model/problem2.py`
+`run_problem3.py`
 
-`src/drying_model/problem3.py`
+`run_problem4.py`
 
-`src/drying_model/problem4.py`
+`verify_problem4.py`
 
-`src/drying_model/problem4_independent.py`
-
-`tests/test_final_review_regressions.py`
-
-`tests/test_problem1.py`
-
-`tests/test_problem2.py`
-
-`tests/test_problem3.py`
-
-`tests/test_problem4.py`
-
-`tests/test_problem4_independent.py`
-
-`tests/test_result4_workbook.py`
-
-`tools/audit_all_results.py`
-
-`tools/build_result4.py`
-
-`tools/compress_problem2_full_process.py`
-
-`tools/extend_problem2_delivery.py`
-
-`tools/rebuild_delivery_workbooks.py`
-
-`tools/restore_full_result2.py`
+`verify_problem4_independent.py`
 
 ### A.1 运行顺序
 
-先在支撑材料根目录安装 requirements.txt 中的依赖。Python 版本须为 3.11 或以上。Windows PowerShell 下设置环境变量后，按下面顺序运行；Linux/macOS 可将环境变量设置语句替换为 export PYTHONPATH=src。
+先在支撑材料根目录安装 requirements.txt 中的依赖。Python 版本须为 3.11 或以上。支撑材料采用单层结构，按下面顺序运行即可：
 
 ```powershell
 python -m pip install -r requirements.txt
-$env:PYTHONPATH='src'
-python -m pytest -q
-python scripts/run_problem1.py
-python scripts/run_problem2.py
-python scripts/run_problem3.py
-python scripts/run_problem4.py
-python tools/rebuild_delivery_workbooks.py
-python tools/extend_problem2_delivery.py
+python run_problem1.py
+python run_problem2.py
+python run_problem3.py
+python run_problem4.py
 ```
 
-四个求解脚本产生 tmp/problem1_result.json 至 tmp/problem4_result.json。工作簿重建脚本不依赖原始 Excel 模板或专用表格服务；全程扩展脚本独立求解两级网格并逐单元回读。复现所需 CSV 已包含在支撑材料中。
+四个求解脚本在根目录产生 problem1_result.json 至 problem4_result.json，并生成相应图形；不会覆盖已填写的四份结果工作簿。复现所需 CSV 已包含在支撑材料中。
 
-若仅需查看全程第二问 Excel，无须重新求解，在支撑材料根目录执行 python tools/restore_full_result2.py，即可由压缩数组还原 outputs/result2_full_process.xlsx。
+若仅需查看全程第二问 Excel，无须重新求解，在支撑材料根目录执行 python restore_full_result2.py，即可由压缩数组还原 result2_full_process.xlsx。
 
 ### A.2 全程输出与数值核验记录
 
-第二问全程逐秒 Excel 约 27.7 MB。为满足支撑材料压缩包不超过 20 MB 的要求，包中以 outputs/result2_full_process.npz 无损保存四位小数交付值，并附 Excel 恢复脚本；outputs/result2.xlsx 为原前三小时文件。包外另提供的全程 Excel 与恢复文件的两张工作表 XML 逐字节相同。
+第二问全程逐秒 Excel 约 27.7 MB。为满足支撑材料压缩包不超过 20 MB 的要求，包中以 result2_full_process.npz 无损保存四位小数交付值，并附 Excel 恢复脚本；result2.xlsx 为原前三小时文件。包外另提供的全程 Excel 与恢复文件的两张工作表 XML 逐字节相同。
 
 全程积分沿用第二问的方程、初值和完整节点终态，输出不由舍入后的分钟值插值得到。其前 3 h 与原第二问交付值完全一致，与第三问独立分钟积分的最大四位小数差为 0.0001 kg/kg，差异来自积分分段与舍入边界。
 
-原四份工作簿共回读 700974 个单元格，题设表 1—6 与对应数值输出一致；第二、三问原始分钟序列在前三小时重叠的 3780 个含水率值相同。第二问全程逐秒工作簿另有独立回读记录，详见 reports/data。
+原四份工作簿共回读 700974 个单元格，题设表 1—6 与对应数值输出一致；第二、三问原始分钟序列在前三小时重叠的 3780 个含水率值相同。第二问全程逐秒工作簿另有独立回读记录，见 problem2_full_process_audit.json。
 
-reports/data 中保存原四问审计、第四问敏感性和密度诊断、全程逐秒结果审计。程序核验与参赛队人工审查是两类不同记录；AI 工具使用详情仅记录可确认的自动检查，不代替或虚构人工核验。
+支撑材料根目录保存原四问审计、第四问敏感性和密度诊断、全程逐秒结果审计。程序核验与参赛队人工审查是两类不同记录；AI 工具使用详情仅记录可确认的自动检查，不代替或虚构人工核验。
 
 ## 附录 B 完整源程序
 
-下列代码为本次建模、输出与验证所需源文件全文。保留文件相对路径与代码缩进，实际运行应使用支撑材料中的原文件。附录页数不计入正文限制。
+下列代码为本次建模、输出与验证所需源文件全文。支撑材料中的程序均直接位于根目录，文件名和代码缩进保持不变。附录页数不计入正文限制。
 
-### scripts/run_problem1.py
-
-```python
-"""Solve Problem 1 and export workbook-ready values plus diagnostic figures."""
-
-from __future__ import annotations
-
-import argparse
-import json
-from pathlib import Path
-
-import matplotlib
-import numpy as np
-
-matplotlib.use("Agg")
-import matplotlib.pyplot as plt
-
-from drying_model.problem1 import (
-    Problem1Parameters,
-    load_chamber_history_csv,
-    richardson_extrapolate_solutions,
-    result_payload,
-    sample_solution,
-    solve_problem1,
-)
-
-
-def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--input", type=Path, default=Path("data/raw/attachment1.csv"))
-    parser.add_argument("--output", type=Path, default=Path("tmp/problem1_result.json"))
-    parser.add_argument("--figure-dir", type=Path, default=Path("reports/figures"))
-    parser.add_argument("--coarse-radial-intervals", type=int, default=5120)
-    parser.add_argument("--fine-radial-intervals", type=int, default=10240)
-    return parser
-
-
-def save_figures(payload: dict[str, list], figure_dir: Path) -> None:
-    figure_dir.mkdir(parents=True, exist_ok=True)
-    time = np.asarray(payload["time_s"], dtype=float)
-    radius = np.asarray(payload["radius_cm"], dtype=float)
-    temperature = np.asarray(payload["temperature_c"], dtype=float)
-    moisture = np.asarray(payload["moisture_concentration"], dtype=float)
-
-    profile_times = [100, 300, 600, 900, 1200, 1500, 1800]
-    colors = plt.cm.viridis(np.linspace(0.05, 0.95, len(profile_times)))
-    fig, axes = plt.subplots(1, 2, figsize=(11.0, 4.2), constrained_layout=True)
-    for selected_time, color in zip(profile_times, colors, strict=True):
-        row = selected_time - 1
-        axes[0].plot(radius, temperature[row], color=color, label=f"{selected_time} s")
-        axes[1].plot(radius, moisture[row], color=color, label=f"{selected_time} s")
-    axes[0].set(xlabel="Radius r (cm)", ylabel="Temperature (deg C)")
-    axes[1].set(xlabel="Radius r (cm)", ylabel="Moisture concentration (kg/kg)")
-    for axis in axes:
-        axis.grid(alpha=0.25)
-    axes[1].legend(ncol=2, fontsize=8)
-    fig.savefig(figure_dir / "problem1_radial_profiles.png", dpi=220)
-    plt.close(fig)
-
-    locations = [(0, "center"), (10, "mid-radius"), (20, "surface")]
-    fig, axes = plt.subplots(1, 2, figsize=(11.0, 4.2), constrained_layout=True)
-    for column, label in locations:
-        axes[0].plot(time, temperature[:, column], label=label)
-        axes[1].plot(time, moisture[:, column], label=label)
-    axes[0].set(xlabel="Time (s)", ylabel="Temperature (deg C)")
-    axes[1].set(xlabel="Time (s)", ylabel="Moisture concentration (kg/kg)")
-    for axis in axes:
-        axis.grid(alpha=0.25)
-        axis.legend()
-    fig.savefig(figure_dir / "problem1_time_histories.png", dpi=220)
-    plt.close(fig)
-
-
-def main() -> None:
-    args = build_parser().parse_args()
-    if args.fine_radial_intervals != 2 * args.coarse_radial_intervals:
-        raise ValueError("Fine radial grid must have twice as many intervals as the coarse grid")
-    history = load_chamber_history_csv(args.input)
-    output_times = np.arange(1.0, 1801.0)
-    requested_radii_cm = np.arange(0.0, 2.0 + 0.05, 0.1)
-    sampled_solutions = []
-    for radial_intervals in (
-        args.coarse_radial_intervals,
-        args.fine_radial_intervals,
-    ):
-        solution = solve_problem1(
-            history,
-            radial_intervals,
-            output_times,
-            parameters=Problem1Parameters(),
-            relative_tolerance=5.0e-10,
-            max_step_s=1.0,
-        )
-        sampled_solutions.append(sample_solution(solution, requested_radii_cm))
-    extrapolated = richardson_extrapolate_solutions(
-        sampled_solutions[0],
-        sampled_solutions[1],
-        order=2,
-    )
-    payload = result_payload(extrapolated)
-    args.output.parent.mkdir(parents=True, exist_ok=True)
-    args.output.write_text(
-        json.dumps(payload, ensure_ascii=False, separators=(",", ":")),
-        encoding="utf-8",
-    )
-    save_figures(payload, args.figure_dir)
-
-
-if __name__ == "__main__":
-    main()
-
-```
-
-### scripts/run_problem2.py
-
-```python
-"""Solve Problem 2 and export workbook-ready values plus diagnostic figures."""
-
-from __future__ import annotations
-
-import argparse
-import json
-from pathlib import Path
-
-import matplotlib
-import numpy as np
-
-matplotlib.use("Agg")
-import matplotlib.pyplot as plt
-
-from drying_model.problem1 import (
-    load_chamber_history_csv,
-    result_payload,
-    richardson_extrapolate_solutions,
-)
-from drying_model.problem2 import diffusivity_q2, solve_problem2_sampled_in_chunks
-
-
-def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--input", type=Path, default=Path("data/raw/attachment1.csv"))
-    parser.add_argument("--output", type=Path, default=Path("tmp/problem2_result.json"))
-    parser.add_argument("--figure-dir", type=Path, default=Path("reports/figures"))
-    parser.add_argument("--coarse-radial-intervals", type=int, default=2560)
-    parser.add_argument("--fine-radial-intervals", type=int, default=5120)
-    parser.add_argument("--chunk-duration-s", type=float, default=600.0)
-    return parser
-
-
-def save_figures(payload: dict[str, list], figure_dir: Path) -> None:
-    figure_dir.mkdir(parents=True, exist_ok=True)
-    time = np.asarray(payload["time_s"], dtype=float)
-    radius = np.asarray(payload["radius_cm"], dtype=float)
-    temperature = np.asarray(payload["temperature_c"], dtype=float)
-    moisture = np.asarray(payload["moisture_concentration"], dtype=float)
-
-    profile_times = [1800, 3600, 5400, 7200, 9000, 10800]
-    colors = plt.cm.viridis(np.linspace(0.05, 0.95, len(profile_times)))
-    fig, axes = plt.subplots(1, 2, figsize=(11.0, 4.2), constrained_layout=True)
-    for selected_time, color in zip(profile_times, colors, strict=True):
-        row = selected_time - 1
-        label = f"{selected_time / 3600:g} h"
-        axes[0].plot(radius, temperature[row], color=color, label=label)
-        axes[1].plot(radius, moisture[row], color=color, label=label)
-    axes[0].set(xlabel="Radius r (cm)", ylabel="Temperature (deg C)")
-    axes[1].set(xlabel="Radius r (cm)", ylabel="Moisture concentration (kg/kg)")
-    for axis in axes:
-        axis.grid(alpha=0.25)
-    axes[1].legend(ncol=2, fontsize=8)
-    fig.savefig(figure_dir / "problem2_radial_profiles.png", dpi=220)
-    plt.close(fig)
-
-    locations = [(0, "center"), (10, "mid-radius"), (20, "surface")]
-    fig, axes = plt.subplots(1, 3, figsize=(14.0, 4.2), constrained_layout=True)
-    for column, label in locations:
-        axes[0].plot(time / 3600.0, temperature[:, column], label=label)
-        axes[1].plot(time / 3600.0, moisture[:, column], label=label)
-        axes[2].plot(
-            time / 3600.0,
-            diffusivity_q2(moisture[:, column], temperature[:, column]),
-            label=label,
-        )
-    axes[0].set(xlabel="Time (h)", ylabel="Temperature (deg C)")
-    axes[1].set(xlabel="Time (h)", ylabel="Moisture concentration (kg/kg)")
-    axes[2].set(xlabel="Time (h)", ylabel="Diffusivity (m2/s)")
-    for axis in axes:
-        axis.grid(alpha=0.25)
-        axis.legend()
-    fig.savefig(figure_dir / "problem2_time_histories.png", dpi=220)
-    plt.close(fig)
-
-
-def main() -> None:
-    args = build_parser().parse_args()
-    if args.fine_radial_intervals != 2 * args.coarse_radial_intervals:
-        raise ValueError("Fine radial grid must have twice as many intervals as the coarse grid")
-    history = load_chamber_history_csv(args.input)
-    output_times = np.arange(1.0, 10801.0)
-    sample_radius_cm = np.arange(0.0, 2.0 + 0.05, 0.1)
-    solutions = []
-    for radial_intervals in (
-        args.coarse_radial_intervals,
-        args.fine_radial_intervals,
-    ):
-        print(f"Solving Problem 2 on {radial_intervals} radial intervals...", flush=True)
-        solutions.append(
-            solve_problem2_sampled_in_chunks(
-                history,
-                radial_intervals=radial_intervals,
-                output_times_s=output_times,
-                sample_radius_cm=sample_radius_cm,
-                chunk_duration_s=args.chunk_duration_s,
-                relative_tolerance=2.0e-10,
-                max_step_s=2.0,
-            )
-        )
-        print(f"Completed {radial_intervals} radial intervals.", flush=True)
-    coarse, fine = solutions
-    extrapolated = richardson_extrapolate_solutions(coarse, fine, order=2)
-    payload = result_payload(extrapolated)
-    payload["numerical_method"] = {
-        "coarse_radial_intervals": args.coarse_radial_intervals,
-        "fine_radial_intervals": args.fine_radial_intervals,
-        "richardson_order": 2,
-        "relative_tolerance": 2.0e-10,
-        "maximum_time_step_s": 2.0,
-        "chunk_duration_s": args.chunk_duration_s,
-        "max_abs_temperature_difference_c": float(
-            np.max(np.abs(fine.temperature_c - coarse.temperature_c))
-        ),
-        "max_abs_moisture_difference": float(
-            np.max(
-                np.abs(
-                    fine.moisture_concentration
-                    - coarse.moisture_concentration
-                )
-            )
-        ),
-        "temperature_four_decimal_mismatches": int(
-            np.count_nonzero(
-                np.round(fine.temperature_c, 4)
-                != np.round(coarse.temperature_c, 4)
-            )
-        ),
-        "moisture_four_decimal_mismatches": int(
-            np.count_nonzero(
-                np.round(fine.moisture_concentration, 4)
-                != np.round(coarse.moisture_concentration, 4)
-            )
-        ),
-    }
-    args.output.parent.mkdir(parents=True, exist_ok=True)
-    args.output.write_text(
-        json.dumps(payload, ensure_ascii=False, separators=(",", ":")),
-        encoding="utf-8",
-    )
-    save_figures(payload, args.figure_dir)
-
-
-if __name__ == "__main__":
-    main()
-
-```
-
-### scripts/run_problem3.py
-
-```python
-"""Solve Problem 3, locate the drying endpoint, and export workbook-ready values."""
-
-from __future__ import annotations
-
-import argparse
-import gc
-import json
-from dataclasses import replace
-from pathlib import Path
-
-import matplotlib
-import numpy as np
-
-matplotlib.use("Agg")
-import matplotlib.pyplot as plt
-
-from drying_model.problem1 import (
-    load_chamber_history_csv,
-    richardson_extrapolate_solutions,
-    sample_solution,
-)
-from drying_model.problem2 import solve_problem2
-from drying_model.problem3 import (
-    Problem3Result,
-    extend_chamber_history_to_plateau,
-    moisture_balance_diagnostics,
-    problem3_payload,
-    richardson_extrapolate_drying_time,
-    solve_problem3,
-    truncate_solution_at_threshold,
-    validate_radially_nonincreasing_moisture,
-)
-
-
-def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--input", type=Path, default=Path("data/raw/attachment1.csv"))
-    parser.add_argument("--output", type=Path, default=Path("tmp/problem3_result.json"))
-    parser.add_argument("--figure-dir", type=Path, default=Path("reports/figures"))
-    parser.add_argument("--coarse-radial-intervals", type=int, default=2560)
-    parser.add_argument("--fine-radial-intervals", type=int, default=5120)
-    parser.add_argument("--sensitivity-radial-intervals", type=int, default=640)
-    parser.add_argument("--horizon-hours", type=float, default=96.0)
-    return parser
-
-
-def save_figures(result: Problem3Result, figure_dir: Path) -> None:
-    figure_dir.mkdir(parents=True, exist_ok=True)
-    solution = result.solution
-    time_h = solution.time_s / 3600.0
-    radius_cm = solution.radius_m * 100.0
-    moisture = solution.moisture_concentration
-
-    selected_hours = [6.0, 12.0, 24.0, 36.0, 48.0]
-    selected_hours = [hour for hour in selected_hours if hour < time_h[-1]]
-    selected_indices = [int(np.argmin(np.abs(time_h - hour))) for hour in selected_hours]
-    critical_index = int(
-        np.flatnonzero(
-            np.isclose(solution.time_s, result.drying_time_s, atol=1.0e-8, rtol=0.0)
-        )[0]
-    )
-    selected_indices.extend([critical_index, len(time_h) - 1])
-    selected_indices = list(dict.fromkeys(selected_indices))
-    fig, axis = plt.subplots(figsize=(7.2, 4.6), constrained_layout=True)
-    for index in selected_indices:
-        if index == critical_index:
-            label = "critical threshold"
-        elif index == len(time_h) - 1:
-            label = "first strict regular time"
-        else:
-            label = f"{time_h[index]:g} h"
-        axis.plot(radius_cm, moisture[index], label=label)
-    axis.axhline(result.threshold, color="#B91C1C", linestyle="--", linewidth=1.0)
-    axis.set(
-        xlabel="Radius r (cm)",
-        ylabel="Moisture concentration (kg/kg)",
-    )
-    axis.grid(alpha=0.25)
-    axis.legend(ncol=2, fontsize=8)
-    fig.savefig(figure_dir / "problem3_radial_profiles.png", dpi=220)
-    plt.close(fig)
-
-    fig, axis = plt.subplots(figsize=(7.2, 4.6), constrained_layout=True)
-    for column, label in ((0, "center"), (10, "mid-radius"), (20, "surface")):
-        axis.plot(time_h, moisture[:, column], label=label)
-    axis.axhline(result.threshold, color="#B91C1C", linestyle="--", linewidth=1.0)
-    axis.set(
-        xlabel="Time (h)",
-        ylabel="Moisture concentration (kg/kg)",
-    )
-    axis.grid(alpha=0.25)
-    axis.legend()
-    fig.savefig(figure_dir / "problem3_time_histories.png", dpi=220)
-    plt.close(fig)
-
-
-def main() -> None:
-    args = build_parser().parse_args()
-    if args.fine_radial_intervals != 2 * args.coarse_radial_intervals:
-        raise ValueError("Fine radial grid must have twice as many intervals as the coarse grid")
-    history = load_chamber_history_csv(args.input)
-    horizon_s = args.horizon_hours * 3600.0
-    solver_options = {"relative_tolerance": 2.0e-9, "max_step_s": 60.0}
-
-    endpoint_results = []
-    for radial_intervals in (
-        args.coarse_radial_intervals,
-        args.fine_radial_intervals,
-    ):
-        endpoint = solve_problem3(
-            history,
-            radial_intervals,
-            horizon_s,
-            output_interval_s=3600.0,
-            **solver_options,
-        )
-        endpoint_results.append(endpoint)
-        print(
-            f"endpoint grid={radial_intervals}: "
-            f"{endpoint.drying_time_s:.6f} s",
-            flush=True,
-        )
-    extrapolated_time = richardson_extrapolate_drying_time(
-        endpoint_results[0].drying_time_s,
-        endpoint_results[1].drying_time_s,
-        order=2,
-    )
-
-    common_end_time = extrapolated_time + 60.0
-    extended_history = extend_chamber_history_to_plateau(history, common_end_time)
-    regular_times = np.arange(60.0, common_end_time + 1.0e-9, 60.0)
-    common_times = np.unique(
-        np.append(
-            regular_times,
-            [extrapolated_time - 60.0, extrapolated_time + 60.0],
-        )
-    )
-    diagnostic_times = np.unique(
-        np.concatenate([np.arange(0.0, 601.0), common_times])
-    )
-    requested_radii_cm = np.arange(0.0, 2.0 + 0.05, 0.1)
-    sampled_solutions = []
-    moisture_balance: dict[str, dict[str, float]] = {}
-    radial_monotonicity: dict[str, float] = {}
-    for radial_intervals in (
-        args.coarse_radial_intervals,
-        args.fine_radial_intervals,
-    ):
-        full_solution = solve_problem2(
-            extended_history,
-            radial_intervals,
-            diagnostic_times,
-            **solver_options,
-        )
-        moisture_balance[str(radial_intervals)] = moisture_balance_diagnostics(
-            full_solution,
-            extended_history,
-        )
-        radial_monotonicity[str(radial_intervals)] = (
-            validate_radially_nonincreasing_moisture(full_solution)
-        )
-        sampled_full_solution = sample_solution(
-            full_solution,
-            requested_radii_cm,
-        )
-        common_indices = np.searchsorted(diagnostic_times, common_times)
-        sampled_solutions.append(
-            replace(
-                sampled_full_solution,
-                time_s=sampled_full_solution.time_s[common_indices],
-                temperature_c=sampled_full_solution.temperature_c[common_indices],
-                moisture_concentration=(
-                    sampled_full_solution.moisture_concentration[common_indices]
-                ),
-            )
-        )
-        del full_solution
-        del sampled_full_solution
-        gc.collect()
-        print(f"sampled field grid={radial_intervals}", flush=True)
-    extrapolated_solution = richardson_extrapolate_solutions(
-        sampled_solutions[0],
-        sampled_solutions[1],
-        order=2,
-    )
-    maximum_outward_increase = validate_radially_nonincreasing_moisture(
-        extrapolated_solution
-    )
-    output_solution = truncate_solution_at_threshold(
-        extrapolated_solution,
-        threshold=0.15,
-        output_interval_s=60.0,
-    )
-    critical_index = output_solution.time_s.size - 2
-    critical_moisture = output_solution.moisture_concentration[critical_index]
-    maximum_index = int(np.argmax(critical_moisture))
-    result = Problem3Result(
-        solution=output_solution,
-        drying_time_s=float(output_solution.time_s[critical_index]),
-        strict_completion_time_s=float(output_solution.time_s[-1]),
-        maximum_moisture=float(critical_moisture[maximum_index]),
-        maximum_radius_m=float(output_solution.radius_m[maximum_index]),
-        plateau_temperature_c=float(extended_history.temperature_c[-1]),
-        plateau_moisture_concentration=float(
-            extended_history.moisture_concentration[-1]
-        ),
-        threshold=0.15,
-        output_interval_s=60.0,
-    )
-
-    tail_half_hour = history.time_s >= history.time_s[-1] - 1800.0
-    tail_hour = history.time_s >= history.time_s[-1] - 3600.0
-    temperature_mean = float(np.mean(history.temperature_c[tail_hour]))
-    moisture_mean = float(np.mean(history.moisture_concentration[tail_hour]))
-    temperature_std = float(np.std(history.temperature_c[tail_hour], ddof=1))
-    moisture_std = float(np.std(history.moisture_concentration[tail_hour], ddof=1))
-    scenarios = {
-        "last_hour_mean": (temperature_mean, moisture_mean),
-        "last_half_hour_mean": (
-            float(np.mean(history.temperature_c[tail_half_hour])),
-            float(np.mean(history.moisture_concentration[tail_half_hour])),
-        ),
-        "last_observation": (
-            float(history.temperature_c[-1]),
-            float(history.moisture_concentration[-1]),
-        ),
-        "cool_wet_one_standard_deviation": (
-            temperature_mean - temperature_std,
-            moisture_mean + moisture_std,
-        ),
-        "warm_dry_one_standard_deviation": (
-            temperature_mean + temperature_std,
-            max(0.0, moisture_mean - moisture_std),
-        ),
-    }
-    sensitivity: dict[str, dict[str, float]] = {}
-    for name, (plateau_temperature, plateau_moisture) in scenarios.items():
-        scenario = solve_problem3(
-            history,
-            args.sensitivity_radial_intervals,
-            horizon_s,
-            output_interval_s=3600.0,
-            plateau_temperature_c=plateau_temperature,
-            plateau_moisture_concentration=plateau_moisture,
-            **solver_options,
-        )
-        sensitivity[name] = {
-            "plateau_temperature_c": plateau_temperature,
-            "plateau_moisture_concentration": plateau_moisture,
-            "drying_time_s": scenario.drying_time_s,
-            "drying_time_h": scenario.drying_time_s / 3600.0,
-        }
-        print(
-            f"sensitivity {name}: {scenario.drying_time_s / 3600.0:.6f} h",
-            flush=True,
-        )
-
-    payload = problem3_payload(result)
-    payload["grid_endpoint_s"] = {
-        str(args.coarse_radial_intervals): endpoint_results[0].drying_time_s,
-        str(args.fine_radial_intervals): endpoint_results[1].drying_time_s,
-        "richardson": result.drying_time_s,
-    }
-    payload["moisture_balance"] = moisture_balance
-    payload["radial_monotonicity"] = {
-        "center_is_wettest_at_all_output_times": True,
-        "maximum_outward_increase_by_grid": radial_monotonicity,
-        "extrapolated_sampled_maximum_outward_increase": maximum_outward_increase,
-    }
-    payload["sensitivity"] = sensitivity
-    args.output.parent.mkdir(parents=True, exist_ok=True)
-    args.output.write_text(
-        json.dumps(payload, ensure_ascii=False, separators=(",", ":")),
-        encoding="utf-8",
-    )
-    save_figures(result, args.figure_dir)
-
-
-if __name__ == "__main__":
-    main()
-
-```
-
-### scripts/run_problem4.py
-
-```python
-"""Solve Problem 4, perform grid checks, and create workbook-ready payloads."""
-
-from __future__ import annotations
-
-import argparse
-import hashlib
-import json
-from pathlib import Path
-
-import matplotlib
-import numpy as np
-
-matplotlib.use("Agg")
-import matplotlib.pyplot as plt
-
-from drying_model.problem1 import load_chamber_history_csv
-from drying_model.problem3 import extend_chamber_history_to_plateau
-from drying_model.problem4 import (
-    RadiusHistory,
-    load_radius_history_csv,
-    moisture_balance_diagnostics,
-    sample_moving_solution,
-    sample_surface,
-    solve_problem4,
-    validate_radially_nonincreasing_moisture,
-)
-
-
-def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--chamber", type=Path, default=Path("data/raw/attachment1.csv"))
-    parser.add_argument("--radius", type=Path, default=Path("data/raw/attachment2.csv"))
-    parser.add_argument("--output", type=Path, default=Path("tmp/problem4_result.json"))
-    parser.add_argument("--figure-dir", type=Path, default=Path("reports/figures"))
-    parser.add_argument("--diagnostics-output", type=Path, default=Path("reports/data/problem4_production_diagnostics.json"))
-    parser.add_argument("--coarse-radial-intervals", type=int, default=640)
-    parser.add_argument("--fine-radial-intervals", type=int, default=1280)
-    parser.add_argument("--horizon-hours", type=float, default=72.0)
-    return parser
-
-
-def richardson(coarse: np.ndarray, fine: np.ndarray, order: int = 2) -> np.ndarray:
-    """Second-order Richardson extrapolation for equal output grids."""
-    if coarse.shape != fine.shape:
-        raise ValueError("Richardson inputs must have equal shapes")
-    return fine + (fine - coarse) / (2.0**order - 1.0)
-
-
-def interpolate_rows(values: np.ndarray, times: np.ndarray, query: float) -> np.ndarray:
-    """Linearly interpolate each spatial column at one time."""
-    if query < times[0] or query > times[-1]:
-        raise ValueError("Interpolation query lies outside the solution")
-    index = int(np.searchsorted(times, query))
-    if index == 0:
-        return values[0].copy()
-    if index == times.size:
-        return values[-1].copy()
-    if np.isclose(times[index], query, atol=1.0e-10, rtol=0.0):
-        return values[index].copy()
-    fraction = (query - times[index - 1]) / (times[index] - times[index - 1])
-    return values[index - 1] + fraction * (values[index] - values[index - 1])
-
-
-def write_diagnostics(payload: dict, path: Path, chamber_path: Path, radius_path: Path) -> None:
-    """Retain compact production evidence alongside the generated workbook."""
-    omitted = {"time_s", "radius_cm", "moisture_concentration", "surface_moisture_concentration"}
-    evidence = {key: value for key, value in payload.items() if key not in omitted}
-    evidence["input_sha256"] = {p.as_posix(): hashlib.sha256(p.read_bytes()).hexdigest() for p in (chamber_path, radius_path)}
-    evidence["data_rows"] = len(payload["time_s"])
-    evidence["table6_columns"] = ["time_h", "center", "0.5_cm", "1.0_cm", "surface"]
-    evidence["table6"] = []
-    for hour in range(6, 49, 6):
-        if hour * 3600 not in payload["time_s"]:
-            continue
-        index = payload["time_s"].index(hour * 3600)
-        row = payload["moisture_concentration"][index]
-        evidence["table6"].append([hour, row[0], row[5], row[10], payload["surface_moisture_concentration"][index]])
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(evidence, indent=2, ensure_ascii=False, allow_nan=False) + "\n", encoding="utf-8")
-
-
-def save_figures(
-    times_s: np.ndarray,
-    radius_cm: np.ndarray,
-    moisture: np.ndarray,
-    surface: np.ndarray,
-    radius_history,
-    drying_time_s: float,
-    figure_dir: Path,
-) -> None:
-    figure_dir.mkdir(parents=True, exist_ok=True)
-    time_h = times_s / 3600.0
-    critical_index = int(np.argmin(np.abs(times_s - drying_time_s)))
-    selected_hours = [6.0, 12.0, 24.0, 36.0, 48.0]
-    selected = [int(np.argmin(np.abs(time_h - value))) for value in selected_hours if value <= time_h[-1]]
-    selected.extend([critical_index, len(times_s) - 1])
-    selected = list(dict.fromkeys(selected))
-    fig, axis = plt.subplots(figsize=(7.4, 4.7), constrained_layout=True)
-    for index in selected:
-        label = f"{time_h[index]:g} h"
-        if np.isclose(times_s[index], drying_time_s, atol=1.0e-6, rtol=0.0):
-            label = "critical threshold"
-        elif index == len(times_s) - 1:
-            label = "first strict regular time"
-        axis.plot(radius_cm, moisture[index], marker="", label=label)
-    axis.axhline(0.15, color="#B91C1C", linestyle="--", linewidth=1.0)
-    axis.set(xlabel="Fixed physical radius (cm)", ylabel="Moisture concentration (kg/kg)")
-    axis.grid(alpha=0.25)
-    axis.legend(ncol=2, fontsize=8)
-    fig.savefig(figure_dir / "problem4_radial_profiles.png", dpi=220)
-    plt.close(fig)
-
-    fig, axis = plt.subplots(figsize=(7.4, 4.7), constrained_layout=True)
-    center = moisture[:, 0]
-    axis.plot(time_h, center, label="center")
-    axis.plot(time_h, surface, label="actual surface")
-    axis.axhline(0.15, color="#B91C1C", linestyle="--", linewidth=1.0)
-    axis.set(xlabel="Time (h)", ylabel="Moisture concentration (kg/kg)")
-    axis.grid(alpha=0.25)
-    axis.legend()
-    fig.savefig(figure_dir / "problem4_time_histories.png", dpi=220)
-    plt.close(fig)
-
-    fig, axis = plt.subplots(figsize=(7.4, 4.7), constrained_layout=True)
-    axis.plot(radius_history.time_s / 3600.0, radius_history.radius_m * 100.0, color="#1D4ED8")
-    axis.set(xlabel="Time (h)", ylabel="Measured radius (cm)")
-    axis.grid(alpha=0.25)
-    fig.savefig(figure_dir / "problem4_radius_history.png", dpi=220)
-    plt.close(fig)
-
-
-def main() -> None:
-    args = build_parser().parse_args()
-    chamber = load_chamber_history_csv(args.chamber)
-    radius_history = load_radius_history_csv(args.radius)
-    if args.fine_radial_intervals != 2 * args.coarse_radial_intervals:
-        raise ValueError("Second-order Richardson requires fine intervals = 2 * coarse intervals")
-    horizon_s = float(args.horizon_hours * 3600.0)
-    extended_chamber = extend_chamber_history_to_plateau(chamber, horizon_s)
-    threshold = 0.15
-    solver_options = {"relative_tolerance": 2.0e-8, "max_step_s": 120.0}
-    endpoint_times: dict[str, float] = {}
-    for grid in (args.coarse_radial_intervals, args.fine_radial_intervals):
-        probe_times = np.unique(np.append(np.arange(3600.0, horizon_s, 3600.0), horizon_s))
-        endpoint = solve_problem4(
-            extended_chamber,
-            radius_history,
-            grid,
-            probe_times,
-            maximum_moisture_threshold=threshold,
-            **solver_options,
-        )
-        endpoint_times[str(grid)] = float(endpoint.time_s[-1])
-        print(f"endpoint grid={grid}: {endpoint.time_s[-1]:.6f} s", flush=True)
-    drying_time_s = float(
-        endpoint_times[str(args.fine_radial_intervals)]
-        + (endpoint_times[str(args.fine_radial_intervals)] - endpoint_times[str(args.coarse_radial_intervals)]) / 3.0
-    )
-    timing_sensitivity: dict[str, float] = {}
-    sensitivity_grid = max(160, args.coarse_radial_intervals // 2)
-    for name, shift_s in (("half_interval_early", -900.0), ("baseline", 0.0), ("half_interval_late", 900.0)):
-        shifted_times = radius_history.time_s.copy()
-        shifted_times[1:-1] += shift_s
-        shifted_radius = RadiusHistory(shifted_times, radius_history.radius_m.copy())
-        sensitivity_solution = solve_problem4(
-            extended_chamber,
-            shifted_radius,
-            sensitivity_grid,
-            probe_times,
-            maximum_moisture_threshold=threshold,
-            **solver_options,
-        )
-        timing_sensitivity[name] = float(sensitivity_solution.time_s[-1])
-    if not (0.0 < drying_time_s < horizon_s):
-        raise RuntimeError("Extrapolated drying endpoint is outside the supplied chamber horizon")
-    strict_time_s = float(np.floor(drying_time_s / 60.0 + 1.0) * 60.0)
-    if strict_time_s <= drying_time_s + 1.0e-8:
-        strict_time_s += 60.0
-
-    regular_times = np.arange(60.0, strict_time_s + 1.0e-9, 60.0)
-    bracket = np.array([drying_time_s - 60.0, drying_time_s + 60.0])
-    integration_times = np.unique(np.concatenate([regular_times, bracket]))
-    fixed_radius_cm = np.round(np.arange(0.0, 2.0 + 0.0001, 0.1), 10)
-    sampled_by_grid: list[np.ndarray] = []
-    surface_by_grid: list[np.ndarray] = []
-    balance_by_grid: dict[str, dict[str, float]] = {}
-    monotonicity_by_grid: dict[str, float] = {}
-    diagnostic_times = np.unique(np.concatenate([np.arange(0.0, 601.0), integration_times]))
-    for grid in (args.coarse_radial_intervals, args.fine_radial_intervals):
-        full = solve_problem4(
-            extended_chamber,
-            radius_history,
-            grid,
-            diagnostic_times,
-            **solver_options,
-        )
-        balance_by_grid[str(grid)] = moisture_balance_diagnostics(
-            full, extended_chamber, radius_history
-        )
-        monotonicity_by_grid[str(grid)] = validate_radially_nonincreasing_moisture(full)
-        sampled_full = sample_moving_solution(full, radius_history, fixed_radius_cm)
-        surface_full = sample_surface(full)
-        retained = np.searchsorted(diagnostic_times, integration_times)
-        sampled_by_grid.append(sampled_full[retained])
-        surface_by_grid.append(surface_full[retained])
-        del full
-        print(f"full output grid={grid} complete", flush=True)
-
-    extrapolated = richardson(sampled_by_grid[0], sampled_by_grid[1])
-    extrapolated_surface = richardson(surface_by_grid[0], surface_by_grid[1])
-    critical_fixed = interpolate_rows(extrapolated, integration_times, drying_time_s)
-    critical_surface = float(interpolate_rows(extrapolated_surface[:, None], integration_times, drying_time_s)[0])
-    strict_index = int(np.where(np.isclose(integration_times, strict_time_s, atol=1.0e-9, rtol=0.0))[0][0])
-    strict_fixed = extrapolated[strict_index]
-    strict_surface = float(extrapolated_surface[strict_index])
-    regular_before = regular_times[regular_times < drying_time_s - 1.0e-8]
-    output_times = np.concatenate([regular_before, [drying_time_s, strict_time_s]])
-    output_fixed = np.vstack([
-        extrapolated[np.searchsorted(integration_times, regular_before)],
-        critical_fixed,
-        strict_fixed,
-    ])
-    output_surface = np.concatenate([
-        extrapolated_surface[np.searchsorted(integration_times, regular_before)],
-        [critical_surface, strict_surface],
-    ])
-
-    endpoint_moisture = float(np.nanmax(critical_fixed))
-    strict_maximum = float(np.nanmax(strict_fixed))
-    if not np.isclose(endpoint_moisture, threshold, atol=1.0e-7, rtol=0.0):
-        raise RuntimeError(f"Critical moisture does not equal threshold: {endpoint_moisture}")
-    if not strict_maximum < threshold:
-        raise RuntimeError(f"Strict regular row is not below threshold: {strict_maximum}")
-    rounded_fixed = np.round(output_fixed, 4)
-    workbook_matrix = [
-        [None if not np.isfinite(value) else float(value) for value in row]
-        for row in rounded_fixed
-    ]
-    payload = {
-        "time_s": [int(round(t)) if np.isclose(t, round(t), rtol=0.0, atol=1.0e-8) else round(float(t), 6) for t in output_times],
-        "radius_cm": fixed_radius_cm.tolist(),
-        "moisture_concentration": workbook_matrix,
-        "surface_moisture_concentration": np.round(output_surface, 4).tolist(),
-        "drying_time_s": round(drying_time_s, 6),
-        "drying_time_h": round(drying_time_s / 3600.0, 10),
-        "strict_completion_time_s": int(round(strict_time_s)),
-        "strict_completion_time_h": round(strict_time_s / 3600.0, 10),
-        "threshold": threshold,
-        "critical_maximum_moisture_unrounded": endpoint_moisture,
-        "strict_completion_maximum_moisture_unrounded": strict_maximum,
-        "radius_at_drying_time_cm": float(np.interp(drying_time_s, radius_history.time_s, radius_history.radius_m) * 100.0),
-        "grid_endpoint_s": endpoint_times | {"richardson": drying_time_s},
-        "outside_radius_cells_are_blank": True,
-        "moisture_balance": balance_by_grid,
-        "radial_monotonicity": monotonicity_by_grid,
-        "radius_timing_sensitivity_s": timing_sensitivity,
-    }
-    args.output.parent.mkdir(parents=True, exist_ok=True)
-    args.output.write_text(
-        json.dumps(payload, ensure_ascii=False, separators=(",", ":"), allow_nan=False),
-        encoding="utf-8",
-    )
-    write_diagnostics(payload, args.diagnostics_output, args.chamber, args.radius)
-    save_figures(output_times, fixed_radius_cm, output_fixed, output_surface, radius_history, drying_time_s, args.figure_dir)
-    print(f"drying endpoint: {drying_time_s / 3600.0:.6f} h; strict row: {strict_time_s:.0f} s", flush=True)
-
-
-if __name__ == "__main__":
-    main()
-
-```
-
-### scripts/verify_problem4.py
-
-```python
-"""Reproduce the Q4 review experiments; no external review values are inputs."""
-
-from __future__ import annotations
-
-import argparse
-from dataclasses import replace
-import hashlib
-import json
-from pathlib import Path
-import platform
-
-import numpy as np
-import scipy
-
-from drying_model.problem1 import Problem1Parameters, load_chamber_history_csv
-from drying_model.problem3 import extend_chamber_history_to_plateau
-from drying_model.problem4 import RadiusHistory, density_shrinkage_compatibility, load_radius_history_csv, solve_problem4
-
-
-def main() -> None:
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--output", type=Path, default=Path("reports/data/problem4_review_experiments.json"))
-    parser.add_argument("--sensitivity-grid", type=int, default=320)
-    args = parser.parse_args()
-    chamber_path = Path("data/raw/attachment1.csv")
-    radius_path = Path("data/raw/attachment2.csv")
-    chamber = extend_chamber_history_to_plateau(load_chamber_history_csv(chamber_path), 144 * 3600.0)
-    radius = load_radius_history_csv(radius_path)
-    parameters = Problem1Parameters()
-    results = {
-        "schema_version": 1,
-        "runtime": {"python": platform.python_version(), "numpy": np.__version__, "scipy": scipy.__version__},
-        "input_sha256": {str(p): hashlib.sha256(p.read_bytes()).hexdigest() for p in (chamber_path, radius_path)},
-        "threshold": 0.15,
-        "default_solver": {"relative_tolerance": 2e-8, "max_step_s": 120.0},
-        "sensitivity_radial_intervals": args.sensitivity_grid,
-    }
-
-    def save() -> None:
-        args.output.parent.mkdir(parents=True, exist_ok=True)
-        args.output.write_text(json.dumps(results, indent=2, ensure_ascii=False, allow_nan=False) + "\n", encoding="utf-8")
-
-    def endpoint(grid, radius_input=radius, params=parameters, rtol=2e-8, step=120.0):
-        solution = solve_problem4(chamber, radius_input, grid, [0.0, 144 * 3600.0], parameters=params,
-                                  relative_tolerance=rtol, max_step_s=step, maximum_moisture_threshold=0.15)
-        return solution
-
-    fixed = RadiusHistory(radius.time_s, np.full_like(radius.radius_m, parameters.radius_m))
-    fixed_endpoints = {}
-    results["fixed_radius_endpoint_s"] = fixed_endpoints
-    for grid in (160, 320, 640, 1280):
-        fixed_endpoints[str(grid)] = float(endpoint(grid, fixed).time_s[-1])
-        print(f"fixed radius N={grid}: {fixed_endpoints[str(grid)] / 3600:.9f} h", flush=True)
-        save()
-    fixed_endpoints["richardson_640_1280"] = fixed_endpoints["1280"] + (fixed_endpoints["1280"] - fixed_endpoints["640"]) / 3
-    fixed_endpoints["observed_order_320_640_1280"] = float(np.log2((fixed_endpoints["320"] - fixed_endpoints["640"]) / (fixed_endpoints["640"] - fixed_endpoints["1280"])))
-
-    time_checks = []
-    results["time_integration"] = time_checks
-    for rtol, step in ((2e-8, 120.0), (2e-9, 60.0), (5e-10, 30.0)):
-        solution = endpoint(args.sensitivity_grid, rtol=rtol, step=step)
-        time_checks.append({"relative_tolerance": rtol, "max_step_s": step, "endpoint_s": float(solution.time_s[-1])})
-        print(f"time convergence: {time_checks[-1]}", flush=True)
-        save()
-    baseline = time_checks[0]["endpoint_s"]
-    results["time_integration_endpoint_spread_s"] = max(row["endpoint_s"] for row in time_checks) - min(row["endpoint_s"] for row in time_checks)
-
-    pchip = RadiusHistory(radius.time_s, radius.radius_m, interpolation="pchip")
-    pchip_time = float(endpoint(args.sensitivity_grid, pchip).time_s[-1])
-    results["radius_interpolation"] = {"linear_endpoint_s": baseline, "pchip_endpoint_s": pchip_time,
-                                       "pchip_minus_linear_s": pchip_time - baseline, "observation_times_unchanged": True}
-    save()
-    print(f"PCHIP minus linear: {pchip_time - baseline:.6f} s", flush=True)
-
-    for name, field in (("mass_transfer", "mass_transfer_coefficient_m_s"), ("heat_transfer", "heat_transfer_coefficient_w_m2_k")):
-        rows = []
-        results[name + "_sensitivity"] = rows
-        for multiplier in (0.8, 1.0, 1.2):
-            value = getattr(parameters, field) * multiplier
-            time = baseline if multiplier == 1.0 else float(endpoint(args.sensitivity_grid, params=replace(parameters, **{field: value})).time_s[-1])
-            rows.append({"multiplier": multiplier, "coefficient": value, "endpoint_s": time, "change_from_baseline_s": time - baseline})
-            print(f"{name} x{multiplier}: {time / 3600:.9f} h", flush=True)
-            save()
-
-    density_checks = {}
-    results["density_shrinkage_compatibility"] = density_checks
-    for grid in (640, 1280):
-        event_solution = endpoint(grid)
-        times = np.append(np.arange(0.0, 49 * 3600.0, 6 * 3600.0), event_solution.time_s[-1])
-        full = solve_problem4(chamber, radius, grid, times, relative_tolerance=2e-8, max_step_s=120.0)
-        density_checks[str(grid)] = density_shrinkage_compatibility(full, radius)
-        density_checks[str(grid)]["center_moisture_at_48h"] = float(full.moisture_concentration[-2, 0])
-        print(f"density compatibility N={grid}: final mass ratio {density_checks[str(grid)]['final_mass_ratio']:.9f}", flush=True)
-        save()
-    save()
-
-
-if __name__ == "__main__":
-    main()
-
-```
-
-### scripts/verify_problem4_independent.py
-
-```python
-"""Reproduce a separately implemented cell-centred discretization of Problem 4."""
-
-from __future__ import annotations
-
-import argparse
-import json
-from pathlib import Path
-import platform
-import time
-
-import numpy as np
-import scipy
-
-from drying_model.problem1 import load_chamber_history_csv
-from drying_model.problem3 import extend_chamber_history_to_plateau
-from drying_model.problem4 import load_radius_history_csv
-from drying_model.problem4_independent import (
-    sample_independent_moisture,
-    solve_independent_problem4,
-)
-
-
-def main() -> None:
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--cells", nargs="+", type=int, default=[100, 200, 400, 800, 1600, 3200])
-    parser.add_argument("--output", type=Path, default=Path("reports/problem4_independent_validation.json"))
-    args = parser.parse_args()
-    raw_chamber = load_chamber_history_csv("data/raw/attachment1.csv")
-    chamber = extend_chamber_history_to_plateau(raw_chamber, 72 * 3600.0)
-    radius = load_radius_history_csv("data/raw/attachment2.csv")
-    table_hours = np.arange(6.0, 48.1, 6.0)
-    requested_times = np.concatenate([[0.0], table_hours * 3600.0, [72 * 3600.0]])
-    reference_table = np.asarray([
-        [1.7196, 1.5377, 1.0226, 0.4207],
-        [0.7377, 0.6546, 0.4083, 0.1669],
-        [0.4088, 0.3687, 0.2397, 0.0892],
-        [0.2851, 0.2611, 0.1790, 0.0673],
-        [0.2263, 0.2094, 0.1493, 0.0595],
-        [0.1928, 0.1797, 0.1317, 0.0560],
-        [0.1712, 0.1604, 0.1200, 0.0541],
-        [0.1561, 0.1468, 0.1116, 0.0530],
-    ])
-    grids = {}
-    for cells in args.cells:
-        started = time.perf_counter()
-        solution = solve_independent_problem4(chamber, radius, cells, requested_times)
-        sampled = sample_independent_moisture(solution, radius, [0.0, 0.5, 1.0])
-        table = np.column_stack([sampled[1:9], solution.surface_moisture[1:9]])
-        full_profiles = np.column_stack([
-            solution.centre_moisture, solution.moisture, solution.surface_moisture,
-        ])
-        grids[str(cells)] = {
-            "cells": cells,
-            "drying_time_s": solution.drying_time_s,
-            "drying_time_h": solution.drying_time_s / 3600.0,
-            "endpoint_cell_maximum": solution.endpoint_cell_maximum,
-            "endpoint_reconstructed_maximum": solution.endpoint_reconstructed_maximum,
-            "endpoint_centre_moisture": float(solution.centre_moisture[-1]),
-            "endpoint_surface_moisture": float(solution.surface_moisture[-1]),
-            "table_unrounded": table.tolist(),
-            "table_rounded_4dp": np.round(table, 4).tolist(),
-            "maximum_outward_increase_at_stored_times": float(np.max(np.diff(full_profiles, axis=1))),
-            "elapsed_s": time.perf_counter() - started,
-        }
-        print(f"cells={cells}: endpoint {solution.drying_time_s:.9f} s = "
-              f"{solution.drying_time_s / 3600:.10f} h", flush=True)
-
-    output = {
-        "purpose": "Numerical cross-check of the same assumed continuum model; not independent experimental validation.",
-        "method": {
-            "geometry": "N complete annular cells; point unknowns at xi=(j+1/2)/N",
-            "internal_faces": "Arithmetic mean transport coefficient with centred gradient",
-            "outer_boundary": "Last-centre half-cell resistance R/(2*N*a_last) plus convection resistance 1/h",
-            "centre_reconstruction": "(9*C[0]-C[1])/8 from an even quadratic",
-            "event": "Maximum of reconstructed centre, all cell-centre values and reconstructed surface equals 0.15",
-            "time_integrator": "SciPy BDF for T and C directly; rtol=2e-9, atol(T)=1e-9, atol(C)=1e-11, max_step=60s",
-            "material_laws": "Independent transcription of Appendix 4 with Kelvin in diffusivity",
-            "shared_inputs": "Same Attachment 1 and 2 CSV inputs, linear radius and chamber interpolation, final-hour chamber means with 60s transition",
-            "limitation": "Arithmetic-face and frozen half-cell coefficient errors, and interior linear sampling, require convergence checks. The reconstruction is not a rigorous bound on continuous subcell maxima.",
-        },
-        "runtime": {"python": platform.python_version(), "numpy": np.__version__, "scipy": scipy.__version__},
-        "chamber_plateau": {"temperature_c": float(chamber.temperature_c[-1]), "moisture": float(chamber.moisture_concentration[-1])},
-        "table_time_h": table_hours.tolist(),
-        "table_columns": ["0 cm", "0.5 cm", "1.0 cm", "actual surface"],
-        "baseline_report": {"drying_time_h": 51.091955, "table_6_rounded_4dp": reference_table.tolist()},
-        "unverified_docx_reference_time_h": 51.091999,
-        "grids": grids,
-    }
-    extrapolations = {}
-    for coarse in args.cells:
-        fine = 2 * coarse
-        if str(fine) not in grids:
-            continue
-        coarse_value, fine_value = grids[str(coarse)], grids[str(fine)]
-        extrap_time = fine_value["drying_time_s"] + (
-            fine_value["drying_time_s"] - coarse_value["drying_time_s"]
-        ) / 3.0
-        extrap_table = np.asarray(fine_value["table_unrounded"]) + (
-            np.asarray(fine_value["table_unrounded"]) - np.asarray(coarse_value["table_unrounded"])
-        ) / 3.0
-        rounded = np.round(extrap_table, 4)
-        mismatches = np.argwhere(rounded != reference_table)
-        extrapolations[f"{coarse}/{fine}"] = {
-            "assumed_order": 2,
-            "drying_time_s": extrap_time,
-            "drying_time_h": extrap_time / 3600.0,
-            "delta_from_baseline_s": extrap_time - 51.091955 * 3600.0,
-            "delta_from_unverified_docx_reference_s": extrap_time - 51.091999 * 3600.0,
-            "table_unrounded": extrap_table.tolist(),
-            "table_rounded_4dp": rounded.tolist(),
-            "maximum_absolute_difference_from_rounded_table_6": float(np.max(np.abs(extrap_table - reference_table))),
-            "rounded_table_mismatch_count": int(len(mismatches)),
-            "rounded_table_mismatches": [
-                {"time_h": float(table_hours[row]), "column": output["table_columns"][col],
-                 "baseline": float(reference_table[row, col]), "independent": float(rounded[row, col])}
-                for row, col in mismatches
-            ],
-        }
-    output["second_order_richardson"] = extrapolations
-    orders = {}
-    for coarse in args.cells:
-        if str(2 * coarse) in grids and str(4 * coarse) in grids:
-            a, b, c = [grids[str(k)]["drying_time_s"] for k in (coarse, 2 * coarse, 4 * coarse)]
-            orders[f"{coarse}/{2 * coarse}/{4 * coarse}"] = float(np.log2(abs((a - b) / (b - c))))
-    output["observed_endpoint_orders"] = orders
-    output["interpretation"] = (
-        "The endpoint differences decrease with refinement, but observed orders remain below two. "
-        "The second-order Richardson values are diagnostic extrapolations, not certified error bounds. "
-        "Agreement with a production-solver extrapolation does not validate the shared physical assumptions. "
-        "Four-decimal table agreement is assessed against the rounded published table; its raw differences "
-        "therefore include reference rounding and are not discretization error estimates."
-    )
-    args.output.parent.mkdir(parents=True, exist_ok=True)
-    args.output.write_text(json.dumps(output, indent=2, ensure_ascii=False, allow_nan=False) + "\n", encoding="utf-8")
-    print(json.dumps({"extrapolated_endpoints_h": {key: row["drying_time_h"] for key, row in extrapolations.items()},
-                      "observed_orders": orders}, ensure_ascii=False), flush=True)
-
-
-if __name__ == "__main__":
-    main()
-
-```
-
-### src/drying_model/__init__.py
-
-```python
-"""Numerical models for Problem A."""
-
-```
-
-### src/drying_model/problem1.py
+### problem1.py
 
 ```python
 """Problem 1 material laws and chamber boundary interpolation."""
@@ -2018,7 +875,7 @@ def result_payload(solution: Problem1Solution) -> dict[str, list]:
 
 ```
 
-### src/drying_model/problem2.py
+### problem2.py
 
 ```python
 """Coupled variable-property model for Problem 2."""
@@ -2032,7 +889,7 @@ from numpy.typing import ArrayLike, NDArray
 from scipy.integrate import solve_ivp
 from scipy.sparse import bmat, diags
 
-from drying_model.problem1 import (
+from problem1 import (
     ChamberHistory,
     Problem1Parameters,
     Problem1Solution,
@@ -2410,7 +1267,7 @@ def solve_problem2_sampled_in_chunks(
 
 ```
 
-### src/drying_model/problem3.py
+### problem3.py
 
 ```python
 """Fixed-radius drying endpoint model for Problem 3."""
@@ -2422,13 +1279,13 @@ from dataclasses import dataclass
 import numpy as np
 from scipy.integrate import cumulative_simpson
 
-from drying_model.problem1 import (
+from problem1 import (
     ChamberHistory,
     Problem1Parameters,
     Problem1Solution,
     nodal_control_volumes,
 )
-from drying_model.problem2 import solve_problem2
+from problem2 import solve_problem2
 
 
 @dataclass(frozen=True)
@@ -2776,7 +1633,7 @@ def problem3_payload(result: Problem3Result) -> dict[str, object]:
 
 ```
 
-### src/drying_model/problem4.py
+### problem4.py
 
 ```python
 """Moving-radius drying model for Problem 4.
@@ -2801,7 +1658,7 @@ from scipy.integrate import cumulative_simpson, solve_ivp
 from scipy.interpolate import PchipInterpolator
 from scipy.sparse import bmat, diags
 
-from drying_model.problem1 import (
+from problem1 import (
     ChamberHistory,
     Problem1Parameters,
     interpolate_history,
@@ -3139,7 +1996,7 @@ def density_shrinkage_compatibility(
 
 ```
 
-### src/drying_model/problem4_independent.py
+### problem4_independent.py
 
 ```python
 """Independent cell-centred finite-volume check of the Problem 4 model.
@@ -3160,8 +2017,8 @@ from numpy.typing import ArrayLike, NDArray
 from scipy.integrate import solve_ivp
 from scipy.sparse import bmat, diags
 
-from drying_model.problem1 import ChamberHistory, Problem1Parameters
-from drying_model.problem4 import RadiusHistory
+from problem1 import ChamberHistory, Problem1Parameters
+from problem4 import RadiusHistory
 
 
 @dataclass(frozen=True)
@@ -3394,1869 +2251,7 @@ def sample_independent_moisture(
 
 ```
 
-### tests/test_final_review_regressions.py
-
-```python
-"""Regressions found while reviewing the four-question delivery."""
-
-import importlib.util
-from pathlib import Path
-import sys
-
-import numpy as np
-import pytest
-
-from drying_model.problem1 import ChamberHistory, Problem1Solution, result_payload
-from drying_model.problem3 import Problem3Result, problem3_payload, truncate_solution_at_threshold
-
-
-def test_fractional_second_is_not_silently_rounded_at_large_times():
-    solution = Problem1Solution(np.array([10800.01]), np.array([0.0, 0.02]),
-                                np.full((1, 2), 50.0), np.full((1, 2), 0.2))
-    with pytest.raises(ValueError, match="whole seconds"):
-        result_payload(solution)
-
-
-@pytest.mark.parametrize("column", [0, 1, 2])
-def test_history_rejects_nonfinite_observation_columns(column):
-    columns = [np.array([0.0, 60.0]), np.array([28.0, 30.0]), np.array([0.02, 0.03])]
-    columns[column][1] = np.nan
-    with pytest.raises(ValueError, match="finite"):
-        ChamberHistory(*columns)
-
-
-def test_threshold_interpolation_when_wettest_node_changes():
-    solution = Problem1Solution(
-        np.array([60.0, 120.0, 180.0]), np.array([0.0, 0.02]), np.full((3, 2), 50.0),
-        np.array([[0.20, 0.19], [0.14, 0.149], [0.13, 0.14]]),
-    )
-    actual = truncate_solution_at_threshold(solution, threshold=0.15, output_interval_s=60.0)
-    expected = 60.0 + 60.0 * (0.19 - 0.15) / (0.19 - 0.149)
-    assert actual.time_s[-2] == pytest.approx(expected, abs=1e-10)
-    assert np.max(actual.moisture_concentration[-2]) == pytest.approx(0.15, abs=1e-14)
-    assert actual.time_s[-1] == 120.0
-
-
-def test_critical_moisture_validation_uses_absolute_tolerance_only():
-    solution = Problem1Solution(
-        np.array([60.0, 90.0, 120.0]), np.array([0.0, 0.02]), np.full((3, 2), 50.0),
-        np.array([[0.16, 0.10], [0.150001, 0.09], [0.14999, 0.08]]),
-    )
-    result = Problem3Result(solution, 90.0, 120.0, 0.150001, 0.0, 50.0, 0.05, 0.15, 60.0)
-    with pytest.raises(ValueError, match="unrounded threshold"):
-        problem3_payload(result)
-
-
-@pytest.mark.parametrize("question", [1, 3])
-def test_runner_rejects_invalid_richardson_grid_ratio(question, monkeypatch):
-    path = Path(__file__).resolve().parents[1] / "scripts" / f"run_problem{question}.py"
-    spec = importlib.util.spec_from_file_location(f"run_problem{question}", path)
-    module = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(module)
-    monkeypatch.setattr(sys, "argv", [str(path), "--coarse-radial-intervals", "8", "--fine-radial-intervals", "24"])
-    with pytest.raises(ValueError, match="twice"):
-        module.main()
-
-```
-
-### tests/test_problem1.py
-
-```python
-import math
-from pathlib import Path
-
-import numpy as np
-
-from drying_model.problem1 import (
-    ChamberHistory,
-    Problem1Solution,
-    diffusivity_q1,
-    richardson_extrapolate_solutions,
-    nodal_control_volumes,
-    radial_flux_divergence,
-    interpolate_history,
-    load_chamber_history_csv,
-    result_payload,
-    sample_solution,
-    solve_problem1,
-)
-
-
-def test_q1_diffusivity_uses_entire_minus_089_over_c_exponent():
-    concentration = np.array([2.55, 1.0, 0.5])
-
-    actual = diffusivity_q1(concentration)
-
-    expected = 7.0e-9 * np.exp(-0.89 / concentration)
-    np.testing.assert_allclose(actual, expected, rtol=1e-14, atol=0.0)
-
-
-def test_chamber_history_is_linearly_interpolated_in_seconds():
-    time = np.array([0.0, 60.0, 120.0])
-    values = np.array([28.0, 30.0, 29.0])
-
-    assert math.isclose(interpolate_history(30.0, time, values), 29.0)
-    assert math.isclose(interpolate_history(90.0, time, values), 29.5)
-
-
-def test_radial_flux_divergence_preserves_uniform_equilibrium():
-    state = np.full(9, 2.55)
-
-    rhs = radial_flux_divergence(
-        state,
-        coefficient=np.full_like(state, 4.0e-9),
-        radius_m=0.02,
-        exchange_coefficient=8.0e-7,
-        ambient_value=2.55,
-    )
-
-    np.testing.assert_allclose(rhs, 0.0, atol=1e-18)
-
-
-def test_closed_radial_domain_conserves_volume_weighted_state():
-    state = np.array([2.6, 2.5, 2.4, 2.2, 2.0], dtype=float)
-    radius_m = 0.02
-
-    rhs = radial_flux_divergence(
-        state,
-        coefficient=np.full_like(state, 5.0e-9),
-        radius_m=radius_m,
-        exchange_coefficient=0.0,
-        ambient_value=0.0,
-    )
-    volumes = nodal_control_volumes(state.size, radius_m)
-
-    assert abs(float(np.dot(rhs, volumes))) < 1e-18
-
-
-def test_surface_exchange_removes_exact_integrated_amount():
-    state = np.full(5, 2.55)
-    radius_m = 0.02
-    transfer = 8.0e-7
-    ambient = 0.02
-
-    rhs = radial_flux_divergence(
-        state,
-        coefficient=np.full_like(state, 5.0e-9),
-        radius_m=radius_m,
-        exchange_coefficient=transfer,
-        ambient_value=ambient,
-    )
-    volumes = nodal_control_volumes(state.size, radius_m)
-    expected_per_length = -2.0 * math.pi * radius_m * transfer * (2.55 - ambient)
-
-    assert math.isclose(float(np.dot(rhs, volumes)), expected_per_length, rel_tol=1e-14)
-
-
-def test_solver_preserves_uniform_state_at_matching_ambient_conditions():
-    history = ChamberHistory(
-        time_s=np.array([0.0, 60.0]),
-        temperature_c=np.array([28.0, 28.0]),
-        moisture_concentration=np.array([2.55, 2.55]),
-    )
-
-    solution = solve_problem1(
-        history,
-        radial_intervals=8,
-        output_times_s=np.array([0.0, 30.0, 60.0]),
-        max_step_s=5.0,
-    )
-
-    np.testing.assert_allclose(solution.temperature_c, 28.0, atol=1e-11)
-    np.testing.assert_allclose(solution.moisture_concentration, 2.55, atol=1e-11)
-
-
-def test_solver_creates_expected_surface_to_center_gradients():
-    history = ChamberHistory(
-        time_s=np.array([0.0, 120.0]),
-        temperature_c=np.array([50.0, 50.0]),
-        moisture_concentration=np.array([0.02, 0.02]),
-    )
-
-    solution = solve_problem1(
-        history,
-        radial_intervals=12,
-        output_times_s=np.array([0.0, 120.0]),
-        max_step_s=2.0,
-    )
-
-    final_temperature = solution.temperature_c[-1]
-    final_moisture = solution.moisture_concentration[-1]
-    assert 28.0 <= final_temperature[0] < final_temperature[-1] < 50.0
-    assert 0.02 < final_moisture[-1] < final_moisture[0] <= 2.55
-
-
-def test_output_can_start_after_initial_time_without_resetting_initial_state():
-    history = ChamberHistory(
-        time_s=np.array([0.0, 10.0]),
-        temperature_c=np.array([50.0, 50.0]),
-        moisture_concentration=np.array([0.02, 0.02]),
-    )
-
-    with_initial = solve_problem1(
-        history,
-        radial_intervals=6,
-        output_times_s=np.array([0.0, 1.0]),
-        max_step_s=0.2,
-    )
-    without_initial = solve_problem1(
-        history,
-        radial_intervals=6,
-        output_times_s=np.array([1.0]),
-        max_step_s=0.2,
-    )
-
-    np.testing.assert_allclose(without_initial.temperature_c[0], with_initial.temperature_c[1])
-    np.testing.assert_allclose(
-        without_initial.moisture_concentration[0], with_initial.moisture_concentration[1]
-    )
-
-
-def test_load_chamber_history_csv_reads_chinese_headers(tmp_path: Path):
-    source = tmp_path / "attachment1.csv"
-    source.write_text(
-        "时间,温度,水分浓度\n0,28,0.01963\n60,28.528,0.02002\n",
-        encoding="utf-8-sig",
-    )
-
-    history = load_chamber_history_csv(source)
-
-    np.testing.assert_array_equal(history.time_s, [0.0, 60.0])
-    np.testing.assert_allclose(history.temperature_c, [28.0, 28.528])
-    np.testing.assert_allclose(history.moisture_concentration, [0.01963, 0.02002])
-
-
-def test_sample_solution_interpolates_to_requested_physical_radii():
-    history = ChamberHistory(
-        time_s=np.array([0.0, 10.0]),
-        temperature_c=np.array([40.0, 40.0]),
-        moisture_concentration=np.array([0.02, 0.02]),
-    )
-    solution = solve_problem1(
-        history,
-        radial_intervals=8,
-        output_times_s=np.array([0.0, 10.0]),
-        max_step_s=1.0,
-    )
-
-    sampled = sample_solution(solution, radius_cm=np.array([0.0, 0.5, 1.0, 1.5, 2.0]))
-
-    assert sampled.temperature_c.shape == (2, 5)
-    assert sampled.moisture_concentration.shape == (2, 5)
-    np.testing.assert_allclose(sampled.radius_m, np.array([0.0, 0.005, 0.01, 0.015, 0.02]))
-
-
-def test_result_payload_uses_seconds_centimetres_and_four_decimal_values():
-    solution = solve_problem1(
-        ChamberHistory(
-            time_s=np.array([0.0, 1.0]),
-            temperature_c=np.array([28.0, 28.0]),
-            moisture_concentration=np.array([2.55, 2.55]),
-        ),
-        radial_intervals=2,
-        output_times_s=np.array([1.0]),
-        max_step_s=0.2,
-    )
-
-    payload = result_payload(solution)
-
-    assert payload["time_s"] == [1]
-    assert payload["radius_cm"] == [0.0, 1.0, 2.0]
-    assert payload["temperature_c"] == [[28.0, 28.0, 28.0]]
-    assert payload["moisture_concentration"] == [[2.55, 2.55, 2.55]]
-
-
-def test_richardson_extrapolation_removes_second_order_spatial_error():
-    time = np.array([1.0, 2.0])
-    radius = np.array([0.0, 0.02])
-    exact_temperature = np.array([[28.0, 29.0], [30.0, 31.0]])
-    exact_moisture = np.array([[2.5, 2.4], [2.3, 2.2]])
-    fine_error_temperature = np.array([[0.03, -0.06], [0.09, -0.12]])
-    fine_error_moisture = np.array([[0.003, -0.006], [0.009, -0.012]])
-    coarse = Problem1Solution(
-        time_s=time,
-        radius_m=radius,
-        temperature_c=exact_temperature + 4.0 * fine_error_temperature,
-        moisture_concentration=exact_moisture + 4.0 * fine_error_moisture,
-    )
-    fine = Problem1Solution(
-        time_s=time,
-        radius_m=radius,
-        temperature_c=exact_temperature + fine_error_temperature,
-        moisture_concentration=exact_moisture + fine_error_moisture,
-    )
-
-    extrapolated = richardson_extrapolate_solutions(coarse, fine, order=2)
-
-    np.testing.assert_allclose(extrapolated.temperature_c, exact_temperature)
-    np.testing.assert_allclose(extrapolated.moisture_concentration, exact_moisture)
-    np.testing.assert_array_equal(extrapolated.time_s, time)
-    np.testing.assert_array_equal(extrapolated.radius_m, radius)
-
-
-def test_richardson_extrapolation_rejects_different_output_grids():
-    coarse = Problem1Solution(
-        time_s=np.array([1.0]),
-        radius_m=np.array([0.0, 0.02]),
-        temperature_c=np.array([[28.0, 29.0]]),
-        moisture_concentration=np.array([[2.5, 2.4]]),
-    )
-    fine = Problem1Solution(
-        time_s=np.array([2.0]),
-        radius_m=np.array([0.0, 0.02]),
-        temperature_c=np.array([[28.0, 29.0]]),
-        moisture_concentration=np.array([[2.5, 2.4]]),
-    )
-
-    with np.testing.assert_raises(ValueError):
-        richardson_extrapolate_solutions(coarse, fine, order=2)
-
-```
-
-### tests/test_problem2.py
-
-```python
-import numpy as np
-
-from drying_model.problem1 import (
-    ChamberHistory,
-    Problem1Parameters,
-    diffusivity_q1,
-    solve_problem1,
-)
-from drying_model.problem2 import (
-    density_q2,
-    diffusivity_q2,
-    heat_capacity_q2,
-    solve_problem2,
-    solve_problem2_sampled_in_chunks,
-    solve_variable_property_fixed_cylinder,
-    thermal_conductivity_q2,
-)
-
-
-def test_q2_material_laws_match_appendix_3_exactly():
-    concentration = np.array([0.15, 1.0, 2.55])
-    temperature_c = np.array([28.0, 40.0, 50.0])
-
-    np.testing.assert_allclose(density_q2(concentration), 650.0 + 128.0 * concentration)
-    np.testing.assert_allclose(
-        heat_capacity_q2(concentration),
-        1450.0 + 2736.0 * concentration / (concentration + 1.0),
-    )
-    np.testing.assert_allclose(
-        thermal_conductivity_q2(concentration),
-        0.21 + 0.38 * concentration / (concentration + 1.0),
-    )
-    np.testing.assert_allclose(
-        diffusivity_q2(concentration, temperature_c),
-        2.4e-3
-        * np.exp(-0.45 / concentration)
-        * np.exp(-3850.0 / (temperature_c + 273.15)),
-    )
-
-
-def test_q2_material_laws_reject_nonphysical_inputs():
-    for law in (density_q2, heat_capacity_q2, thermal_conductivity_q2):
-        with np.testing.assert_raises(ValueError):
-            law(np.array([-1.0]))
-    with np.testing.assert_raises(ValueError):
-        diffusivity_q2(np.array([0.0]), np.array([28.0]))
-    with np.testing.assert_raises(ValueError):
-        diffusivity_q2(np.array([1.0]), np.array([-273.15]))
-
-
-def test_q2_uniform_equilibrium_remains_constant():
-    history = ChamberHistory(
-        time_s=np.array([0.0, 20.0]),
-        temperature_c=np.array([28.0, 28.0]),
-        moisture_concentration=np.array([2.55, 2.55]),
-    )
-
-    solution = solve_problem2(
-        history,
-        radial_intervals=8,
-        output_times_s=np.array([0.0, 10.0, 20.0]),
-        max_step_s=1.0,
-    )
-
-    np.testing.assert_allclose(solution.temperature_c, 28.0, atol=1.0e-11)
-    np.testing.assert_allclose(solution.moisture_concentration, 2.55, atol=1.0e-11)
-
-
-def test_generic_coupled_solver_degenerates_to_problem1_laws():
-    history = ChamberHistory(
-        time_s=np.array([0.0, 30.0]),
-        temperature_c=np.array([45.0, 45.0]),
-        moisture_concentration=np.array([0.02, 0.02]),
-    )
-    parameters = Problem1Parameters()
-    output_times = np.array([0.0, 10.0, 30.0])
-    expected = solve_problem1(
-        history,
-        radial_intervals=10,
-        output_times_s=output_times,
-        parameters=parameters,
-        relative_tolerance=1.0e-9,
-        max_step_s=0.5,
-    )
-
-    actual = solve_variable_property_fixed_cylinder(
-        history,
-        radial_intervals=10,
-        output_times_s=output_times,
-        density_law=lambda concentration: np.full_like(concentration, parameters.density_kg_m3),
-        heat_capacity_law=lambda concentration: np.full_like(
-            concentration, parameters.heat_capacity_j_kg_k
-        ),
-        conductivity_law=lambda concentration: np.full_like(
-            concentration, parameters.thermal_conductivity_w_m_k
-        ),
-        diffusivity_law=lambda concentration, temperature_c: diffusivity_q1(concentration),
-        parameters=parameters,
-        relative_tolerance=1.0e-9,
-        max_step_s=0.5,
-    )
-
-    np.testing.assert_allclose(actual.temperature_c, expected.temperature_c, atol=2.0e-8)
-    np.testing.assert_allclose(
-        actual.moisture_concentration,
-        expected.moisture_concentration,
-        atol=2.0e-8,
-    )
-
-
-def test_q2_hot_dry_environment_creates_expected_surface_gradients():
-    history = ChamberHistory(
-        time_s=np.array([0.0, 120.0]),
-        temperature_c=np.array([50.0, 50.0]),
-        moisture_concentration=np.array([0.02, 0.02]),
-    )
-
-    solution = solve_problem2(
-        history,
-        radial_intervals=16,
-        output_times_s=np.array([120.0]),
-        max_step_s=1.0,
-    )
-
-    assert solution.temperature_c[0, -1] > solution.temperature_c[0, 0]
-    assert solution.moisture_concentration[0, -1] < solution.moisture_concentration[0, 0]
-    assert np.all(solution.moisture_concentration > 0.0)
-
-
-def test_coupled_solver_appends_exact_maximum_moisture_threshold_event():
-    history = ChamberHistory(
-        time_s=np.array([0.0, 1000.0]),
-        temperature_c=np.array([50.0, 50.0]),
-        moisture_concentration=np.array([0.05, 0.05]),
-    )
-    parameters = Problem1Parameters(radius_m=1.0e-4)
-
-    solution = solve_problem2(
-        history,
-        radial_intervals=8,
-        output_times_s=np.arange(0.0, 1001.0, 60.0),
-        parameters=parameters,
-        relative_tolerance=1.0e-9,
-        max_step_s=1.0,
-        maximum_moisture_threshold=0.2,
-    )
-
-    assert solution.time_s[-1] % 60.0 != 0.0
-    np.testing.assert_allclose(
-        np.max(solution.moisture_concentration[-1]),
-        0.2,
-        atol=1.0e-9,
-    )
-    assert np.all(np.max(solution.moisture_concentration[:-1], axis=1) > 0.2)
-
-
-def test_coupled_solver_reports_when_threshold_is_not_reached():
-    history = ChamberHistory(
-        time_s=np.array([0.0, 100.0]),
-        temperature_c=np.array([50.0, 50.0]),
-        moisture_concentration=np.array([0.05, 0.05]),
-    )
-
-    with np.testing.assert_raises_regex(RuntimeError, "not reached"):
-        solve_problem2(
-            history,
-            radial_intervals=8,
-            output_times_s=np.arange(0.0, 101.0, 20.0),
-            maximum_moisture_threshold=0.01,
-        )
-
-
-def test_q2_solver_can_continue_from_a_previous_chunk_without_resetting_state():
-    history = ChamberHistory(
-        time_s=np.array([0.0, 120.0]),
-        temperature_c=np.array([50.0, 50.0]),
-        moisture_concentration=np.array([0.05, 0.05]),
-    )
-    monolithic = solve_problem2(
-        history,
-        radial_intervals=16,
-        output_times_s=np.array([60.0, 120.0]),
-        relative_tolerance=1.0e-9,
-        max_step_s=0.5,
-    )
-    first_chunk = solve_problem2(
-        history,
-        radial_intervals=16,
-        output_times_s=np.array([60.0]),
-        relative_tolerance=1.0e-9,
-        max_step_s=0.5,
-    )
-
-    second_chunk = solve_problem2(
-        history,
-        radial_intervals=16,
-        output_times_s=np.array([120.0]),
-        initial_time_s=60.0,
-        initial_temperature_c=first_chunk.temperature_c[-1],
-        initial_moisture_concentration=first_chunk.moisture_concentration[-1],
-        relative_tolerance=1.0e-9,
-        max_step_s=0.5,
-    )
-
-    np.testing.assert_allclose(
-        second_chunk.temperature_c[-1],
-        monolithic.temperature_c[-1],
-        atol=2.0e-7,
-    )
-    np.testing.assert_allclose(
-        second_chunk.moisture_concentration[-1],
-        monolithic.moisture_concentration[-1],
-        atol=2.0e-9,
-    )
-
-
-def test_chunked_q2_sampling_matches_monolithic_solution():
-    history = ChamberHistory(
-        time_s=np.array([0.0, 120.0]),
-        temperature_c=np.array([50.0, 50.0]),
-        moisture_concentration=np.array([0.05, 0.05]),
-    )
-    output_times = np.arange(1.0, 121.0)
-    sample_radius_cm = np.array([0.0, 1.0, 2.0])
-    monolithic = solve_problem2(
-        history,
-        radial_intervals=16,
-        output_times_s=output_times,
-        relative_tolerance=1.0e-9,
-        max_step_s=0.5,
-    )
-
-    actual = solve_problem2_sampled_in_chunks(
-        history,
-        radial_intervals=16,
-        output_times_s=output_times,
-        sample_radius_cm=sample_radius_cm,
-        chunk_duration_s=30.0,
-        relative_tolerance=1.0e-9,
-        max_step_s=0.5,
-    )
-
-    np.testing.assert_array_equal(actual.time_s, output_times)
-    np.testing.assert_allclose(actual.radius_m, sample_radius_cm * 0.01)
-    np.testing.assert_allclose(
-        actual.temperature_c,
-        monolithic.temperature_c[:, [0, 8, 16]],
-        atol=3.0e-7,
-    )
-    np.testing.assert_allclose(
-        actual.moisture_concentration,
-        monolithic.moisture_concentration[:, [0, 8, 16]],
-        atol=3.0e-9,
-    )
-
-```
-
-### tests/test_problem3.py
-
-```python
-import numpy as np
-import drying_model.problem3 as problem3
-
-from drying_model.problem1 import ChamberHistory, Problem1Parameters, Problem1Solution
-from drying_model.problem2 import solve_problem2
-from drying_model.problem3 import (
-    Problem3Result,
-    extend_chamber_history_to_plateau,
-    problem3_payload,
-    richardson_extrapolate_drying_time,
-    solve_problem3,
-    truncate_solution_at_threshold,
-)
-
-
-def test_plateau_extension_preserves_observations_and_uses_tail_mean():
-    history = ChamberHistory(
-        time_s=np.array([0.0, 60.0, 120.0, 180.0]),
-        temperature_c=np.array([20.0, 30.0, 40.0, 50.0]),
-        moisture_concentration=np.array([0.4, 0.3, 0.2, 0.1]),
-    )
-
-    extended = extend_chamber_history_to_plateau(
-        history,
-        end_time_s=600.0,
-        averaging_window_s=120.0,
-        transition_s=60.0,
-    )
-
-    np.testing.assert_array_equal(extended.time_s[:4], history.time_s)
-    np.testing.assert_array_equal(extended.temperature_c[:4], history.temperature_c)
-    np.testing.assert_array_equal(
-        extended.moisture_concentration[:4],
-        history.moisture_concentration,
-    )
-    np.testing.assert_array_equal(extended.time_s[-2:], np.array([240.0, 600.0]))
-    np.testing.assert_allclose(extended.temperature_c[-2:], 40.0)
-    np.testing.assert_allclose(extended.moisture_concentration[-2:], 0.2)
-
-
-def test_problem3_solver_stops_on_full_field_threshold():
-    history = ChamberHistory(
-        time_s=np.array([0.0, 100.0]),
-        temperature_c=np.array([50.0, 50.0]),
-        moisture_concentration=np.array([0.05, 0.05]),
-    )
-    parameters = Problem1Parameters(radius_m=1.0e-4)
-
-    result = solve_problem3(
-        history,
-        radial_intervals=8,
-        horizon_s=1000.0,
-        output_interval_s=60.0,
-        threshold=0.2,
-        averaging_window_s=100.0,
-        parameters=parameters,
-        relative_tolerance=1.0e-9,
-        max_step_s=1.0,
-    )
-
-    assert result.drying_time_s == result.solution.time_s[-1]
-    assert result.strict_completion_time_s is None
-    assert result.drying_time_s % 60.0 != 0.0
-    np.testing.assert_allclose(result.maximum_moisture, 0.2, atol=1.0e-9)
-    assert result.maximum_radius_m in result.solution.radius_m
-    assert np.all(
-        np.max(result.solution.moisture_concentration[:-1], axis=1) > 0.2
-    )
-
-
-def test_problem3_payload_keeps_exact_endpoint_and_rounds_only_outputs():
-    solution = Problem1Solution(
-        time_s=np.array([60.0, 120.0, 135.567891, 180.0]),
-        radius_m=np.array([0.0, 0.01, 0.02]),
-        temperature_c=np.full((4, 3), 50.0),
-        moisture_concentration=np.array(
-            [
-                [0.20006, 0.19004, 0.18003],
-                [0.16006, 0.15504, 0.15103],
-                [0.15, 0.14994, 0.14991],
-                [0.1499, 0.1497, 0.1495],
-            ]
-        ),
-    )
-    result = Problem3Result(
-        solution=solution,
-        drying_time_s=135.567891,
-        strict_completion_time_s=180.0,
-        maximum_moisture=0.15,
-        maximum_radius_m=0.0,
-        plateau_temperature_c=50.0,
-        plateau_moisture_concentration=0.05,
-        threshold=0.15,
-        output_interval_s=60.0,
-    )
-
-    payload = problem3_payload(result)
-
-    assert payload["time_s"] == [60, 120, 135.567891, 180]
-    assert payload["radius_cm"] == [0.0, 1.0, 2.0]
-    assert payload["moisture_concentration"] == [
-        [0.2001, 0.19, 0.18],
-        [0.1601, 0.155, 0.151],
-        [0.15, 0.1499, 0.1499],
-        [0.1499, 0.1497, 0.1495],
-    ]
-    assert payload["drying_time_s"] == 135.567891
-    assert payload["drying_time_h"] == round(135.567891 / 3600.0, 10)
-    assert payload["strict_completion_time_s"] == 180
-    assert payload["strict_completion_time_h"] == 0.05
-
-
-def test_problem3_payload_distinguishes_nearby_critical_and_regular_times():
-    solution = Problem1Solution(
-        time_s=np.array([206880.0, 206939.5, 206940.0]),
-        radius_m=np.array([0.0, 0.02]),
-        temperature_c=np.full((3, 2), 50.0),
-        moisture_concentration=np.array(
-            [[0.1501, 0.05], [0.15, 0.05], [0.1499, 0.05]]
-        ),
-    )
-    result = Problem3Result(
-        solution=solution,
-        drying_time_s=206939.5,
-        strict_completion_time_s=206940.0,
-        maximum_moisture=0.15,
-        maximum_radius_m=0.0,
-        plateau_temperature_c=50.0,
-        plateau_moisture_concentration=0.05,
-        threshold=0.15,
-        output_interval_s=60.0,
-    )
-
-    payload = problem3_payload(result)
-
-    assert payload["time_s"][-2:] == [206939.5, 206940]
-
-
-def test_richardson_extrapolates_second_order_drying_time_error():
-    assert richardson_extrapolate_drying_time(104.0, 101.0, order=2) == 100.0
-
-    with np.testing.assert_raises(ValueError):
-        richardson_extrapolate_drying_time(104.0, 101.0, order=0)
-
-
-def test_radial_moisture_validation_rejects_an_outward_increase():
-    valid = Problem1Solution(
-        time_s=np.array([60.0, 120.0]),
-        radius_m=np.array([0.0, 0.01, 0.02]),
-        temperature_c=np.full((2, 3), 50.0),
-        moisture_concentration=np.array(
-            [[0.30, 0.20, 0.10], [0.15, 0.14, 0.05]]
-        ),
-    )
-    invalid = Problem1Solution(
-        time_s=valid.time_s,
-        radius_m=valid.radius_m,
-        temperature_c=valid.temperature_c,
-        moisture_concentration=np.array(
-            [[0.30, 0.10, 0.20], [0.15, 0.14, 0.05]]
-        ),
-    )
-
-    assert problem3.validate_radially_nonincreasing_moisture(valid) <= 0.0
-    with np.testing.assert_raises_regex(ValueError, "outward increase"):
-        problem3.validate_radially_nonincreasing_moisture(invalid)
-
-
-def test_full_solution_moisture_change_matches_integrated_surface_flux():
-    history = ChamberHistory(
-        time_s=np.array([0.0, 600.0]),
-        temperature_c=np.array([50.0, 50.0]),
-        moisture_concentration=np.array([0.05, 0.05]),
-    )
-    parameters = Problem1Parameters()
-    solution = solve_problem2(
-        history,
-        radial_intervals=16,
-        output_times_s=np.arange(0.0, 601.0),
-        parameters=parameters,
-        relative_tolerance=1.0e-9,
-        max_step_s=0.5,
-    )
-
-    diagnostics = problem3.moisture_balance_diagnostics(
-        solution,
-        history,
-        parameters=parameters,
-    )
-
-    assert diagnostics["relative_max_residual"] < 1.0e-6
-    assert abs(diagnostics["final_residual"]) < 1.0e-8
-
-
-def test_threshold_interpolation_keeps_crossing_and_first_strict_regular_row():
-    times = np.array([60.0, 120.0, 130.0, 140.0, 180.0])
-    moisture = np.array(
-        [
-            [0.20, 0.18],
-            [0.16, 0.14],
-            [0.155, 0.135],
-            [0.145, 0.13],
-            [0.10, 0.09],
-        ]
-    )
-    solution = Problem1Solution(
-        time_s=times,
-        radius_m=np.array([0.0, 0.02]),
-        temperature_c=np.column_stack([times, times + 1.0]),
-        moisture_concentration=moisture,
-    )
-
-    truncated = truncate_solution_at_threshold(
-        solution,
-        threshold=0.15,
-        output_interval_s=60.0,
-    )
-
-    np.testing.assert_allclose(
-        truncated.time_s,
-        np.array([60.0, 120.0, 135.0, 180.0]),
-    )
-    np.testing.assert_allclose(truncated.moisture_concentration[-2, 0], 0.15)
-    assert np.max(truncated.moisture_concentration[-1]) < 0.15
-    np.testing.assert_allclose(truncated.temperature_c[-2], np.array([135.0, 136.0]))
-
-```
-
-### tests/test_problem4.py
-
-```python
-import numpy as np
-import pytest
-
-from drying_model.problem1 import ChamberHistory, Problem1Parameters
-from drying_model.problem4 import (
-    RadiusHistory,
-    density_q4,
-    density_shrinkage_compatibility,
-    diffusivity_q4,
-    heat_capacity_q4,
-    interpolate_radius,
-    moisture_balance_diagnostics,
-    sample_moving_solution,
-    solve_problem4,
-    thermal_conductivity_q4,
-    Problem4Solution,
-)
-
-
-def test_q4_material_laws_match_appendix_4():
-    c = np.array([0.15, 1.0, 2.55])
-    t = np.array([28.0, 40.0, 50.0])
-    np.testing.assert_allclose(density_q4(c), 760.0 + 90.0 * c)
-    np.testing.assert_allclose(heat_capacity_q4(c), 1850.0 + 2150.0 * c / (c + 1.0))
-    np.testing.assert_allclose(thermal_conductivity_q4(c), 0.12 + 0.20 * c / (c + 1.0))
-    np.testing.assert_allclose(
-        diffusivity_q4(c, t), 4.2e-4 * np.exp(-0.30 / c) * np.exp(-3850.0 / (t + 273.15))
-    )
-
-
-def test_radius_history_interpolation_is_monotone_and_holds_tail():
-    history = RadiusHistory(np.array([0.0, 10.0, 20.0]), np.array([0.02, 0.018, 0.018]))
-    values = interpolate_radius(np.array([0.0, 5.0, 30.0]), history)
-    np.testing.assert_allclose(values, [0.02, 0.019, 0.018])
-
-
-def test_uniform_equilibrium_remains_constant_with_shrinking_radius():
-    chamber = ChamberHistory(np.array([0.0, 100.0]), np.array([28.0, 28.0]), np.array([2.55, 2.55]))
-    radius = RadiusHistory(np.array([0.0, 50.0, 100.0]), np.array([0.02, 0.018, 0.016]))
-    solution = solve_problem4(chamber, radius, 8, np.array([0.0, 50.0, 100.0]), max_step_s=2.0)
-    np.testing.assert_allclose(solution.temperature_c, 28.0, atol=2.0e-10)
-    np.testing.assert_allclose(solution.moisture_concentration, 2.55, atol=2.0e-10)
-
-
-def test_hot_dry_boundary_creates_expected_gradients():
-    chamber = ChamberHistory(np.array([0.0, 120.0]), np.array([50.0, 50.0]), np.array([0.02, 0.02]))
-    radius = RadiusHistory(np.array([0.0, 120.0]), np.array([0.02, 0.019]))
-    solution = solve_problem4(chamber, radius, 16, np.array([120.0]), max_step_s=1.0)
-    assert solution.temperature_c[0, -1] > solution.temperature_c[0, 0]
-    assert solution.moisture_concentration[0, -1] < solution.moisture_concentration[0, 0]
-    assert np.all(solution.moisture_concentration > 0.0)
-
-
-def test_sampling_uses_nan_for_fixed_radii_outside_shrunken_body():
-    solution = Problem4Solution(
-        time_s=np.array([0.0, 1.0]), xi=np.array([0.0, 0.5, 1.0]),
-        temperature_c=np.full((2, 3), 30.0),
-        moisture_concentration=np.array([[1.0, 0.8, 0.6], [1.0, 0.8, 0.6]]),
-    )
-    radius = RadiusHistory(np.array([0.0, 1.0]), np.array([0.02, 0.01]))
-    sampled = sample_moving_solution(solution, radius, np.array([0.0, 1.0, 1.5, 2.0]))
-    assert np.isfinite(sampled[0, :]).all()
-    assert np.isfinite(sampled[1, :2]).all()
-    assert np.isnan(sampled[1, 2:]).all()
-
-
-def test_threshold_event_reports_exact_crossing():
-    chamber = ChamberHistory(np.array([0.0, 200.0]), np.array([50.0, 50.0]), np.array([0.02, 0.02]))
-    radius = RadiusHistory(np.array([0.0, 200.0]), np.array([0.0001, 0.0001]))
-    result = solve_problem4(
-        chamber, radius, 8, np.arange(20.0, 201.0, 20.0), maximum_moisture_threshold=0.2,
-        parameters=Problem1Parameters(radius_m=0.0001), max_step_s=0.5,
-    )
-    assert result.time_s[-1] % 20.0 != 0.0
-    np.testing.assert_allclose(np.max(result.moisture_concentration[-1]), 0.2, atol=1.0e-8)
-
-
-def test_moving_domain_moisture_change_matches_surface_flux():
-    chamber = ChamberHistory(np.array([0.0, 600.0]), np.array([50.0, 50.0]), np.array([0.05, 0.05]))
-    radius = RadiusHistory(np.array([0.0, 600.0]), np.array([0.02, 0.018]))
-    solution = solve_problem4(
-        chamber, radius, 24, np.arange(0.0, 601.0), relative_tolerance=1.0e-9, max_step_s=0.5
-    )
-    diagnostics = moisture_balance_diagnostics(solution, chamber, radius)
-    assert diagnostics["relative_max_residual"] < 2.0e-6
-
-
-def test_constant_radius_reduces_to_fixed_cylinder_equations():
-    from drying_model.problem2 import solve_variable_property_fixed_cylinder
-
-    chamber = ChamberHistory(np.array([0.0, 600.0]), np.array([45.0, 50.0]), np.array([0.05, 0.03]))
-    radius = RadiusHistory(np.array([0.0, 600.0]), np.array([0.02, 0.02]))
-    times = np.array([0.0, 100.0, 600.0])
-    moving = solve_problem4(chamber, radius, 24, times, relative_tolerance=1e-9, max_step_s=1.0)
-    fixed = solve_variable_property_fixed_cylinder(
-        chamber, 24, times, density_law=density_q4, heat_capacity_law=heat_capacity_q4,
-        conductivity_law=thermal_conductivity_q4, diffusivity_law=diffusivity_q4,
-        relative_tolerance=1e-9, max_step_s=1.0,
-    )
-    np.testing.assert_allclose(moving.temperature_c, fixed.temperature_c, rtol=1e-8, atol=1e-7)
-    np.testing.assert_allclose(moving.moisture_concentration, fixed.moisture_concentration, rtol=1e-8, atol=1e-9)
-
-
-@pytest.mark.parametrize("method", ["linear", "pchip"])
-def test_solver_holds_radius_tail_but_requires_explicit_chamber_extension(method):
-    chamber = ChamberHistory(np.array([0.0, 100.0]), np.array([50.0, 50.0]), np.array([0.02, 0.02]))
-    radius = RadiusHistory(np.array([0.0, 20.0, 40.0]), np.array([0.02, 0.019, 0.018]), interpolation=method)
-    result = solve_problem4(chamber, radius, 8, [40.0, 100.0])
-    assert result.time_s[-1] == 100.0
-    assert np.isfinite(result.moisture_concentration).all()
-    np.testing.assert_allclose(interpolate_radius([40.0, 100.0], radius), 0.018)
-    with pytest.raises(ValueError, match="chamber history"):
-        solve_problem4(chamber, radius, 8, [101.0])
-
-
-def test_pchip_preserves_radius_observations_and_monotonicity():
-    radius = RadiusHistory(np.array([0.0, 10.0, 20.0, 30.0]), np.array([0.02, 0.016, 0.015, 0.015]), interpolation="pchip")
-    np.testing.assert_allclose(interpolate_radius(radius.time_s, radius), radius.radius_m, rtol=0, atol=1e-15)
-    samples = interpolate_radius(np.linspace(0.0, 60.0, 601), radius)
-    assert np.max(np.diff(samples)) <= 1e-14
-    assert np.min(samples) >= 0.015 - 1e-14
-
-
-def test_density_compatibility_detects_mass_loss_despite_uniform_moisture():
-    solution = Problem4Solution(
-        time_s=np.array([0.0, 100.0]), xi=np.linspace(0.0, 1.0, 9),
-        temperature_c=np.full((2, 9), 28.0), moisture_concentration=np.full((2, 9), 2.55),
-    )
-    radius = RadiusHistory(solution.time_s, np.array([0.02, 0.01]))
-    result = density_shrinkage_compatibility(solution, radius)
-    np.testing.assert_allclose(result["mass_ratio_to_initial"], [1.0, 0.25])
-    expected_initial = np.pi * 0.02**2 * (760.0 + 90.0 * 2.55) / 3.55
-    np.testing.assert_allclose(result["implied_dry_mass_per_length_kg_m"][0], expected_initial)
-
-```
-
-### tests/test_problem4_independent.py
-
-```python
-"""Independent finite-volume checks against analytic geometry and balances."""
-
-from dataclasses import replace
-
-import numpy as np
-
-from drying_model.problem1 import ChamberHistory, Problem1Parameters
-from drying_model.problem4 import RadiusHistory
-from drying_model.problem4_independent import (
-    cell_flux_divergence,
-    reconstruct_centre,
-    solve_independent_problem4,
-    surface_from_series_resistance,
-)
-
-
-def test_quadratic_cylindrical_laplacian_and_axis_reconstruction():
-    n = 40
-    radius = 0.017
-    xi = (np.arange(n) + 0.5) / n
-    values = 2.0 + 0.3 * xi**2
-    diffusion = 2.0e-9
-    divergence, _ = cell_flux_divergence(values, np.full(n, diffusion), radius, 0.0, 0.0)
-    # Exclude the imposed zero-flux outer face, which this polynomial does not satisfy.
-    np.testing.assert_allclose(divergence[:-1], 4 * 0.3 * diffusion / radius**2, rtol=2e-11)
-    np.testing.assert_allclose(reconstruct_centre(values), 2.0, atol=1e-15)
-
-
-def test_arbitrary_field_has_exact_discrete_surface_flux_balance():
-    n = 35
-    radius = 0.016
-    values = 0.2 + np.exp(-np.linspace(0.0, 2.0, n))
-    diffusion = np.linspace(1e-9, 2e-9, n)
-    exchange = 8e-7
-    ambient = 0.05
-    divergence, surface = cell_flux_divergence(values, diffusion, radius, exchange, ambient)
-    faces = np.arange(n + 1) / n
-    physical_volumes_per_two_pi = 0.5 * radius**2 * np.diff(faces**2)
-    np.testing.assert_allclose(
-        np.dot(divergence, physical_volumes_per_two_pi),
-        -radius * exchange * (surface - ambient), rtol=1e-13,
-    )
-    # The reported surface satisfies both pieces of the series resistance.
-    inner_flux = diffusion[-1] * (values[-1] - surface) / (radius / (2 * n))
-    np.testing.assert_allclose(inner_flux, exchange * (surface - ambient), rtol=1e-13)
-
-
-def test_shrinking_domain_preserves_uniform_equilibrium():
-    times = np.array([0.0, 100.0, 200.0])
-    chamber = ChamberHistory(times, np.full(3, 28.0), np.full(3, 2.55))
-    radius = RadiusHistory(times, np.array([0.02, 0.015, 0.012]))
-    result = solve_independent_problem4(chamber, radius, 12, times, threshold=None)
-    np.testing.assert_allclose(result.moisture, 2.55, atol=1e-12)
-    np.testing.assert_allclose(result.temperature_c, 28.0, atol=1e-12)
-
-
-def test_zero_exchange_keeps_initial_fields_during_shrinkage():
-    times = np.array([0.0, 100.0, 200.0])
-    chamber = ChamberHistory(times, np.full(3, 70.0), np.full(3, 0.05))
-    radius = RadiusHistory(times, np.array([0.02, 0.015, 0.012]))
-    parameters = replace(Problem1Parameters(), heat_transfer_coefficient_w_m2_k=0.0,
-                         mass_transfer_coefficient_m_s=0.0)
-    result = solve_independent_problem4(chamber, radius, 12, times, threshold=None, parameters=parameters)
-    np.testing.assert_allclose(result.moisture, 2.55, atol=1e-12)
-    np.testing.assert_allclose(result.temperature_c, 28.0, atol=1e-12)
-
-```
-
-### tests/test_result4_workbook.py
-
-```python
-"""Round-trip and deliberate-corruption checks for the submission workbook."""
-
-from __future__ import annotations
-
-import importlib.util
-import json
-import math
-import subprocess
-import sys
-from pathlib import Path
-
-import openpyxl
-import pytest
-from openpyxl.comments import Comment
-
-
-BUILDER_PATH = Path(__file__).resolve().parents[1] / "tools" / "build_result4.py"
-SPEC = importlib.util.spec_from_file_location("result4_workbook_builder", BUILDER_PATH)
-builder = importlib.util.module_from_spec(SPEC)
-SPEC.loader.exec_module(builder)
-
-
-def _fixture(tmp_path: Path, critical: float = 119.9999):
-    radius_path = tmp_path / "radius.csv"
-    radius_path.write_text("time_s,radius_cm\n0,2\n300,0.5\n", encoding="utf-8")
-    strict = 60 * (math.floor(critical / 60) + 1)
-    times = sorted(set([*range(60, strict + 1, 60), critical]))
-    radii = [index / 10 for index in range(21)]
-    matrix = []
-    for time in times:
-        maximum = 0.15 if time == critical else 0.14998 if time == strict else 0.25
-        actual_radius = 2 - time / 200
-        matrix.append([
-            round(maximum - index * 0.002, 4) if radius <= actual_radius + 1e-10 else None
-            for index, radius in enumerate(radii)
-        ])
-    payload = {
-        "time_s": times,
-        "radius_cm": radii,
-        "moisture_concentration": matrix,
-        "surface_moisture_concentration": [0.04] * len(times),
-        "drying_time_s": critical,
-        "strict_completion_time_s": strict,
-        "threshold": 0.15,
-        "critical_maximum_moisture_unrounded": 0.15,
-        "strict_completion_maximum_moisture_unrounded": 0.14998,
-    }
-    template = tmp_path / "template.xlsx"
-    workbook = openpyxl.Workbook()
-    workbook.active.title = "Sheet1"
-    workbook.active["A1"] = builder.HEADER
-    workbook.active["A20"] = "placeholder"
-    workbook.properties.title = "Official numeric result template"
-    workbook.save(template)
-    workbook.close()
-    return template, payload, tmp_path / "result4.xlsx", radius_path
-
-
-@pytest.mark.parametrize("critical", [119.9999, 120.0, 120.0001, 30.0])
-def test_roundtrip_preserves_nearby_critical_and_minute_rows(tmp_path, critical):
-    template, payload, output, radius = _fixture(tmp_path, critical)
-    summary = builder.build_result4(template, payload, output, radius)
-    assert summary["status"] == "passed"
-    assert summary["rows"] == len(payload["time_s"]) + 1
-    assert summary["columns"] == 23
-    workbook = openpyxl.load_workbook(output)
-    sheet = workbook["Sheet1"]
-    assert [cell.value for cell in sheet["A"][1:]] == payload["time_s"]
-    assert sheet["A1"].comment is None
-    assert sheet["B2"].number_format == "0.0000"
-    assert workbook.properties.title == "Official numeric result template"
-    # Strict compliance relies on unrounded evidence: both display as 0.1500.
-    assert sheet.cell(sheet.max_row, 2).value == 0.15
-    assert summary["strict_completion_maximum_moisture_unrounded"] < 0.15
-    workbook.close()
-
-
-@pytest.mark.parametrize(
-    "corruption",
-    [
-        "inside_blank", "outside_zero", "surface_blank", "numeric_change",
-        "radius_header", "surface_header", "time_change", "missing_minute",
-        "formula", "error", "comment", "hidden_row", "hidden_column",
-        "hidden_sheet", "extra_sheet", "extra_column", "boolean", "hidden_by_default",
-    ],
-)
-def test_audit_rejects_workbook_corruption(tmp_path, corruption):
-    template, payload, output, radius = _fixture(tmp_path)
-    builder.build_result4(template, payload, output, radius)
-    workbook = openpyxl.load_workbook(output)
-    sheet = workbook["Sheet1"]
-    if corruption == "inside_blank":
-        sheet["B2"] = None
-    elif corruption == "outside_zero":
-        sheet["V2"] = 0
-    elif corruption == "surface_blank":
-        sheet["W2"] = None
-    elif corruption == "numeric_change":
-        sheet["C2"] = sheet["C2"].value + 0.0001
-    elif corruption == "radius_header":
-        sheet["C1"] = 0.11
-    elif corruption == "surface_header":
-        sheet["W1"] = "2 cm"
-    elif corruption == "time_change":
-        sheet["A3"] = 120.0  # Replaces the nearby critical time.
-    elif corruption == "missing_minute":
-        sheet.delete_rows(2)
-    elif corruption == "formula":
-        sheet["B2"] = "=0.25"
-    elif corruption == "error":
-        sheet["B2"] = "#VALUE!"
-    elif corruption == "comment":
-        sheet["A1"].comment = Comment("Unexpected annotation", "Reviewer")
-    elif corruption == "hidden_row":
-        sheet.row_dimensions[2].hidden = True
-    elif corruption == "hidden_column":
-        sheet.column_dimensions["C"].hidden = True
-    elif corruption == "hidden_by_default":
-        sheet.sheet_format.zeroHeight = True
-    elif corruption == "hidden_sheet":
-        workbook.create_sheet("hidden").sheet_state = "hidden"
-    elif corruption == "extra_sheet":
-        workbook.create_sheet("extra")
-    elif corruption == "extra_column":
-        sheet["X1"] = "unexpected"
-    elif corruption == "boolean":
-        sheet["B1"] = False  # Python equality alone would equate this to 0.
-    workbook.save(output)
-    workbook.close()
-    with pytest.raises(ValueError):
-        builder.audit_result4(output, payload, radius)
-
-
-@pytest.mark.parametrize(
-    "corruption",
-    [
-        "inside_blank", "outside_zero", "surface_nan", "nonfinite_inside",
-        "bad_headers", "missing_minute", "nearby_critical", "critical_error",
-        "strict_not_below", "strict_rounding_mismatch", "wrong_threshold",
-        "duplicate_time", "skipped_strict_minute", "wrong_geometry",
-    ],
-)
-def test_audit_rejects_invalid_payload_even_when_workbook_could_match(tmp_path, corruption):
-    _, payload, _, radius = _fixture(tmp_path)
-    if corruption == "inside_blank":
-        payload["moisture_concentration"][0][0] = None
-    elif corruption == "outside_zero":
-        payload["moisture_concentration"][0][-1] = 0
-    elif corruption == "surface_nan":
-        payload["surface_moisture_concentration"][0] = float("nan")
-    elif corruption == "nonfinite_inside":
-        payload["moisture_concentration"][0][0] = float("inf")
-    elif corruption == "bad_headers":
-        payload["radius_cm"][1] = 0.11
-    elif corruption == "missing_minute":
-        for key in ("time_s", "moisture_concentration", "surface_moisture_concentration"):
-            payload[key].pop(0)
-    elif corruption == "nearby_critical":
-        payload["time_s"][1] = 119.9998
-    elif corruption == "critical_error":
-        payload["critical_maximum_moisture_unrounded"] = 0.1500002
-    elif corruption == "strict_not_below":
-        payload["strict_completion_maximum_moisture_unrounded"] = 0.15
-    elif corruption == "strict_rounding_mismatch":
-        payload["strict_completion_maximum_moisture_unrounded"] = 0.14
-    elif corruption == "wrong_threshold":
-        payload["threshold"] = 0.2
-    elif corruption == "duplicate_time":
-        payload["time_s"][-1] = payload["time_s"][-2]
-    elif corruption == "skipped_strict_minute":
-        payload["strict_completion_time_s"] += 60
-    elif corruption == "wrong_geometry":
-        radius.write_text("time_s,radius_cm\n0,2\n300,2\n", encoding="utf-8")
-    with pytest.raises(ValueError):
-        builder.validate_payload(payload, radius)
-
-
-def test_original_cli_and_readonly_audit_mode(tmp_path):
-    template, payload, output, radius = _fixture(tmp_path)
-    payload_path = tmp_path / "payload.json"
-    payload_path.write_text(json.dumps(payload), encoding="utf-8")
-    command = [sys.executable, str(BUILDER_PATH), str(template), str(payload_path), str(output), "--radius-history", str(radius)]
-    created = subprocess.run(command, capture_output=True, text=True, check=True)
-    assert json.loads(created.stdout)["status"] == "passed"
-    original_bytes = output.read_bytes()
-    checked = subprocess.run([*command, "--audit-only"], capture_output=True, text=True, check=True)
-    assert json.loads(checked.stdout)["status"] == "passed"
-    assert output.read_bytes() == original_bytes
-
-
-def test_radius_extension_holds_the_last_observed_value(tmp_path):
-    template, payload, output, radius = _fixture(tmp_path)
-    radius.write_text("time_s,radius_cm\n0,2\n60,1.7\n", encoding="utf-8")
-    for time, row in zip(payload["time_s"], payload["moisture_concentration"]):
-        maximum = 0.15 if time == payload["drying_time_s"] else 0.14998 if time == payload["strict_completion_time_s"] else 0.25
-        for index, position in enumerate(payload["radius_cm"]):
-            row[index] = round(maximum - index * 0.002, 4) if position <= 1.7 else None
-    summary = builder.build_result4(template, payload, output, radius)
-    assert summary["status"] == "passed"
-    assert summary["rows_after_radius_observations"] == 2
-    assert summary["radius_extension"] == "hold_last_value"
-    assert builder._radius_at(90, [0, 60], [2, 1.7]) == 1.7
-    assert builder._radius_at(60, [0, 60], [2, 1.7]) == 1.7
-    with pytest.raises(ValueError, match="precedes"):
-        builder._radius_at(-1, [0, 60], [2, 1.7])
-    # A tail row must use the held radius, so its 1.7 cm cell cannot be blank.
-    payload["moisture_concentration"][-1][17] = None
-    with pytest.raises(ValueError, match="Inside-radius"):
-        builder.validate_payload(payload, radius)
-
-
-@pytest.mark.parametrize("audit_only", [False, True])
-def test_cli_can_archive_audit_json(tmp_path, audit_only):
-    template, payload, output, radius = _fixture(tmp_path)
-    payload_path = tmp_path / "payload.json"
-    payload_path.write_text(json.dumps(payload), encoding="utf-8")
-    archive = tmp_path / "reports" / "data" / "workbook_audit.json"
-    command = [sys.executable, str(BUILDER_PATH), str(template), str(payload_path), str(output), "--radius-history", str(radius), "--audit-output", str(archive)]
-    if audit_only:
-        builder.build_result4(template, payload, output, radius)
-        previous_workbook = output.read_bytes()
-        command.append("--audit-only")
-    result = subprocess.run(command, capture_output=True, text=True, check=True)
-    assert json.loads(archive.read_text(encoding="utf-8")) == json.loads(result.stdout)
-    assert json.loads(result.stdout)["status"] == "passed"
-    if audit_only:
-        assert output.read_bytes() == previous_workbook
-
-
-def test_audit_archive_cannot_overwrite_the_workbook(tmp_path):
-    template, payload, output, radius = _fixture(tmp_path)
-    payload_path = tmp_path / "payload.json"
-    payload_path.write_text(json.dumps(payload), encoding="utf-8")
-    builder.build_result4(template, payload, output, radius)
-    previous_workbook = output.read_bytes()
-    command = [sys.executable, str(BUILDER_PATH), str(template), str(payload_path), str(output), "--radius-history", str(radius), "--audit-output", str(output), "--audit-only"]
-    result = subprocess.run(command, capture_output=True, text=True)
-    assert result.returncode != 0
-    assert "must be distinct" in result.stderr
-    assert output.read_bytes() == previous_workbook
-
-```
-
-### tools/audit_all_results.py
-
-```python
-"""Read-only audit of original inputs, four result workbooks and computed payloads."""
-
-from __future__ import annotations
-
-import argparse
-import csv
-import hashlib
-import json
-import re
-from pathlib import Path
-
-import numpy as np
-import openpyxl
-
-from build_result4 import audit_result4
-
-HEADER = "时间\\到药材中心的距离"
-RADII = [i / 10 for i in range(21)]
-
-
-def file_hash(path: Path) -> str:
-    return hashlib.sha256(path.read_bytes()).hexdigest()
-
-
-def check_original_inputs(attachment_dir: Path) -> dict:
-    results = {}
-    for number, columns in ((1, 3), (2, 2)):
-        source = attachment_dir / f"附件{number}.xlsx"
-        book = openpyxl.load_workbook(source, read_only=True, data_only=True)
-        try:
-            original = np.asarray([row[:columns] for row in book.worksheets[0].iter_rows(min_row=2, values_only=True)
-                                   if row[0] is not None], dtype=float)
-        finally:
-            book.close()
-        csv_path = Path(f"data/raw/attachment{number}.csv")
-        with csv_path.open(encoding="utf-8-sig", newline="") as stream:
-            reader = csv.reader(stream)
-            next(reader)
-            exported = np.asarray(list(reader), dtype=float)
-        if original.shape != exported.shape or not np.array_equal(original, exported):
-            raise ValueError(f"Attachment {number} CSV differs from original workbook")
-        results[str(number)] = {"rows": len(original), "columns": columns,
-                                "exact_numeric_match": True, "original_sha256": file_hash(source),
-                                "csv_sha256": file_hash(csv_path), "first_row": original[0].tolist(),
-                                "last_row": original[-1].tolist()}
-    return results
-
-
-def audit_fixed_workbook(path: Path, payload: dict, number: int) -> dict:
-    times = payload["time_s"]
-    if payload["radius_cm"] != RADII:
-        raise ValueError(f"Question {number}: invalid fixed radii")
-    if number in (1, 2):
-        expected_count = 1800 if number == 1 else 10800
-        if times != list(range(1, expected_count + 1)):
-            raise ValueError(f"Question {number}: incomplete one-second output")
-        fields = [("温度", "temperature_c"), ("水分浓度", "moisture_concentration")]
-    else:
-        critical = payload["drying_time_s"]
-        strict = payload["strict_completion_time_s"]
-        expected_strict = (np.floor(critical / 60) + 1) * 60
-        expected_times = sorted(set(list(range(60, int(expected_strict) + 1, 60)) + [critical]))
-        if strict != expected_strict or times != expected_times:
-            raise ValueError("Question 3: missing minute, critical or first strict row")
-        if abs(payload["critical_maximum_moisture_unrounded"] - 0.15) > 1e-8:
-            raise ValueError("Question 3: invalid unrounded critical maximum")
-        if not 0 <= payload["strict_completion_maximum_moisture_unrounded"] < 0.15:
-            raise ValueError("Question 3: invalid unrounded strict maximum")
-        fields = [("Sheet1", "moisture_concentration")]
-    book = openpyxl.load_workbook(path, data_only=False)
-    summaries = []
-    mismatches = []
-    mismatch_count = 0
-    try:
-        if book.sheetnames != [name for name, _ in fields]:
-            raise ValueError(f"Question {number}: invalid sheets")
-        for name, field in fields:
-            sheet = book[name]
-            if sheet.sheet_state != "visible" or sheet.sheet_format.zeroHeight:
-                raise ValueError(f"Hidden content in {path}:{name}")
-            if any(dim.hidden for dim in [*sheet.row_dimensions.values(), *sheet.column_dimensions.values()]):
-                raise ValueError(f"Hidden rows or columns in {path}:{name}")
-            expected_shape = (len(times) + 1, 22)
-            if (sheet.max_row, sheet.max_column) != expected_shape:
-                raise ValueError(f"Question {number}: invalid dimensions {sheet.max_row, sheet.max_column}")
-            data = np.asarray(payload[field], dtype=float)
-            if data.shape != (len(times), 21) or not np.isfinite(data).all():
-                raise ValueError(f"Question {number}: invalid payload field")
-            if field == "moisture_concentration" and np.min(data) < 0:
-                raise ValueError("Negative moisture in payload")
-            if not np.array_equal(data, np.round(data, 4)):
-                raise ValueError("Output concentrations/temperatures must be rounded to four decimals")
-            expected = [[HEADER, *RADII], *[[time, *row] for time, row in zip(times, payload[field])]]
-            for actual_row, expected_row in zip(sheet.iter_rows(), expected):
-                for cell, value in zip(actual_row, expected_row):
-                    if cell.data_type in ("f", "e") or cell.comment is not None:
-                        raise ValueError(f"Unexpected formula, error or comment at {name}!{cell.coordinate}")
-                    if cell.value != value or isinstance(cell.value, bool):
-                        mismatch_count += 1
-                        if len(mismatches) < 12:
-                            mismatches.append({"sheet": name, "cell": cell.coordinate, "workbook": cell.value, "recomputed": value})
-                    if cell.row > 1 and cell.column > 1 and cell.number_format != "0.0000":
-                        raise ValueError(f"Incorrect number format at {name}!{cell.coordinate}")
-            summaries.append({"name": name, "rows": sheet.max_row, "columns": sheet.max_column,
-                              "checked_cells": sheet.max_row * sheet.max_column})
-    finally:
-        book.close()
-    return {"status": "passed" if mismatch_count == 0 else "mismatch", "sheets": summaries,
-            "mismatch_count": mismatch_count, "first_mismatches": mismatches,
-            "workbook_sha256": file_hash(path)}
-
-
-def main() -> None:
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--attachment-dir", type=Path, required=True)
-    parser.add_argument("--payload-dir", type=Path, default=Path("tmp"))
-    parser.add_argument("--output", type=Path, default=Path("reports/data/final_all_questions_audit.json"))
-    args = parser.parse_args()
-    results = {"inputs": check_original_inputs(args.attachment_dir), "workbooks": {}, "numerical_evidence": {}}
-    payloads = {}
-    for number in range(1, 5):
-        payload_path = args.payload_dir / f"problem{number}_result.json"
-        payload = json.loads(payload_path.read_text(encoding="utf-8"))
-        payloads[number] = payload
-        workbook = Path(f"outputs/result{number}.xlsx")
-        audit = audit_result4(workbook, payload) if number == 4 else audit_fixed_workbook(workbook, payload, number)
-        audit["payload_sha256"] = file_hash(payload_path)
-        audit["workbook_sha256"] = file_hash(workbook)
-        results["workbooks"][str(number)] = audit
-        excluded = {"time_s", "radius_cm", "temperature_c", "moisture_concentration", "surface_moisture_concentration"}
-        results["numerical_evidence"][str(number)] = {k: v for k, v in payload.items() if k not in excluded}
-        print(f"Question {number}: {audit['status']}", flush=True)
-    q2 = np.asarray(payloads[2]["moisture_concentration"])[59::60]
-    q3 = np.asarray(payloads[3]["moisture_concentration"])[:180]
-    results["q2_q3_shared_first_three_hours"] = {
-        "same_continuum_model": True, "comparison_points": int(q2.size),
-        "maximum_absolute_rounded_difference": float(np.max(np.abs(q2 - q3))),
-        "rounded_mismatch_count": int(np.count_nonzero(q2 != q3)),
-        "note": "Q2 and Q3 use different time-integration tolerances; four-decimal boundary flips are assessed separately.",
-    }
-    tables = []
-    for number, fields, hours in ((1, ["temperature_c", "moisture_concentration"], False),
-                                  (2, ["temperature_c", "moisture_concentration"], True),
-                                  (3, ["moisture_concentration"], True), (4, ["moisture_concentration"], True)):
-        report = Path(f"reports/problem{number}.md").read_text(encoding="utf-8")
-        payload = payloads[number]
-        for table_index, field in enumerate(fields):
-            table_number = (1 if number == 1 else 3 if number == 2 else 5 if number == 3 else 6) + table_index
-            section = re.split(rf"\*\*表 {table_number}\s", report, maxsplit=1)[1]
-            rows = []
-            started = False
-            for line in section.splitlines():
-                if line.startswith("|"):
-                    started = True
-                    cells = [value.strip() for value in line.strip("|").split("|")]
-                    if re.fullmatch(r"\d+(?:\.\d+)?", cells[0]):
-                        rows.append(cells)
-                elif started:
-                    break
-            for cells in rows:
-                time = float(cells[0]) * (3600 if hours else 1)
-                index = payload["time_s"].index(time)
-                expected = [payload[field][index][i] for i in ([0, 5, 10] if number == 4 else [0, 5, 10, 15, 20])]
-                if number == 4:
-                    expected.append(payload["surface_moisture_concentration"][index])
-                if [float(value) for value in cells[1:]] != expected:
-                    raise ValueError(f"Table {table_number} differs from recomputed values at {time} s")
-            expected_rows = 7 if number == 1 else 6 if number == 2 else 9 if number == 3 else 8
-            if len(rows) != expected_rows:
-                raise ValueError(f"Table {table_number} is incomplete")
-            tables.append({"table": table_number, "checked_regular_rows": len(rows), "status": "passed"})
-    results["paper_tables"] = tables
-    results["status"] = "passed" if all(row["status"] == "passed" for row in results["workbooks"].values()) else "mismatch"
-    args.output.parent.mkdir(parents=True, exist_ok=True)
-    args.output.write_text(json.dumps(results, indent=2, ensure_ascii=False, allow_nan=False) + "\n", encoding="utf-8")
-    print(json.dumps({"status": results["status"], "shared_Q2_Q3": results["q2_q3_shared_first_three_hours"]}, ensure_ascii=False))
-    if results["status"] != "passed":
-        raise SystemExit(1)
-
-
-if __name__ == "__main__":
-    main()
-
-```
-
-### tools/build_result4.py
-
-```python
-"""Fill and audit the official Problem 4 workbook with numeric results."""
-
-from __future__ import annotations
-
-import argparse
-import csv
-import json
-import math
-from bisect import bisect_left
-from copy import copy
-from pathlib import Path
-from typing import Any
-
-import openpyxl
-
-DEFAULT_RADIUS_HISTORY = Path("data/raw/attachment2.csv")
-HEADER = "时间\\到药材中心的距离"
-FIXED_RADII_CM = [index / 10.0 for index in range(21)]
-# Match the solver's 1e-12 m geometric tolerance, expressed here in cm.
-RADIUS_TOLERANCE_CM = 1.0e-10
-CRITICAL_MOISTURE_TOLERANCE = 1.0e-7
-
-
-def _finite_number(value: Any, label: str) -> float:
-    if isinstance(value, bool) or not isinstance(value, (int, float)) or not math.isfinite(value):
-        raise ValueError(f"{label} must be a finite numeric value")
-    return float(value)
-
-
-def _radius_history(path: Path) -> tuple[list[float], list[float]]:
-    with path.open(encoding="utf-8-sig", newline="") as handle:
-        rows = list(csv.DictReader(handle))
-    times = [float(row["time_s"]) for row in rows]
-    radii = [float(row["radius_cm"]) for row in rows]
-    if len(times) < 2 or any(not math.isfinite(value) for value in times + radii):
-        raise ValueError("Radius history must contain at least two finite observations")
-    if any(right <= left for left, right in zip(times, times[1:])):
-        raise ValueError("Radius-history times must be strictly increasing")
-    if any(value <= 0.0 for value in radii):
-        raise ValueError("Radius-history values must be positive")
-    return times, radii
-
-
-def _radius_at(query: float, times: list[float], radii: list[float]) -> float:
-    """Interpolate measured radii, holding the last radius after observation."""
-    if query < times[0]:
-        raise ValueError("Output time precedes the measured radius-history horizon")
-    if query >= times[-1]:
-        return radii[-1]
-    index = bisect_left(times, query)
-    if times[index] == query:
-        return radii[index]
-    fraction = (query - times[index - 1]) / (times[index] - times[index - 1])
-    return radii[index - 1] + fraction * (radii[index] - radii[index - 1])
-
-
-def validate_payload(
-    payload: dict[str, Any],
-    radius_history: Path = DEFAULT_RADIUS_HISTORY,
-) -> dict[str, Any]:
-    """Validate time, geometry, and unrounded endpoint evidence.
-
-    Time identities use exact equality: relative tolerances can incorrectly
-    merge a minute sample and a nearby critical sample at large times.
-    Geometry is recomputed from the observations, not the payload blank mask.
-    """
-    times = payload["time_s"]
-    radii = payload["radius_cm"]
-    matrix = payload["moisture_concentration"]
-    surface = payload["surface_moisture_concentration"]
-    if radii != FIXED_RADII_CM or any(isinstance(value, bool) for value in radii):
-        raise ValueError("Fixed radius headers must be 0, 0.1, ..., 2.0 cm")
-    if not times or len(times) != len(matrix) or len(times) != len(surface):
-        raise ValueError("Payload dimensions do not match the result4 template")
-    if any(len(row) != 21 for row in matrix):
-        raise ValueError("Moisture matrix has an invalid shape")
-    numeric_times = [_finite_number(value, "Output time") for value in times]
-    if any(right <= left for left, right in zip(numeric_times, numeric_times[1:])):
-        raise ValueError("Output times must be strictly increasing")
-    critical = _finite_number(payload["drying_time_s"], "Critical time")
-    strict = _finite_number(payload["strict_completion_time_s"], "Strict completion time")
-    if critical <= 0.0 or strict != 60.0 * (math.floor(critical / 60.0) + 1):
-        raise ValueError("Strict completion must be the first minute strictly after the critical time")
-    if numeric_times.count(critical) != 1:
-        raise ValueError("Exactly one critical time row is required")
-    expected_times = sorted(set([float(value) for value in range(60, int(strict) + 1, 60)] + [critical]))
-    if numeric_times != expected_times:
-        raise ValueError("Time rows must contain every 60 s sample and exactly one critical row")
-    history_times, history_radii = _radius_history(Path(radius_history))
-    blank_count = 0
-    for index, time in enumerate(numeric_times):
-        actual_radius = _radius_at(time, history_times, history_radii)
-        for radius, value in zip(FIXED_RADII_CM, matrix[index]):
-            if radius > actual_radius + RADIUS_TOLERANCE_CM:
-                if value is not None:
-                    raise ValueError(f"Outside-radius cell must be blank at time {time}, radius {radius}")
-                blank_count += 1
-            else:
-                moisture = _finite_number(value, f"Inside-radius moisture at time {time}, radius {radius}")
-                if moisture < 0.0:
-                    raise ValueError("Moisture values must not be negative")
-        if _finite_number(surface[index], f"Surface moisture at time {time}") < 0.0:
-            raise ValueError("Surface moisture values must not be negative")
-    threshold = _finite_number(payload["threshold"], "Moisture threshold")
-    if threshold != 0.15:
-        raise ValueError("Problem 4 requires the 0.15 kg/kg moisture threshold")
-    critical_maximum = _finite_number(payload["critical_maximum_moisture_unrounded"], "Unrounded critical maximum")
-    strict_maximum = _finite_number(payload["strict_completion_maximum_moisture_unrounded"], "Unrounded strict maximum")
-    if abs(critical_maximum - threshold) > CRITICAL_MOISTURE_TOLERANCE:
-        raise ValueError("Unrounded critical maximum does not meet the threshold tolerance")
-    if not 0.0 <= strict_maximum < threshold:
-        raise ValueError("Unrounded strict completion maximum must be strictly below the threshold")
-    for time, maximum in ((critical, critical_maximum), (strict, strict_maximum)):
-        index = numeric_times.index(time)
-        displayed_maximum = max([value for value in matrix[index] if value is not None] + [surface[index]])
-        if abs(displayed_maximum - round(maximum, 4)) > 1.0e-12:
-            raise ValueError("Rounded endpoint values disagree with the unrounded maximum")
-    return {
-        "data_rows": len(times),
-        "rows": len(times) + 1,
-        "columns": 23,
-        "blank_outside_cells": blank_count,
-        "radius_last_observation_time_s": history_times[-1],
-        "radius_extension": "hold_last_value",
-        "rows_after_radius_observations": sum(time > history_times[-1] for time in numeric_times),
-        "critical_time_s": critical,
-        "strict_completion_time_s": strict,
-        "critical_maximum_moisture_unrounded": critical_maximum,
-        "strict_completion_maximum_moisture_unrounded": strict_maximum,
-    }
-
-
-def audit_result4(
-    workbook_path: Path,
-    payload: dict[str, Any] | Path,
-    radius_history: Path = DEFAULT_RADIUS_HISTORY,
-) -> dict[str, Any]:
-    """Reopen the workbook and compare every cell with the verified payload.
-
-    No workbook metadata is removed. Unexpected comments, hidden content,
-    formulas, errors, extra sheets, and changed numeric values fail the audit.
-    """
-    if not isinstance(payload, dict):
-        payload = json.loads(Path(payload).read_text(encoding="utf-8"))
-    summary = validate_payload(payload, radius_history)
-    workbook = openpyxl.load_workbook(workbook_path, data_only=False)
-    try:
-        for sheet in workbook.worksheets:
-            if sheet.sheet_state != "visible":
-                raise ValueError(f"Hidden worksheet: {sheet.title}")
-            if sheet.sheet_format.zeroHeight or any(dimension.hidden for dimension in sheet.row_dimensions.values()):
-                raise ValueError(f"Hidden rows in {sheet.title}")
-            if any(dimension.hidden for dimension in sheet.column_dimensions.values()):
-                raise ValueError(f"Hidden columns in {sheet.title}")
-            for row in sheet.iter_rows():
-                for cell in row:
-                    if cell.comment is not None:
-                        raise ValueError(f"Unexpected comment in {sheet.title}!{cell.coordinate}")
-                    if cell.data_type in ("f", "e"):
-                        raise ValueError(f"Unexpected formula or error in {sheet.title}!{cell.coordinate}")
-        if workbook.sheetnames != ["Sheet1"]:
-            raise ValueError("Result4 must contain only the official Sheet1")
-        sheet = workbook["Sheet1"]
-        if (sheet.max_row, sheet.max_column) != (summary["rows"], summary["columns"]):
-            raise ValueError("Workbook dimensions do not match the validated payload")
-        expected = [[HEADER, *FIXED_RADII_CM, "药材表面"]]
-        expected.extend(
-            [time, *row, surface]
-            for time, row, surface in zip(payload["time_s"], payload["moisture_concentration"], payload["surface_moisture_concentration"])
-        )
-        for actual_row, expected_row in zip(sheet.iter_rows(), expected):
-            for cell, value in zip(actual_row, expected_row):
-                if cell.value != value or isinstance(cell.value, bool):
-                    raise ValueError(f"Workbook/payload mismatch at {cell.coordinate}: {cell.value!r} != {value!r}")
-        return {"status": "passed", **summary, "checked_cells": summary["rows"] * summary["columns"]}
-    finally:
-        workbook.close()
-
-
-def build_result4(
-    template: Path,
-    payload: dict[str, Any] | Path,
-    output: Path,
-    radius_history: Path = DEFAULT_RADIUS_HISTORY,
-) -> dict[str, Any]:
-    """Populate the template, preserving its numeric-output conventions."""
-    if not isinstance(payload, dict):
-        payload = json.loads(Path(payload).read_text(encoding="utf-8"))
-    summary = validate_payload(payload, radius_history)
-    times = payload["time_s"]
-    radii = payload["radius_cm"]
-    matrix = payload["moisture_concentration"]
-    surface = payload["surface_moisture_concentration"]
-    workbook = openpyxl.load_workbook(template)
-    if "Sheet1" not in workbook.sheetnames:
-        raise ValueError("Official result4 template must contain Sheet1")
-    sheet = workbook["Sheet1"]
-    sheet.cell(1, 1).value = HEADER
-    for col, radius in enumerate(radii, start=2):
-        sheet.cell(1, col).value = radius
-    sheet.cell(1, len(radii) + 2).value = "药材表面"
-    required_rows = summary["rows"]
-    if sheet.max_row > required_rows:
-        sheet.delete_rows(required_rows + 1, sheet.max_row - required_rows)
-    for row_index, time in enumerate(times, start=2):
-        for col_index, value in enumerate([time, *matrix[row_index - 2], surface[row_index - 2]], start=1):
-            sheet.cell(row_index, col_index).value = value
-
-    sheet.column_dimensions["A"].width = 24
-    for col in range(2, len(radii) + 3):
-        sheet.column_dimensions[openpyxl.utils.get_column_letter(col)].width = 11
-    for row in sheet.iter_rows(min_row=1, max_row=required_rows, min_col=1, max_col=len(radii) + 2):
-        for cell in row:
-            alignment = copy(cell.alignment)
-            alignment.horizontal = "center"
-            alignment.vertical = "center"
-            cell.alignment = alignment
-            if cell.row == 1:
-                font = copy(cell.font)
-                font.name = "宋体"
-                font.size = 10
-                cell.font = font
-            elif cell.column == 1:
-                cell.number_format = "0.######"
-            else:
-                cell.number_format = "0.0000"
-    sheet.freeze_panes = "B2"
-    output.parent.mkdir(parents=True, exist_ok=True)
-    workbook.save(output)
-    workbook.close()
-    return audit_result4(output, payload, radius_history)
-
-
-def main() -> None:
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("template", type=Path)
-    parser.add_argument("payload", type=Path)
-    parser.add_argument("output", type=Path)
-    parser.add_argument("--radius-history", type=Path, default=DEFAULT_RADIUS_HISTORY)
-    parser.add_argument("--audit-only", action="store_true", help="Audit an existing output; do not write a workbook")
-    parser.add_argument("--audit-output", type=Path, help="Write the successful audit summary as JSON")
-    args = parser.parse_args()
-    if args.audit_output is not None and args.audit_output.resolve() in {
-        path.resolve() for path in (args.template, args.payload, args.output, args.radius_history)
-    }:
-        parser.error("--audit-output must be distinct from the template, payload, workbook, and radius history")
-    if args.audit_only:
-        summary = audit_result4(args.output, args.payload, args.radius_history)
-    else:
-        summary = build_result4(args.template, args.payload, args.output, args.radius_history)
-    report = {"workbook": str(args.output), **summary}
-    if args.audit_output is not None:
-        args.audit_output.parent.mkdir(parents=True, exist_ok=True)
-        args.audit_output.write_text(json.dumps(report, ensure_ascii=False, indent=2, allow_nan=False) + "\n", encoding="utf-8")
-    print(json.dumps(report, ensure_ascii=False))
-
-
-if __name__ == "__main__":
-    main()
-
-```
-
-### tools/compress_problem2_full_process.py
-
-```python
-"""Convert the large full-process workbook to a compact compressed NPZ archive."""
-from pathlib import Path
-import numpy as np
-from openpyxl import load_workbook
-
-root = Path(__file__).resolve().parents[1]
-src = root / 'deliverables' / 'supporting_materials' / 'outputs' / 'result2.xlsx'
-dst = src.with_name('result2_full_process.npz')
-wb = load_workbook(src, read_only=True, data_only=True)
-arrays = {}
-for ws in wb.worksheets:
-    rows = ws.iter_rows(values_only=True)
-    header = next(rows)
-    data = np.asarray([[np.nan if v is None else v for v in row] for row in rows], dtype=np.float64)
-    arrays[ws.title] = data
-    arrays[f'{ws.title}_header'] = np.asarray([str(v) for v in header])
-np.savez_compressed(dst, **arrays)
-print({'source_bytes': src.stat().st_size, 'npz_bytes': dst.stat().st_size,
-       'sheets': list(arrays), 'rows': {k: v.shape for k, v in arrays.items() if not k.endswith('_header')}})
-
-```
-
-### tools/extend_problem2_delivery.py
-
-```python
-"""Add a full-process one-second workbook without changing the original results."""
-from pathlib import Path
-import json
-import numpy as np
-from openpyxl import Workbook, load_workbook
-from openpyxl.cell import WriteOnlyCell
-from drying_model.problem1 import load_chamber_history_csv, sample_solution
-from drying_model.problem2 import solve_problem2
-from drying_model.problem3 import extend_chamber_history_to_plateau
-
-
-def main():
-    out = Path('deliverables/supporting_materials')
-    (out / 'outputs').mkdir(parents=True, exist_ok=True)
-    Path('tmp/paper').mkdir(parents=True, exist_ok=True)
-    end = int(json.loads(Path('tmp/problem3_result.json').read_text(encoding='utf-8'))['strict_completion_time_s'])
-    history = extend_chamber_history_to_plateau(load_chamber_history_csv('data/raw/attachment1.csv'), end)
-    radii = np.arange(21) / 10
-    for n in (2560, 5120):
-        cache = Path(f'tmp/paper/q2full_{n}.npz')
-        if cache.exists():
-            continue
-        T = np.empty((end, 21)); C = np.empty_like(T)
-        ti = ci = None
-        for start in range(0, end, 600):
-            stop = min(start + 600, end)
-            times = np.arange(start + 1, stop + 1, dtype=float)
-            sol = solve_problem2(history, radial_intervals=n, output_times_s=times,
-                relative_tolerance=2e-10, max_step_s=2 if start < 14400 else 60,
-                initial_time_s=float(start) if start else None,
-                initial_temperature_c=ti, initial_moisture_concentration=ci)
-            sample = sample_solution(sol, radii)
-            T[start:stop] = sample.temperature_c; C[start:stop] = sample.moisture_concentration
-            ti = sol.temperature_c[-1].copy(); ci = sol.moisture_concentration[-1].copy()
-            if start % 21600 == 0:
-                print(f'grid={n}, time={stop}/{end}', flush=True)
-        np.savez_compressed(cache, temperature=T, moisture=C)
-    coarse = np.load('tmp/paper/q2full_2560.npz')
-    fine = np.load('tmp/paper/q2full_5120.npz')
-    values = {key: (4*fine[key]-coarse[key])/3 for key in ('temperature','moisture')}
-    p2 = json.loads(Path('tmp/problem2_result.json').read_text(encoding='utf-8'))
-    p3 = json.loads(Path('tmp/problem3_result.json').read_text(encoding='utf-8'))
-    audit = {'time_start_s':1,'time_end_s':end,'radial_intervals':[2560,5120], 'output_interval_s':1}
-    for field, key in [('temperature','temperature_c'),('moisture','moisture_concentration')]:
-        difference = np.abs(np.round(values[field][:10800],4)-np.array(p2[key]))
-        audit[field+'_first_3h_max_difference'] = float(difference.max())
-        if difference.max() > 1e-8:
-            raise ValueError('First three hours differ from audited original')
-    minute_rows = [(int(t)-1, i) for i,t in enumerate(p3['time_s']) if float(t).is_integer() and int(t)%60 == 0]
-    diff = np.array([np.round(values['moisture'][a],4)-np.array(p3['moisture_concentration'][b]) for a,b in minute_rows])
-    audit['q3_minute_max_rounded_difference'] = float(np.abs(diff).max())
-    audit['strict_final_maximum_unrounded'] = float(values['moisture'][-1].max())
-    if audit['strict_final_maximum_unrounded'] >= .15 or np.abs(diff).max() > .00010001:
-        raise ValueError('Full-process cross-check failed')
-    book = Workbook(write_only=True)
-    for name, field in [('温度','temperature'),('水分浓度','moisture')]:
-        sheet = book.create_sheet(name)
-        sheet.append(['时间\\到药材中心的距离']+list(radii))
-        for i, row in enumerate(np.round(values[field],4)):
-            cells = [i+1]
-            for v in row:
-                cell = WriteOnlyCell(sheet, float(v)); cell.number_format='0.0000'; cells.append(cell)
-            sheet.append(cells)
-    dest = out/'outputs/result2.xlsx'
-    book.save(dest)
-    check = load_workbook(dest,read_only=True,data_only=True)
-    checked=0
-    for sheet, field in zip(check.worksheets,('temperature','moisture')):
-        for i,row in enumerate(sheet.iter_rows(min_row=2,values_only=True)):
-            if row[0] != i+1 or not np.allclose(row[1:],np.round(values[field][i],4),rtol=0,atol=1e-12):
-                raise ValueError('Workbook readback mismatch')
-            checked+=len(row)
-        if i+1 != end: raise ValueError('Missing output rows')
-    check.close()
-    audit['readback_checked_cells']=checked
-    audit['workbook_bytes']=dest.stat().st_size
-    audit['status']='passed'
-    (out/'reports/data').mkdir(parents=True,exist_ok=True)
-    (out/'reports/data/problem2_full_process_audit.json').write_text(json.dumps(audit,ensure_ascii=False,indent=2),encoding='utf-8')
-    print(json.dumps(audit),flush=True)
-
-
-if __name__=='__main__': main()
-
-```
-
-### tools/rebuild_delivery_workbooks.py
-
-```python
-"""Build the four workbooks from the independently reproduced JSON payloads."""
-from pathlib import Path
-import json
-from openpyxl import Workbook
-
-def main():
-    out=Path('outputs/recomputed'); out.mkdir(parents=True,exist_ok=True)
-    for number in (1,2,3,4):
-        payload=json.loads(Path(f'tmp/problem{number}_result.json').read_text(encoding='utf-8'))
-        book=Workbook(); book.remove(book.active)
-        for name,key in ([('温度','temperature_c'),('水分浓度','moisture_concentration')] if number<3 else [('Sheet1','moisture_concentration')]):
-            ws=book.create_sheet(name)
-            ws.append(['时间\\到药材中心的距离']+payload['radius_cm']+(['药材表面'] if number==4 else []))
-            for i,(t,row) in enumerate(zip(payload['time_s'],payload[key],strict=True)):
-                ws.append([t]+row+([payload['surface_moisture_concentration'][i]] if number==4 else []))
-            for row in ws.iter_rows(min_row=2,min_col=2):
-                for c in row: c.number_format='0.0000'
-        dest=out/f'result{number}.xlsx'
-        if dest.exists(): raise FileExistsError(dest)
-        book.save(dest)
-        print(dest)
-
-if __name__=='__main__': main()
-
-```
-
-### tools/restore_full_result2.py
+### restore_full_result2.py
 
 ```python
 """Restore the complete, rounded, per-second result2.xlsx from the lossless NPZ."""
@@ -5268,8 +2263,8 @@ from openpyxl.cell import WriteOnlyCell
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--input',type=Path,default=Path('outputs/result2_full_process.npz'))
-    parser.add_argument('--output',type=Path,default=Path('outputs/result2_full_process.xlsx'))
+    parser.add_argument('--input',type=Path,default=Path('result2_full_process.npz'))
+    parser.add_argument('--output',type=Path,default=Path('result2_full_process.xlsx'))
     args = parser.parse_args()
     if args.output.exists():
         raise FileExistsError(f'Refusing to overwrite {args.output}; choose another --output')
@@ -5288,5 +2283,1081 @@ def main():
     print(args.output)
 
 if __name__=='__main__': main()
+
+```
+
+### run_problem1.py
+
+```python
+"""Solve Problem 1 and export workbook-ready values plus diagnostic figures."""
+
+from __future__ import annotations
+
+import argparse
+import json
+from pathlib import Path
+
+import matplotlib
+import numpy as np
+
+matplotlib.use("Agg")
+import matplotlib.pyplot as plt
+
+from problem1 import (
+    Problem1Parameters,
+    load_chamber_history_csv,
+    richardson_extrapolate_solutions,
+    result_payload,
+    sample_solution,
+    solve_problem1,
+)
+
+
+def build_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--input", type=Path, default=Path("attachment1.csv"))
+    parser.add_argument("--output", type=Path, default=Path("problem1_result.json"))
+    parser.add_argument("--figure-dir", type=Path, default=Path("."))
+    parser.add_argument("--coarse-radial-intervals", type=int, default=5120)
+    parser.add_argument("--fine-radial-intervals", type=int, default=10240)
+    return parser
+
+
+def save_figures(payload: dict[str, list], figure_dir: Path) -> None:
+    figure_dir.mkdir(parents=True, exist_ok=True)
+    time = np.asarray(payload["time_s"], dtype=float)
+    radius = np.asarray(payload["radius_cm"], dtype=float)
+    temperature = np.asarray(payload["temperature_c"], dtype=float)
+    moisture = np.asarray(payload["moisture_concentration"], dtype=float)
+
+    profile_times = [100, 300, 600, 900, 1200, 1500, 1800]
+    colors = plt.cm.viridis(np.linspace(0.05, 0.95, len(profile_times)))
+    fig, axes = plt.subplots(1, 2, figsize=(11.0, 4.2), constrained_layout=True)
+    for selected_time, color in zip(profile_times, colors, strict=True):
+        row = selected_time - 1
+        axes[0].plot(radius, temperature[row], color=color, label=f"{selected_time} s")
+        axes[1].plot(radius, moisture[row], color=color, label=f"{selected_time} s")
+    axes[0].set(xlabel="Radius r (cm)", ylabel="Temperature (deg C)")
+    axes[1].set(xlabel="Radius r (cm)", ylabel="Moisture concentration (kg/kg)")
+    for axis in axes:
+        axis.grid(alpha=0.25)
+    axes[1].legend(ncol=2, fontsize=8)
+    fig.savefig(figure_dir / "problem1_radial_profiles.png", dpi=220)
+    plt.close(fig)
+
+    locations = [(0, "center"), (10, "mid-radius"), (20, "surface")]
+    fig, axes = plt.subplots(1, 2, figsize=(11.0, 4.2), constrained_layout=True)
+    for column, label in locations:
+        axes[0].plot(time, temperature[:, column], label=label)
+        axes[1].plot(time, moisture[:, column], label=label)
+    axes[0].set(xlabel="Time (s)", ylabel="Temperature (deg C)")
+    axes[1].set(xlabel="Time (s)", ylabel="Moisture concentration (kg/kg)")
+    for axis in axes:
+        axis.grid(alpha=0.25)
+        axis.legend()
+    fig.savefig(figure_dir / "problem1_time_histories.png", dpi=220)
+    plt.close(fig)
+
+
+def main() -> None:
+    args = build_parser().parse_args()
+    if args.fine_radial_intervals != 2 * args.coarse_radial_intervals:
+        raise ValueError("Fine radial grid must have twice as many intervals as the coarse grid")
+    history = load_chamber_history_csv(args.input)
+    output_times = np.arange(1.0, 1801.0)
+    requested_radii_cm = np.arange(0.0, 2.0 + 0.05, 0.1)
+    sampled_solutions = []
+    for radial_intervals in (
+        args.coarse_radial_intervals,
+        args.fine_radial_intervals,
+    ):
+        solution = solve_problem1(
+            history,
+            radial_intervals,
+            output_times,
+            parameters=Problem1Parameters(),
+            relative_tolerance=5.0e-10,
+            max_step_s=1.0,
+        )
+        sampled_solutions.append(sample_solution(solution, requested_radii_cm))
+    extrapolated = richardson_extrapolate_solutions(
+        sampled_solutions[0],
+        sampled_solutions[1],
+        order=2,
+    )
+    payload = result_payload(extrapolated)
+    args.output.parent.mkdir(parents=True, exist_ok=True)
+    args.output.write_text(
+        json.dumps(payload, ensure_ascii=False, separators=(",", ":")),
+        encoding="utf-8",
+    )
+    save_figures(payload, args.figure_dir)
+
+
+if __name__ == "__main__":
+    main()
+
+```
+
+### run_problem2.py
+
+```python
+"""Solve Problem 2 and export workbook-ready values plus diagnostic figures."""
+
+from __future__ import annotations
+
+import argparse
+import json
+from pathlib import Path
+
+import matplotlib
+import numpy as np
+
+matplotlib.use("Agg")
+import matplotlib.pyplot as plt
+
+from problem1 import (
+    load_chamber_history_csv,
+    result_payload,
+    richardson_extrapolate_solutions,
+)
+from problem2 import diffusivity_q2, solve_problem2_sampled_in_chunks
+
+
+def build_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--input", type=Path, default=Path("attachment1.csv"))
+    parser.add_argument("--output", type=Path, default=Path("problem2_result.json"))
+    parser.add_argument("--figure-dir", type=Path, default=Path("."))
+    parser.add_argument("--coarse-radial-intervals", type=int, default=2560)
+    parser.add_argument("--fine-radial-intervals", type=int, default=5120)
+    parser.add_argument("--chunk-duration-s", type=float, default=600.0)
+    return parser
+
+
+def save_figures(payload: dict[str, list], figure_dir: Path) -> None:
+    figure_dir.mkdir(parents=True, exist_ok=True)
+    time = np.asarray(payload["time_s"], dtype=float)
+    radius = np.asarray(payload["radius_cm"], dtype=float)
+    temperature = np.asarray(payload["temperature_c"], dtype=float)
+    moisture = np.asarray(payload["moisture_concentration"], dtype=float)
+
+    profile_times = [1800, 3600, 5400, 7200, 9000, 10800]
+    colors = plt.cm.viridis(np.linspace(0.05, 0.95, len(profile_times)))
+    fig, axes = plt.subplots(1, 2, figsize=(11.0, 4.2), constrained_layout=True)
+    for selected_time, color in zip(profile_times, colors, strict=True):
+        row = selected_time - 1
+        label = f"{selected_time / 3600:g} h"
+        axes[0].plot(radius, temperature[row], color=color, label=label)
+        axes[1].plot(radius, moisture[row], color=color, label=label)
+    axes[0].set(xlabel="Radius r (cm)", ylabel="Temperature (deg C)")
+    axes[1].set(xlabel="Radius r (cm)", ylabel="Moisture concentration (kg/kg)")
+    for axis in axes:
+        axis.grid(alpha=0.25)
+    axes[1].legend(ncol=2, fontsize=8)
+    fig.savefig(figure_dir / "problem2_radial_profiles.png", dpi=220)
+    plt.close(fig)
+
+    locations = [(0, "center"), (10, "mid-radius"), (20, "surface")]
+    fig, axes = plt.subplots(1, 3, figsize=(14.0, 4.2), constrained_layout=True)
+    for column, label in locations:
+        axes[0].plot(time / 3600.0, temperature[:, column], label=label)
+        axes[1].plot(time / 3600.0, moisture[:, column], label=label)
+        axes[2].plot(
+            time / 3600.0,
+            diffusivity_q2(moisture[:, column], temperature[:, column]),
+            label=label,
+        )
+    axes[0].set(xlabel="Time (h)", ylabel="Temperature (deg C)")
+    axes[1].set(xlabel="Time (h)", ylabel="Moisture concentration (kg/kg)")
+    axes[2].set(xlabel="Time (h)", ylabel="Diffusivity (m2/s)")
+    for axis in axes:
+        axis.grid(alpha=0.25)
+        axis.legend()
+    fig.savefig(figure_dir / "problem2_time_histories.png", dpi=220)
+    plt.close(fig)
+
+
+def main() -> None:
+    args = build_parser().parse_args()
+    if args.fine_radial_intervals != 2 * args.coarse_radial_intervals:
+        raise ValueError("Fine radial grid must have twice as many intervals as the coarse grid")
+    history = load_chamber_history_csv(args.input)
+    output_times = np.arange(1.0, 10801.0)
+    sample_radius_cm = np.arange(0.0, 2.0 + 0.05, 0.1)
+    solutions = []
+    for radial_intervals in (
+        args.coarse_radial_intervals,
+        args.fine_radial_intervals,
+    ):
+        print(f"Solving Problem 2 on {radial_intervals} radial intervals...", flush=True)
+        solutions.append(
+            solve_problem2_sampled_in_chunks(
+                history,
+                radial_intervals=radial_intervals,
+                output_times_s=output_times,
+                sample_radius_cm=sample_radius_cm,
+                chunk_duration_s=args.chunk_duration_s,
+                relative_tolerance=2.0e-10,
+                max_step_s=2.0,
+            )
+        )
+        print(f"Completed {radial_intervals} radial intervals.", flush=True)
+    coarse, fine = solutions
+    extrapolated = richardson_extrapolate_solutions(coarse, fine, order=2)
+    payload = result_payload(extrapolated)
+    payload["numerical_method"] = {
+        "coarse_radial_intervals": args.coarse_radial_intervals,
+        "fine_radial_intervals": args.fine_radial_intervals,
+        "richardson_order": 2,
+        "relative_tolerance": 2.0e-10,
+        "maximum_time_step_s": 2.0,
+        "chunk_duration_s": args.chunk_duration_s,
+        "max_abs_temperature_difference_c": float(
+            np.max(np.abs(fine.temperature_c - coarse.temperature_c))
+        ),
+        "max_abs_moisture_difference": float(
+            np.max(
+                np.abs(
+                    fine.moisture_concentration
+                    - coarse.moisture_concentration
+                )
+            )
+        ),
+        "temperature_four_decimal_mismatches": int(
+            np.count_nonzero(
+                np.round(fine.temperature_c, 4)
+                != np.round(coarse.temperature_c, 4)
+            )
+        ),
+        "moisture_four_decimal_mismatches": int(
+            np.count_nonzero(
+                np.round(fine.moisture_concentration, 4)
+                != np.round(coarse.moisture_concentration, 4)
+            )
+        ),
+    }
+    args.output.parent.mkdir(parents=True, exist_ok=True)
+    args.output.write_text(
+        json.dumps(payload, ensure_ascii=False, separators=(",", ":")),
+        encoding="utf-8",
+    )
+    save_figures(payload, args.figure_dir)
+
+
+if __name__ == "__main__":
+    main()
+
+```
+
+### run_problem3.py
+
+```python
+"""Solve Problem 3, locate the drying endpoint, and export workbook-ready values."""
+
+from __future__ import annotations
+
+import argparse
+import gc
+import json
+from dataclasses import replace
+from pathlib import Path
+
+import matplotlib
+import numpy as np
+
+matplotlib.use("Agg")
+import matplotlib.pyplot as plt
+
+from problem1 import (
+    load_chamber_history_csv,
+    richardson_extrapolate_solutions,
+    sample_solution,
+)
+from problem2 import solve_problem2
+from problem3 import (
+    Problem3Result,
+    extend_chamber_history_to_plateau,
+    moisture_balance_diagnostics,
+    problem3_payload,
+    richardson_extrapolate_drying_time,
+    solve_problem3,
+    truncate_solution_at_threshold,
+    validate_radially_nonincreasing_moisture,
+)
+
+
+def build_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--input", type=Path, default=Path("attachment1.csv"))
+    parser.add_argument("--output", type=Path, default=Path("problem3_result.json"))
+    parser.add_argument("--figure-dir", type=Path, default=Path("."))
+    parser.add_argument("--coarse-radial-intervals", type=int, default=2560)
+    parser.add_argument("--fine-radial-intervals", type=int, default=5120)
+    parser.add_argument("--sensitivity-radial-intervals", type=int, default=640)
+    parser.add_argument("--horizon-hours", type=float, default=96.0)
+    return parser
+
+
+def save_figures(result: Problem3Result, figure_dir: Path) -> None:
+    figure_dir.mkdir(parents=True, exist_ok=True)
+    solution = result.solution
+    time_h = solution.time_s / 3600.0
+    radius_cm = solution.radius_m * 100.0
+    moisture = solution.moisture_concentration
+
+    selected_hours = [6.0, 12.0, 24.0, 36.0, 48.0]
+    selected_hours = [hour for hour in selected_hours if hour < time_h[-1]]
+    selected_indices = [int(np.argmin(np.abs(time_h - hour))) for hour in selected_hours]
+    critical_index = int(
+        np.flatnonzero(
+            np.isclose(solution.time_s, result.drying_time_s, atol=1.0e-8, rtol=0.0)
+        )[0]
+    )
+    selected_indices.extend([critical_index, len(time_h) - 1])
+    selected_indices = list(dict.fromkeys(selected_indices))
+    fig, axis = plt.subplots(figsize=(7.2, 4.6), constrained_layout=True)
+    for index in selected_indices:
+        if index == critical_index:
+            label = "critical threshold"
+        elif index == len(time_h) - 1:
+            label = "first strict regular time"
+        else:
+            label = f"{time_h[index]:g} h"
+        axis.plot(radius_cm, moisture[index], label=label)
+    axis.axhline(result.threshold, color="#B91C1C", linestyle="--", linewidth=1.0)
+    axis.set(
+        xlabel="Radius r (cm)",
+        ylabel="Moisture concentration (kg/kg)",
+    )
+    axis.grid(alpha=0.25)
+    axis.legend(ncol=2, fontsize=8)
+    fig.savefig(figure_dir / "problem3_radial_profiles.png", dpi=220)
+    plt.close(fig)
+
+    fig, axis = plt.subplots(figsize=(7.2, 4.6), constrained_layout=True)
+    for column, label in ((0, "center"), (10, "mid-radius"), (20, "surface")):
+        axis.plot(time_h, moisture[:, column], label=label)
+    axis.axhline(result.threshold, color="#B91C1C", linestyle="--", linewidth=1.0)
+    axis.set(
+        xlabel="Time (h)",
+        ylabel="Moisture concentration (kg/kg)",
+    )
+    axis.grid(alpha=0.25)
+    axis.legend()
+    fig.savefig(figure_dir / "problem3_time_histories.png", dpi=220)
+    plt.close(fig)
+
+
+def main() -> None:
+    args = build_parser().parse_args()
+    if args.fine_radial_intervals != 2 * args.coarse_radial_intervals:
+        raise ValueError("Fine radial grid must have twice as many intervals as the coarse grid")
+    history = load_chamber_history_csv(args.input)
+    horizon_s = args.horizon_hours * 3600.0
+    solver_options = {"relative_tolerance": 2.0e-9, "max_step_s": 60.0}
+
+    endpoint_results = []
+    for radial_intervals in (
+        args.coarse_radial_intervals,
+        args.fine_radial_intervals,
+    ):
+        endpoint = solve_problem3(
+            history,
+            radial_intervals,
+            horizon_s,
+            output_interval_s=3600.0,
+            **solver_options,
+        )
+        endpoint_results.append(endpoint)
+        print(
+            f"endpoint grid={radial_intervals}: "
+            f"{endpoint.drying_time_s:.6f} s",
+            flush=True,
+        )
+    extrapolated_time = richardson_extrapolate_drying_time(
+        endpoint_results[0].drying_time_s,
+        endpoint_results[1].drying_time_s,
+        order=2,
+    )
+
+    common_end_time = extrapolated_time + 60.0
+    extended_history = extend_chamber_history_to_plateau(history, common_end_time)
+    regular_times = np.arange(60.0, common_end_time + 1.0e-9, 60.0)
+    common_times = np.unique(
+        np.append(
+            regular_times,
+            [extrapolated_time - 60.0, extrapolated_time + 60.0],
+        )
+    )
+    diagnostic_times = np.unique(
+        np.concatenate([np.arange(0.0, 601.0), common_times])
+    )
+    requested_radii_cm = np.arange(0.0, 2.0 + 0.05, 0.1)
+    sampled_solutions = []
+    moisture_balance: dict[str, dict[str, float]] = {}
+    radial_monotonicity: dict[str, float] = {}
+    for radial_intervals in (
+        args.coarse_radial_intervals,
+        args.fine_radial_intervals,
+    ):
+        full_solution = solve_problem2(
+            extended_history,
+            radial_intervals,
+            diagnostic_times,
+            **solver_options,
+        )
+        moisture_balance[str(radial_intervals)] = moisture_balance_diagnostics(
+            full_solution,
+            extended_history,
+        )
+        radial_monotonicity[str(radial_intervals)] = (
+            validate_radially_nonincreasing_moisture(full_solution)
+        )
+        sampled_full_solution = sample_solution(
+            full_solution,
+            requested_radii_cm,
+        )
+        common_indices = np.searchsorted(diagnostic_times, common_times)
+        sampled_solutions.append(
+            replace(
+                sampled_full_solution,
+                time_s=sampled_full_solution.time_s[common_indices],
+                temperature_c=sampled_full_solution.temperature_c[common_indices],
+                moisture_concentration=(
+                    sampled_full_solution.moisture_concentration[common_indices]
+                ),
+            )
+        )
+        del full_solution
+        del sampled_full_solution
+        gc.collect()
+        print(f"sampled field grid={radial_intervals}", flush=True)
+    extrapolated_solution = richardson_extrapolate_solutions(
+        sampled_solutions[0],
+        sampled_solutions[1],
+        order=2,
+    )
+    maximum_outward_increase = validate_radially_nonincreasing_moisture(
+        extrapolated_solution
+    )
+    output_solution = truncate_solution_at_threshold(
+        extrapolated_solution,
+        threshold=0.15,
+        output_interval_s=60.0,
+    )
+    critical_index = output_solution.time_s.size - 2
+    critical_moisture = output_solution.moisture_concentration[critical_index]
+    maximum_index = int(np.argmax(critical_moisture))
+    result = Problem3Result(
+        solution=output_solution,
+        drying_time_s=float(output_solution.time_s[critical_index]),
+        strict_completion_time_s=float(output_solution.time_s[-1]),
+        maximum_moisture=float(critical_moisture[maximum_index]),
+        maximum_radius_m=float(output_solution.radius_m[maximum_index]),
+        plateau_temperature_c=float(extended_history.temperature_c[-1]),
+        plateau_moisture_concentration=float(
+            extended_history.moisture_concentration[-1]
+        ),
+        threshold=0.15,
+        output_interval_s=60.0,
+    )
+
+    tail_half_hour = history.time_s >= history.time_s[-1] - 1800.0
+    tail_hour = history.time_s >= history.time_s[-1] - 3600.0
+    temperature_mean = float(np.mean(history.temperature_c[tail_hour]))
+    moisture_mean = float(np.mean(history.moisture_concentration[tail_hour]))
+    temperature_std = float(np.std(history.temperature_c[tail_hour], ddof=1))
+    moisture_std = float(np.std(history.moisture_concentration[tail_hour], ddof=1))
+    scenarios = {
+        "last_hour_mean": (temperature_mean, moisture_mean),
+        "last_half_hour_mean": (
+            float(np.mean(history.temperature_c[tail_half_hour])),
+            float(np.mean(history.moisture_concentration[tail_half_hour])),
+        ),
+        "last_observation": (
+            float(history.temperature_c[-1]),
+            float(history.moisture_concentration[-1]),
+        ),
+        "cool_wet_one_standard_deviation": (
+            temperature_mean - temperature_std,
+            moisture_mean + moisture_std,
+        ),
+        "warm_dry_one_standard_deviation": (
+            temperature_mean + temperature_std,
+            max(0.0, moisture_mean - moisture_std),
+        ),
+    }
+    sensitivity: dict[str, dict[str, float]] = {}
+    for name, (plateau_temperature, plateau_moisture) in scenarios.items():
+        scenario = solve_problem3(
+            history,
+            args.sensitivity_radial_intervals,
+            horizon_s,
+            output_interval_s=3600.0,
+            plateau_temperature_c=plateau_temperature,
+            plateau_moisture_concentration=plateau_moisture,
+            **solver_options,
+        )
+        sensitivity[name] = {
+            "plateau_temperature_c": plateau_temperature,
+            "plateau_moisture_concentration": plateau_moisture,
+            "drying_time_s": scenario.drying_time_s,
+            "drying_time_h": scenario.drying_time_s / 3600.0,
+        }
+        print(
+            f"sensitivity {name}: {scenario.drying_time_s / 3600.0:.6f} h",
+            flush=True,
+        )
+
+    payload = problem3_payload(result)
+    payload["grid_endpoint_s"] = {
+        str(args.coarse_radial_intervals): endpoint_results[0].drying_time_s,
+        str(args.fine_radial_intervals): endpoint_results[1].drying_time_s,
+        "richardson": result.drying_time_s,
+    }
+    payload["moisture_balance"] = moisture_balance
+    payload["radial_monotonicity"] = {
+        "center_is_wettest_at_all_output_times": True,
+        "maximum_outward_increase_by_grid": radial_monotonicity,
+        "extrapolated_sampled_maximum_outward_increase": maximum_outward_increase,
+    }
+    payload["sensitivity"] = sensitivity
+    args.output.parent.mkdir(parents=True, exist_ok=True)
+    args.output.write_text(
+        json.dumps(payload, ensure_ascii=False, separators=(",", ":")),
+        encoding="utf-8",
+    )
+    save_figures(result, args.figure_dir)
+
+
+if __name__ == "__main__":
+    main()
+
+```
+
+### run_problem4.py
+
+```python
+"""Solve Problem 4, perform grid checks, and create workbook-ready payloads."""
+
+from __future__ import annotations
+
+import argparse
+import hashlib
+import json
+from pathlib import Path
+
+import matplotlib
+import numpy as np
+
+matplotlib.use("Agg")
+import matplotlib.pyplot as plt
+
+from problem1 import load_chamber_history_csv
+from problem3 import extend_chamber_history_to_plateau
+from problem4 import (
+    RadiusHistory,
+    load_radius_history_csv,
+    moisture_balance_diagnostics,
+    sample_moving_solution,
+    sample_surface,
+    solve_problem4,
+    validate_radially_nonincreasing_moisture,
+)
+
+
+def build_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--chamber", type=Path, default=Path("attachment1.csv"))
+    parser.add_argument("--radius", type=Path, default=Path("attachment2.csv"))
+    parser.add_argument("--output", type=Path, default=Path("problem4_result.json"))
+    parser.add_argument("--figure-dir", type=Path, default=Path("."))
+    parser.add_argument("--diagnostics-output", type=Path, default=Path("problem4_production_diagnostics.json"))
+    parser.add_argument("--coarse-radial-intervals", type=int, default=640)
+    parser.add_argument("--fine-radial-intervals", type=int, default=1280)
+    parser.add_argument("--horizon-hours", type=float, default=72.0)
+    return parser
+
+
+def richardson(coarse: np.ndarray, fine: np.ndarray, order: int = 2) -> np.ndarray:
+    """Second-order Richardson extrapolation for equal output grids."""
+    if coarse.shape != fine.shape:
+        raise ValueError("Richardson inputs must have equal shapes")
+    return fine + (fine - coarse) / (2.0**order - 1.0)
+
+
+def interpolate_rows(values: np.ndarray, times: np.ndarray, query: float) -> np.ndarray:
+    """Linearly interpolate each spatial column at one time."""
+    if query < times[0] or query > times[-1]:
+        raise ValueError("Interpolation query lies outside the solution")
+    index = int(np.searchsorted(times, query))
+    if index == 0:
+        return values[0].copy()
+    if index == times.size:
+        return values[-1].copy()
+    if np.isclose(times[index], query, atol=1.0e-10, rtol=0.0):
+        return values[index].copy()
+    fraction = (query - times[index - 1]) / (times[index] - times[index - 1])
+    return values[index - 1] + fraction * (values[index] - values[index - 1])
+
+
+def write_diagnostics(payload: dict, path: Path, chamber_path: Path, radius_path: Path) -> None:
+    """Retain compact production evidence alongside the generated workbook."""
+    omitted = {"time_s", "radius_cm", "moisture_concentration", "surface_moisture_concentration"}
+    evidence = {key: value for key, value in payload.items() if key not in omitted}
+    evidence["input_sha256"] = {p.as_posix(): hashlib.sha256(p.read_bytes()).hexdigest() for p in (chamber_path, radius_path)}
+    evidence["data_rows"] = len(payload["time_s"])
+    evidence["table6_columns"] = ["time_h", "center", "0.5_cm", "1.0_cm", "surface"]
+    evidence["table6"] = []
+    for hour in range(6, 49, 6):
+        if hour * 3600 not in payload["time_s"]:
+            continue
+        index = payload["time_s"].index(hour * 3600)
+        row = payload["moisture_concentration"][index]
+        evidence["table6"].append([hour, row[0], row[5], row[10], payload["surface_moisture_concentration"][index]])
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(evidence, indent=2, ensure_ascii=False, allow_nan=False) + "\n", encoding="utf-8")
+
+
+def save_figures(
+    times_s: np.ndarray,
+    radius_cm: np.ndarray,
+    moisture: np.ndarray,
+    surface: np.ndarray,
+    radius_history,
+    drying_time_s: float,
+    figure_dir: Path,
+) -> None:
+    figure_dir.mkdir(parents=True, exist_ok=True)
+    time_h = times_s / 3600.0
+    critical_index = int(np.argmin(np.abs(times_s - drying_time_s)))
+    selected_hours = [6.0, 12.0, 24.0, 36.0, 48.0]
+    selected = [int(np.argmin(np.abs(time_h - value))) for value in selected_hours if value <= time_h[-1]]
+    selected.extend([critical_index, len(times_s) - 1])
+    selected = list(dict.fromkeys(selected))
+    fig, axis = plt.subplots(figsize=(7.4, 4.7), constrained_layout=True)
+    for index in selected:
+        label = f"{time_h[index]:g} h"
+        if np.isclose(times_s[index], drying_time_s, atol=1.0e-6, rtol=0.0):
+            label = "critical threshold"
+        elif index == len(times_s) - 1:
+            label = "first strict regular time"
+        axis.plot(radius_cm, moisture[index], marker="", label=label)
+    axis.axhline(0.15, color="#B91C1C", linestyle="--", linewidth=1.0)
+    axis.set(xlabel="Fixed physical radius (cm)", ylabel="Moisture concentration (kg/kg)")
+    axis.grid(alpha=0.25)
+    axis.legend(ncol=2, fontsize=8)
+    fig.savefig(figure_dir / "problem4_radial_profiles.png", dpi=220)
+    plt.close(fig)
+
+    fig, axis = plt.subplots(figsize=(7.4, 4.7), constrained_layout=True)
+    center = moisture[:, 0]
+    axis.plot(time_h, center, label="center")
+    axis.plot(time_h, surface, label="actual surface")
+    axis.axhline(0.15, color="#B91C1C", linestyle="--", linewidth=1.0)
+    axis.set(xlabel="Time (h)", ylabel="Moisture concentration (kg/kg)")
+    axis.grid(alpha=0.25)
+    axis.legend()
+    fig.savefig(figure_dir / "problem4_time_histories.png", dpi=220)
+    plt.close(fig)
+
+    fig, axis = plt.subplots(figsize=(7.4, 4.7), constrained_layout=True)
+    axis.plot(radius_history.time_s / 3600.0, radius_history.radius_m * 100.0, color="#1D4ED8")
+    axis.set(xlabel="Time (h)", ylabel="Measured radius (cm)")
+    axis.grid(alpha=0.25)
+    fig.savefig(figure_dir / "problem4_radius_history.png", dpi=220)
+    plt.close(fig)
+
+
+def main() -> None:
+    args = build_parser().parse_args()
+    chamber = load_chamber_history_csv(args.chamber)
+    radius_history = load_radius_history_csv(args.radius)
+    if args.fine_radial_intervals != 2 * args.coarse_radial_intervals:
+        raise ValueError("Second-order Richardson requires fine intervals = 2 * coarse intervals")
+    horizon_s = float(args.horizon_hours * 3600.0)
+    extended_chamber = extend_chamber_history_to_plateau(chamber, horizon_s)
+    threshold = 0.15
+    solver_options = {"relative_tolerance": 2.0e-8, "max_step_s": 120.0}
+    endpoint_times: dict[str, float] = {}
+    for grid in (args.coarse_radial_intervals, args.fine_radial_intervals):
+        probe_times = np.unique(np.append(np.arange(3600.0, horizon_s, 3600.0), horizon_s))
+        endpoint = solve_problem4(
+            extended_chamber,
+            radius_history,
+            grid,
+            probe_times,
+            maximum_moisture_threshold=threshold,
+            **solver_options,
+        )
+        endpoint_times[str(grid)] = float(endpoint.time_s[-1])
+        print(f"endpoint grid={grid}: {endpoint.time_s[-1]:.6f} s", flush=True)
+    drying_time_s = float(
+        endpoint_times[str(args.fine_radial_intervals)]
+        + (endpoint_times[str(args.fine_radial_intervals)] - endpoint_times[str(args.coarse_radial_intervals)]) / 3.0
+    )
+    timing_sensitivity: dict[str, float] = {}
+    sensitivity_grid = max(160, args.coarse_radial_intervals // 2)
+    for name, shift_s in (("half_interval_early", -900.0), ("baseline", 0.0), ("half_interval_late", 900.0)):
+        shifted_times = radius_history.time_s.copy()
+        shifted_times[1:-1] += shift_s
+        shifted_radius = RadiusHistory(shifted_times, radius_history.radius_m.copy())
+        sensitivity_solution = solve_problem4(
+            extended_chamber,
+            shifted_radius,
+            sensitivity_grid,
+            probe_times,
+            maximum_moisture_threshold=threshold,
+            **solver_options,
+        )
+        timing_sensitivity[name] = float(sensitivity_solution.time_s[-1])
+    if not (0.0 < drying_time_s < horizon_s):
+        raise RuntimeError("Extrapolated drying endpoint is outside the supplied chamber horizon")
+    strict_time_s = float(np.floor(drying_time_s / 60.0 + 1.0) * 60.0)
+    if strict_time_s <= drying_time_s + 1.0e-8:
+        strict_time_s += 60.0
+
+    regular_times = np.arange(60.0, strict_time_s + 1.0e-9, 60.0)
+    bracket = np.array([drying_time_s - 60.0, drying_time_s + 60.0])
+    integration_times = np.unique(np.concatenate([regular_times, bracket]))
+    fixed_radius_cm = np.round(np.arange(0.0, 2.0 + 0.0001, 0.1), 10)
+    sampled_by_grid: list[np.ndarray] = []
+    surface_by_grid: list[np.ndarray] = []
+    balance_by_grid: dict[str, dict[str, float]] = {}
+    monotonicity_by_grid: dict[str, float] = {}
+    diagnostic_times = np.unique(np.concatenate([np.arange(0.0, 601.0), integration_times]))
+    for grid in (args.coarse_radial_intervals, args.fine_radial_intervals):
+        full = solve_problem4(
+            extended_chamber,
+            radius_history,
+            grid,
+            diagnostic_times,
+            **solver_options,
+        )
+        balance_by_grid[str(grid)] = moisture_balance_diagnostics(
+            full, extended_chamber, radius_history
+        )
+        monotonicity_by_grid[str(grid)] = validate_radially_nonincreasing_moisture(full)
+        sampled_full = sample_moving_solution(full, radius_history, fixed_radius_cm)
+        surface_full = sample_surface(full)
+        retained = np.searchsorted(diagnostic_times, integration_times)
+        sampled_by_grid.append(sampled_full[retained])
+        surface_by_grid.append(surface_full[retained])
+        del full
+        print(f"full output grid={grid} complete", flush=True)
+
+    extrapolated = richardson(sampled_by_grid[0], sampled_by_grid[1])
+    extrapolated_surface = richardson(surface_by_grid[0], surface_by_grid[1])
+    critical_fixed = interpolate_rows(extrapolated, integration_times, drying_time_s)
+    critical_surface = float(interpolate_rows(extrapolated_surface[:, None], integration_times, drying_time_s)[0])
+    strict_index = int(np.where(np.isclose(integration_times, strict_time_s, atol=1.0e-9, rtol=0.0))[0][0])
+    strict_fixed = extrapolated[strict_index]
+    strict_surface = float(extrapolated_surface[strict_index])
+    regular_before = regular_times[regular_times < drying_time_s - 1.0e-8]
+    output_times = np.concatenate([regular_before, [drying_time_s, strict_time_s]])
+    output_fixed = np.vstack([
+        extrapolated[np.searchsorted(integration_times, regular_before)],
+        critical_fixed,
+        strict_fixed,
+    ])
+    output_surface = np.concatenate([
+        extrapolated_surface[np.searchsorted(integration_times, regular_before)],
+        [critical_surface, strict_surface],
+    ])
+
+    endpoint_moisture = float(np.nanmax(critical_fixed))
+    strict_maximum = float(np.nanmax(strict_fixed))
+    if not np.isclose(endpoint_moisture, threshold, atol=1.0e-7, rtol=0.0):
+        raise RuntimeError(f"Critical moisture does not equal threshold: {endpoint_moisture}")
+    if not strict_maximum < threshold:
+        raise RuntimeError(f"Strict regular row is not below threshold: {strict_maximum}")
+    rounded_fixed = np.round(output_fixed, 4)
+    workbook_matrix = [
+        [None if not np.isfinite(value) else float(value) for value in row]
+        for row in rounded_fixed
+    ]
+    payload = {
+        "time_s": [int(round(t)) if np.isclose(t, round(t), rtol=0.0, atol=1.0e-8) else round(float(t), 6) for t in output_times],
+        "radius_cm": fixed_radius_cm.tolist(),
+        "moisture_concentration": workbook_matrix,
+        "surface_moisture_concentration": np.round(output_surface, 4).tolist(),
+        "drying_time_s": round(drying_time_s, 6),
+        "drying_time_h": round(drying_time_s / 3600.0, 10),
+        "strict_completion_time_s": int(round(strict_time_s)),
+        "strict_completion_time_h": round(strict_time_s / 3600.0, 10),
+        "threshold": threshold,
+        "critical_maximum_moisture_unrounded": endpoint_moisture,
+        "strict_completion_maximum_moisture_unrounded": strict_maximum,
+        "radius_at_drying_time_cm": float(np.interp(drying_time_s, radius_history.time_s, radius_history.radius_m) * 100.0),
+        "grid_endpoint_s": endpoint_times | {"richardson": drying_time_s},
+        "outside_radius_cells_are_blank": True,
+        "moisture_balance": balance_by_grid,
+        "radial_monotonicity": monotonicity_by_grid,
+        "radius_timing_sensitivity_s": timing_sensitivity,
+    }
+    args.output.parent.mkdir(parents=True, exist_ok=True)
+    args.output.write_text(
+        json.dumps(payload, ensure_ascii=False, separators=(",", ":"), allow_nan=False),
+        encoding="utf-8",
+    )
+    write_diagnostics(payload, args.diagnostics_output, args.chamber, args.radius)
+    save_figures(output_times, fixed_radius_cm, output_fixed, output_surface, radius_history, drying_time_s, args.figure_dir)
+    print(f"drying endpoint: {drying_time_s / 3600.0:.6f} h; strict row: {strict_time_s:.0f} s", flush=True)
+
+
+if __name__ == "__main__":
+    main()
+
+```
+
+### verify_problem4.py
+
+```python
+"""Reproduce the Q4 review experiments; no external review values are inputs."""
+
+from __future__ import annotations
+
+import argparse
+from dataclasses import replace
+import hashlib
+import json
+from pathlib import Path
+import platform
+
+import numpy as np
+import scipy
+
+from problem1 import Problem1Parameters, load_chamber_history_csv
+from problem3 import extend_chamber_history_to_plateau
+from problem4 import RadiusHistory, density_shrinkage_compatibility, load_radius_history_csv, solve_problem4
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--output", type=Path, default=Path("problem4_review_experiments.json"))
+    parser.add_argument("--sensitivity-grid", type=int, default=320)
+    args = parser.parse_args()
+    chamber_path = Path("attachment1.csv")
+    radius_path = Path("attachment2.csv")
+    chamber = extend_chamber_history_to_plateau(load_chamber_history_csv(chamber_path), 144 * 3600.0)
+    radius = load_radius_history_csv(radius_path)
+    parameters = Problem1Parameters()
+    results = {
+        "schema_version": 1,
+        "runtime": {"python": platform.python_version(), "numpy": np.__version__, "scipy": scipy.__version__},
+        "input_sha256": {str(p): hashlib.sha256(p.read_bytes()).hexdigest() for p in (chamber_path, radius_path)},
+        "threshold": 0.15,
+        "default_solver": {"relative_tolerance": 2e-8, "max_step_s": 120.0},
+        "sensitivity_radial_intervals": args.sensitivity_grid,
+    }
+
+    def save() -> None:
+        args.output.parent.mkdir(parents=True, exist_ok=True)
+        args.output.write_text(json.dumps(results, indent=2, ensure_ascii=False, allow_nan=False) + "\n", encoding="utf-8")
+
+    def endpoint(grid, radius_input=radius, params=parameters, rtol=2e-8, step=120.0):
+        solution = solve_problem4(chamber, radius_input, grid, [0.0, 144 * 3600.0], parameters=params,
+                                  relative_tolerance=rtol, max_step_s=step, maximum_moisture_threshold=0.15)
+        return solution
+
+    fixed = RadiusHistory(radius.time_s, np.full_like(radius.radius_m, parameters.radius_m))
+    fixed_endpoints = {}
+    results["fixed_radius_endpoint_s"] = fixed_endpoints
+    for grid in (160, 320, 640, 1280):
+        fixed_endpoints[str(grid)] = float(endpoint(grid, fixed).time_s[-1])
+        print(f"fixed radius N={grid}: {fixed_endpoints[str(grid)] / 3600:.9f} h", flush=True)
+        save()
+    fixed_endpoints["richardson_640_1280"] = fixed_endpoints["1280"] + (fixed_endpoints["1280"] - fixed_endpoints["640"]) / 3
+    fixed_endpoints["observed_order_320_640_1280"] = float(np.log2((fixed_endpoints["320"] - fixed_endpoints["640"]) / (fixed_endpoints["640"] - fixed_endpoints["1280"])))
+
+    time_checks = []
+    results["time_integration"] = time_checks
+    for rtol, step in ((2e-8, 120.0), (2e-9, 60.0), (5e-10, 30.0)):
+        solution = endpoint(args.sensitivity_grid, rtol=rtol, step=step)
+        time_checks.append({"relative_tolerance": rtol, "max_step_s": step, "endpoint_s": float(solution.time_s[-1])})
+        print(f"time convergence: {time_checks[-1]}", flush=True)
+        save()
+    baseline = time_checks[0]["endpoint_s"]
+    results["time_integration_endpoint_spread_s"] = max(row["endpoint_s"] for row in time_checks) - min(row["endpoint_s"] for row in time_checks)
+
+    pchip = RadiusHistory(radius.time_s, radius.radius_m, interpolation="pchip")
+    pchip_time = float(endpoint(args.sensitivity_grid, pchip).time_s[-1])
+    results["radius_interpolation"] = {"linear_endpoint_s": baseline, "pchip_endpoint_s": pchip_time,
+                                       "pchip_minus_linear_s": pchip_time - baseline, "observation_times_unchanged": True}
+    save()
+    print(f"PCHIP minus linear: {pchip_time - baseline:.6f} s", flush=True)
+
+    for name, field in (("mass_transfer", "mass_transfer_coefficient_m_s"), ("heat_transfer", "heat_transfer_coefficient_w_m2_k")):
+        rows = []
+        results[name + "_sensitivity"] = rows
+        for multiplier in (0.8, 1.0, 1.2):
+            value = getattr(parameters, field) * multiplier
+            time = baseline if multiplier == 1.0 else float(endpoint(args.sensitivity_grid, params=replace(parameters, **{field: value})).time_s[-1])
+            rows.append({"multiplier": multiplier, "coefficient": value, "endpoint_s": time, "change_from_baseline_s": time - baseline})
+            print(f"{name} x{multiplier}: {time / 3600:.9f} h", flush=True)
+            save()
+
+    density_checks = {}
+    results["density_shrinkage_compatibility"] = density_checks
+    for grid in (640, 1280):
+        event_solution = endpoint(grid)
+        times = np.append(np.arange(0.0, 49 * 3600.0, 6 * 3600.0), event_solution.time_s[-1])
+        full = solve_problem4(chamber, radius, grid, times, relative_tolerance=2e-8, max_step_s=120.0)
+        density_checks[str(grid)] = density_shrinkage_compatibility(full, radius)
+        density_checks[str(grid)]["center_moisture_at_48h"] = float(full.moisture_concentration[-2, 0])
+        print(f"density compatibility N={grid}: final mass ratio {density_checks[str(grid)]['final_mass_ratio']:.9f}", flush=True)
+        save()
+    save()
+
+
+if __name__ == "__main__":
+    main()
+
+```
+
+### verify_problem4_independent.py
+
+```python
+"""Reproduce a separately implemented cell-centred discretization of Problem 4."""
+
+from __future__ import annotations
+
+import argparse
+import json
+from pathlib import Path
+import platform
+import time
+
+import numpy as np
+import scipy
+
+from problem1 import load_chamber_history_csv
+from problem3 import extend_chamber_history_to_plateau
+from problem4 import load_radius_history_csv
+from problem4_independent import (
+    sample_independent_moisture,
+    solve_independent_problem4,
+)
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--cells", nargs="+", type=int, default=[100, 200, 400, 800, 1600, 3200])
+    parser.add_argument("--output", type=Path, default=Path("problem4_independent_validation.json"))
+    args = parser.parse_args()
+    raw_chamber = load_chamber_history_csv("attachment1.csv")
+    chamber = extend_chamber_history_to_plateau(raw_chamber, 72 * 3600.0)
+    radius = load_radius_history_csv("attachment2.csv")
+    table_hours = np.arange(6.0, 48.1, 6.0)
+    requested_times = np.concatenate([[0.0], table_hours * 3600.0, [72 * 3600.0]])
+    reference_table = np.asarray([
+        [1.7196, 1.5377, 1.0226, 0.4207],
+        [0.7377, 0.6546, 0.4083, 0.1669],
+        [0.4088, 0.3687, 0.2397, 0.0892],
+        [0.2851, 0.2611, 0.1790, 0.0673],
+        [0.2263, 0.2094, 0.1493, 0.0595],
+        [0.1928, 0.1797, 0.1317, 0.0560],
+        [0.1712, 0.1604, 0.1200, 0.0541],
+        [0.1561, 0.1468, 0.1116, 0.0530],
+    ])
+    grids = {}
+    for cells in args.cells:
+        started = time.perf_counter()
+        solution = solve_independent_problem4(chamber, radius, cells, requested_times)
+        sampled = sample_independent_moisture(solution, radius, [0.0, 0.5, 1.0])
+        table = np.column_stack([sampled[1:9], solution.surface_moisture[1:9]])
+        full_profiles = np.column_stack([
+            solution.centre_moisture, solution.moisture, solution.surface_moisture,
+        ])
+        grids[str(cells)] = {
+            "cells": cells,
+            "drying_time_s": solution.drying_time_s,
+            "drying_time_h": solution.drying_time_s / 3600.0,
+            "endpoint_cell_maximum": solution.endpoint_cell_maximum,
+            "endpoint_reconstructed_maximum": solution.endpoint_reconstructed_maximum,
+            "endpoint_centre_moisture": float(solution.centre_moisture[-1]),
+            "endpoint_surface_moisture": float(solution.surface_moisture[-1]),
+            "table_unrounded": table.tolist(),
+            "table_rounded_4dp": np.round(table, 4).tolist(),
+            "maximum_outward_increase_at_stored_times": float(np.max(np.diff(full_profiles, axis=1))),
+            "elapsed_s": time.perf_counter() - started,
+        }
+        print(f"cells={cells}: endpoint {solution.drying_time_s:.9f} s = "
+              f"{solution.drying_time_s / 3600:.10f} h", flush=True)
+
+    output = {
+        "purpose": "Numerical cross-check of the same assumed continuum model; not independent experimental validation.",
+        "method": {
+            "geometry": "N complete annular cells; point unknowns at xi=(j+1/2)/N",
+            "internal_faces": "Arithmetic mean transport coefficient with centred gradient",
+            "outer_boundary": "Last-centre half-cell resistance R/(2*N*a_last) plus convection resistance 1/h",
+            "centre_reconstruction": "(9*C[0]-C[1])/8 from an even quadratic",
+            "event": "Maximum of reconstructed centre, all cell-centre values and reconstructed surface equals 0.15",
+            "time_integrator": "SciPy BDF for T and C directly; rtol=2e-9, atol(T)=1e-9, atol(C)=1e-11, max_step=60s",
+            "material_laws": "Independent transcription of Appendix 4 with Kelvin in diffusivity",
+            "shared_inputs": "Same Attachment 1 and 2 CSV inputs, linear radius and chamber interpolation, final-hour chamber means with 60s transition",
+            "limitation": "Arithmetic-face and frozen half-cell coefficient errors, and interior linear sampling, require convergence checks. The reconstruction is not a rigorous bound on continuous subcell maxima.",
+        },
+        "runtime": {"python": platform.python_version(), "numpy": np.__version__, "scipy": scipy.__version__},
+        "chamber_plateau": {"temperature_c": float(chamber.temperature_c[-1]), "moisture": float(chamber.moisture_concentration[-1])},
+        "table_time_h": table_hours.tolist(),
+        "table_columns": ["0 cm", "0.5 cm", "1.0 cm", "actual surface"],
+        "baseline_report": {"drying_time_h": 51.091955, "table_6_rounded_4dp": reference_table.tolist()},
+        "unverified_docx_reference_time_h": 51.091999,
+        "grids": grids,
+    }
+    extrapolations = {}
+    for coarse in args.cells:
+        fine = 2 * coarse
+        if str(fine) not in grids:
+            continue
+        coarse_value, fine_value = grids[str(coarse)], grids[str(fine)]
+        extrap_time = fine_value["drying_time_s"] + (
+            fine_value["drying_time_s"] - coarse_value["drying_time_s"]
+        ) / 3.0
+        extrap_table = np.asarray(fine_value["table_unrounded"]) + (
+            np.asarray(fine_value["table_unrounded"]) - np.asarray(coarse_value["table_unrounded"])
+        ) / 3.0
+        rounded = np.round(extrap_table, 4)
+        mismatches = np.argwhere(rounded != reference_table)
+        extrapolations[f"{coarse}/{fine}"] = {
+            "assumed_order": 2,
+            "drying_time_s": extrap_time,
+            "drying_time_h": extrap_time / 3600.0,
+            "delta_from_baseline_s": extrap_time - 51.091955 * 3600.0,
+            "delta_from_unverified_docx_reference_s": extrap_time - 51.091999 * 3600.0,
+            "table_unrounded": extrap_table.tolist(),
+            "table_rounded_4dp": rounded.tolist(),
+            "maximum_absolute_difference_from_rounded_table_6": float(np.max(np.abs(extrap_table - reference_table))),
+            "rounded_table_mismatch_count": int(len(mismatches)),
+            "rounded_table_mismatches": [
+                {"time_h": float(table_hours[row]), "column": output["table_columns"][col],
+                 "baseline": float(reference_table[row, col]), "independent": float(rounded[row, col])}
+                for row, col in mismatches
+            ],
+        }
+    output["second_order_richardson"] = extrapolations
+    orders = {}
+    for coarse in args.cells:
+        if str(2 * coarse) in grids and str(4 * coarse) in grids:
+            a, b, c = [grids[str(k)]["drying_time_s"] for k in (coarse, 2 * coarse, 4 * coarse)]
+            orders[f"{coarse}/{2 * coarse}/{4 * coarse}"] = float(np.log2(abs((a - b) / (b - c))))
+    output["observed_endpoint_orders"] = orders
+    output["interpretation"] = (
+        "The endpoint differences decrease with refinement, but observed orders remain below two. "
+        "The second-order Richardson values are diagnostic extrapolations, not certified error bounds. "
+        "Agreement with a production-solver extrapolation does not validate the shared physical assumptions. "
+        "Four-decimal table agreement is assessed against the rounded published table; its raw differences "
+        "therefore include reference rounding and are not discretization error estimates."
+    )
+    args.output.parent.mkdir(parents=True, exist_ok=True)
+    args.output.write_text(json.dumps(output, indent=2, ensure_ascii=False, allow_nan=False) + "\n", encoding="utf-8")
+    print(json.dumps({"extrapolated_endpoints_h": {key: row["drying_time_h"] for key, row in extrapolations.items()},
+                      "observed_orders": orders}, ensure_ascii=False), flush=True)
+
+
+if __name__ == "__main__":
+    main()
 
 ```
