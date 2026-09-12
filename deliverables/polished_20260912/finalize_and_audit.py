@@ -109,7 +109,7 @@ def audit():
     new_tables = re.findall(r'(?m)^\|.*\|$', new)
     assert old_tables == new_tables, 'A numeric/symbol table changed'
     new_codes = re.findall(r'```python\n(.*?)```', new, re.S)
-    assert len(new_codes) == 12, 'Unexpected flattened source appendix count'
+    assert len(new_codes) == 4, 'Appendix must contain only four core model files'
     references = new_source.split('## 参考文献', 1)[1].split('<!-- APPENDIX -->', 1)[0]
     assert not re.search(r'(?i)\bAI\b|Scientific Agent Skills|Nature Skills|Codex', references)
     assert re.findall(r'(?m)^\[(\d+)\]', references) == ['1', '2', '3']
@@ -182,6 +182,9 @@ def audit():
     assert flat_audit['structure'] == 'single-level'
     assert flat_audit['workbooks_resaved'] is False
     assert set(flat_audit['result_filenames']) == expected_results
+    assert flat_audit['python_source_files'] == 25
+    assert flat_audit['flat_package_tests'] == '95 passed'
+    assert len(list(support.glob('*.py'))) == 25
     with zipfile.ZipFile(OUT / 'A题支撑材料.zip', 'w', zipfile.ZIP_DEFLATED, compresslevel=9) as z:
         for p in files:
             z.write(p, p.name)
@@ -207,6 +210,7 @@ def audit():
               'appendix_first_page': appendix, 'native_editable_equations': equations,
               'editable_three_line_tables': len(tables), 'display_equations_unchanged': len(old_display),
               'table_rows_unchanged': len(old_tables), 'python_listings': len(new_codes),
+              'support_python_sources': 25, 'flat_package_tests': '95 passed',
               'support_files': len(files), 'support_subdirectories': 0, 'reference_count': 3,
               'result_workbooks_resaved': False, 'source_main_chars_before': count(before_main),
               'source_main_chars_after': count(after_main), 'section_counts': section_counts,

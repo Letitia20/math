@@ -8,9 +8,12 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
 from pathlib import Path
 import re
 import shutil
+import subprocess
+import sys
 import zipfile
 
 from openpyxl import load_workbook
@@ -130,6 +133,18 @@ def workbook_audit(template: Path, result: Path) -> dict[str, object]:
 
 def flatten_python(text: str) -> str:
     text = re.sub(r"from drying_model\.([a-zA-Z0-9_]+) import", r"from \1 import", text)
+    text = re.sub(
+        r"import drying_model\.([a-zA-Z0-9_]+) as ([a-zA-Z0-9_]+)",
+        r"import \1 as \2",
+        text,
+    )
+    text = text.replace(
+        'Path(__file__).resolve().parents[1] / "scripts" / ',
+        'Path(__file__).resolve().parent / ',
+    ).replace(
+        'Path(__file__).resolve().parents[1] / "tools" / ',
+        'Path(__file__).resolve().parent / ',
+    )
     replacements = {
         "data/raw/attachment1.csv": "attachment1.csv",
         "data/raw/attachment2.csv": "attachment2.csv",
@@ -140,9 +155,14 @@ def flatten_python(text: str) -> str:
         "reports/figures": ".",
         "reports/data/problem4_production_diagnostics.json": "problem4_production_diagnostics.json",
         "reports/data/problem4_review_experiments.json": "problem4_review_experiments.json",
+        "reports/data/final_all_questions_audit.json": "final_all_questions_audit.json",
         "reports/problem4_independent_validation.json": "problem4_independent_validation.json",
+        "outputs/result1.xlsx": "result1.xlsx",
+        "outputs/result2.xlsx": "result2.xlsx",
         "outputs/result2_full_process.npz": "result2_full_process.npz",
         "outputs/result2_full_process.xlsx": "result2_full_process.xlsx",
+        "outputs/result3.xlsx": "result3.xlsx",
+        "outputs/result4.xlsx": "result4.xlsx",
     }
     for old, new in replacements.items():
         text = text.replace(old, new)
@@ -184,13 +204,23 @@ def build() -> None:
 
     python_sources = [
         *(ROOT / "src" / "drying_model" / name for name in (
-            "problem1.py", "problem2.py", "problem3.py", "problem4.py", "problem4_independent.py"
+            "__init__.py", "problem1.py", "problem2.py", "problem3.py", "problem4.py",
+            "problem4_independent.py",
         )),
         *(ROOT / "scripts" / name for name in (
             "run_problem1.py", "run_problem2.py", "run_problem3.py", "run_problem4.py",
             "verify_problem4.py", "verify_problem4_independent.py",
         )),
-        ROOT / "tools" / "restore_full_result2.py",
+        *(ROOT / "tests" / name for name in (
+            "test_final_review_regressions.py", "test_problem1.py", "test_problem2.py",
+            "test_problem3.py", "test_problem4.py", "test_problem4_independent.py",
+            "test_result4_workbook.py",
+        )),
+        *(ROOT / "tools" / name for name in (
+            "audit_all_results.py", "build_result4.py", "compress_problem2_full_process.py",
+            "extend_problem2_delivery.py", "rebuild_delivery_workbooks.py",
+            "restore_full_result2.py",
+        )),
     ]
     for source in python_sources:
         destination = STAGING / source.name
@@ -199,12 +229,13 @@ def build() -> None:
 
     readme = """# A题支撑材料
 
-本压缩包采用单层结构，所有文件均直接位于根目录，不含子文件夹。`result1.xlsx`、`result2.xlsx`、`result3.xlsx`、`result4.xlsx` 已填写计算结果，沿用题目指定文件名和原模板格式；打包过程仅逐字节复制，没有用表格软件重新保存。
+本压缩包采用单层结构，所有文件均直接位于根目录，不含子文件夹。`result1.xlsx`、`result2.xlsx`、`result3.xlsx`、`result4.xlsx` 已填写计算结果，沿用题目指定文件名和现有表格格式；打包过程仅逐字节复制，没有用表格软件重新保存。
 
-`attachment1.csv` 和 `attachment2.csv` 为数值输入，`problem1.py` 至 `problem4.py` 为核心模型，`run_problem1.py` 至 `run_problem4.py` 为四问运行入口。运行脚本默认在当前目录读取输入、写出 JSON 和图形，不建立多级目录。安装依赖后可依次运行：
+`attachment1.csv` 和 `attachment2.csv` 为数值输入。支撑材料共含 25 份 Python 源码：四问模型与独立验证模块、运行入口、测试程序以及工作簿构建和审计工具。`problem1.py` 至 `problem4.py` 为附录中展示的核心模型，完整源码均保存在本目录。安装依赖后可先运行全部测试，再依次运行四问入口：
 
 ```powershell
 python -m pip install -r requirements.txt
+python -m pytest -q -p no:cacheprovider
 python run_problem1.py
 python run_problem2.py
 python run_problem3.py
@@ -228,7 +259,6 @@ python run_problem4.py
         workbook_reports.append(workbook_audit(TEMPLATE_DIR / filename, staged_result))
 
     # Import every flattened model module before replacing the previous tree.
-    import sys
     sys.dont_write_bytecode = True
     sys.path.insert(0, str(STAGING))
     for module_name in ("problem1", "problem2", "problem3", "problem4", "problem4_independent"):
@@ -237,6 +267,18 @@ python run_problem4.py
     bytecode_cache = STAGING / "__pycache__"
     if bytecode_cache.exists():
         shutil.rmtree(bytecode_cache)
+    test_environment = os.environ.copy()
+    test_environment["PYTHONDONTWRITEBYTECODE"] = "1"
+    completed = subprocess.run(
+        [sys.executable, "-m", "pytest", "-q", "-p", "no:cacheprovider"],
+        cwd=STAGING,
+        env=test_environment,
+        check=True,
+        capture_output=True,
+        text=True,
+    )
+    assert "95 passed" in completed.stdout
+    assert not any(path.is_dir() for path in STAGING.iterdir())
 
     audit = {
         "structure": "single-level",
@@ -244,6 +286,8 @@ python run_problem4.py
         "result_workbooks": workbook_reports,
         "result_filenames": [f"result{i}.xlsx" for i in range(1, 5)],
         "workbooks_resaved": False,
+        "python_source_files": len(python_sources),
+        "flat_package_tests": "95 passed",
     }
     (STAGING / "flat_support_audit.json").write_text(
         json.dumps(audit, ensure_ascii=False, indent=2), encoding="utf-8"

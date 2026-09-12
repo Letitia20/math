@@ -141,5 +141,7 @@
     "result3.xlsx",
     "result4.xlsx"
   ],
-  "workbooks_resaved": false
+  "workbooks_resaved": false,
+  "python_source_files": 25,
+  "flat_package_tests": "95 passed"
 }

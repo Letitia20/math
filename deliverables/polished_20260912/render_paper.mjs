@@ -29,7 +29,7 @@ source=source.replace('{{ENDPOINT3}}','第三问临界时刻为 206906.2447 s（
 const support=path.join(out,'supporting_materials');
 const files=walk(support).map(f=>path.relative(support,f).replaceAll('\\','/')).sort();
 source=source.replace('{{FILELIST}}',files.map(f=>'`'+f+'`').join('\n\n'));
-const codes=files.filter(f=>f.endsWith('.py'));
+const codes=files.filter(f=>/^problem[1-4]\.py$/.test(f));
 source=source.replace('{{SOURCECODE}}',codes.map(f=>'### '+f+'\n\n```python\n'+fs.readFileSync(path.join(support,f),'utf8')+'\n```').join('\n\n'));
 fs.writeFileSync(path.join(out,'paper_complete.md'),source);
 function parse(text){const children=[],lines=text.split('\n');let code=false;for(let i=0;i<lines.length;i++){const ln=lines[i],s=ln.trim();

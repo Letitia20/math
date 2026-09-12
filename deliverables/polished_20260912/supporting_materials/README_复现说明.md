@@ -1,11 +1,12 @@
 # A题支撑材料
 
-本压缩包采用单层结构，所有文件均直接位于根目录，不含子文件夹。`result1.xlsx`、`result2.xlsx`、`result3.xlsx`、`result4.xlsx` 已填写计算结果，沿用题目指定文件名和原模板格式；打包过程仅逐字节复制，没有用表格软件重新保存。
+本压缩包采用单层结构，所有文件均直接位于根目录，不含子文件夹。`result1.xlsx`、`result2.xlsx`、`result3.xlsx`、`result4.xlsx` 已填写计算结果，沿用题目指定文件名和现有表格格式；打包过程仅逐字节复制，没有用表格软件重新保存。
 
-`attachment1.csv` 和 `attachment2.csv` 为数值输入，`problem1.py` 至 `problem4.py` 为核心模型，`run_problem1.py` 至 `run_problem4.py` 为四问运行入口。运行脚本默认在当前目录读取输入、写出 JSON 和图形，不建立多级目录。安装依赖后可依次运行：
+`attachment1.csv` 和 `attachment2.csv` 为数值输入。支撑材料共含 25 份 Python 源码：四问模型与独立验证模块、运行入口、测试程序以及工作簿构建和审计工具。`problem1.py` 至 `problem4.py` 为附录中展示的核心模型，完整源码均保存在本目录。安装依赖后可先运行全部测试，再依次运行四问入口：
 
 ```powershell
 python -m pip install -r requirements.txt
+python -m pytest -q -p no:cacheprovider
 python run_problem1.py
 python run_problem2.py
 python run_problem3.py
